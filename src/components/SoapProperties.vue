@@ -34,47 +34,47 @@ export default {
 			aryRanges,
 			aryFADetail,
 			tailFADetail
-		}
+		};
 	}
-}
+};
 </script>
 <template lang="pug">
 div(class="lyeWidget flex flex-col min-h-[200px] max-h-[600px] border border-transparent hover:border-pink-500")
-	div(class="Head bg-pink-500 p-2 rounded-md")
-		span(class="text-black font-bold ") Soap Properties.
-	perfect-scrollbar
-		ul(class="bg-[var(--dark400)] mt-4 p-2 rounded-md overflow-hidden")
-			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-[var(--dark200)]")
+	div(class="Head bg-linear-to-r from-pink-500 to-gray-950/40 p-2 mb-4 rounded-md")
+		span(class="text-black dark:text-white font-bold") Soap Properties.
+	perfect-scrollbar(class="h-full w-full rounded-lg border-4")
+		ul(class="bg-(--LTheme3) dark:bg-(--Theme3) mt-4 p-2 rounded-md overflow-hidden")
+			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-(--LTheme3) dark:border-t-(--LTheme3)")
 				span(class="text-sm text-white flex items-center")
 					<button class="w-4 h-4 rounded-full flex items-center justify-center bg-pink-500 text-sm mr-2 text-black" v-tippy="{ content: aryRanges[0] }">!</button>
 					| Hardness
 				span(class="text-pink-500 ml-auto") {{soapProperties.Hardness}}
-			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-[var(--dark200)]")
+			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-(--LTheme3) dark:border-t-(--LTheme3)")
 				span(class="text-sm text-white flex items-center")
 					<button class="w-4 h-4 rounded-full flex items-center justify-center bg-pink-500 text-sm mr-2 text-black" v-tippy="{ content: aryRanges[1] }">!</button>
 					| Cleansing
 				span(class="text-pink-500 ml-auto") {{soapProperties.Cleansing}}
-			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-[var(--dark200)]")
+			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-(--LTheme3) dark:border-t-(--LTheme3)")
 				span(class="text-sm text-white flex items-center")
 					<button class="w-4 h-4 rounded-full flex items-center justify-center bg-pink-500 text-sm mr-2 text-black" v-tippy="{ content: aryRanges[2] }">!</button>
 					| Conditioning
 				span(class="text-pink-500 ml-auto") {{soapProperties.Conditioning}}
-			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-[var(--dark200)]")
+			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-(--LTheme3) dark:border-t-(--LTheme3)")
 				span(class="text-sm text-white flex items-center")
 					<button class="w-4 h-4 rounded-full flex items-center justify-center bg-pink-500 text-sm mr-2 text-black" v-tippy="{ content: aryRanges[3] }">!</button>
 					| Bubbly
 				span(class="text-pink-500 ml-auto") {{soapProperties.Bubbly}}
-			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-[var(--dark200)]")
+			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-(--LTheme3) dark:border-t-(--LTheme3)")
 				span(class="text-sm text-white flex items-center")
 					<button class="w-4 h-4 rounded-full flex items-center justify-center bg-pink-500 text-sm mr-2 text-black" v-tippy="{ content: aryRanges[4] }">!</button>
 					| Creamy
 				span(class="text-pink-500 ml-auto") {{soapProperties.Creamy}}
-			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-[var(--dark200)]")
+			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-(--LTheme3) dark:border-t-(--LTheme3)")
 				span(class="text-sm text-white flex items-center")
 					<button class="w-4 h-4 rounded-full flex items-center justify-center bg-pink-500 text-sm mr-2 text-black" v-tippy="{ content: aryRanges[5] }">!</button>
 					| Iodine
 				span(class="text-pink-500 ml-auto") {{soapProperties.Iodine}}
-			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-[var(--dark200)]")
+			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-(--LTheme3) dark:border-t-(--LTheme3)")
 				span(class="text-sm text-white flex items-center")
 					<button class="w-4 h-4 rounded-full flex items-center justify-center bg-pink-500 text-sm mr-2 text-black" v-tippy="{ content: aryRanges[6] }">!</button>
 					| INS
@@ -86,37 +86,37 @@ div(class="lyeWidget flex flex-col min-h-[200px] max-h-[600px] border border-tra
 					<button class="w-4 h-4 rounded-full flex items-center justify-center bg-pink-500 text-sm mr-2 text-black" v-tippy="{ content: aryFADetail[0] }">!</button>
 					| Lauric
 				span(class="text-pink-500 ml-auto") {{soapProperties.Lauric}}
-			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-[var(--dark200)]")
+			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-(--LTheme3) dark:border-t-(--LTheme3)")
 				span(class="text-sm text-white flex items-center")
 					<button class="w-4 h-4 rounded-full flex items-center justify-center bg-pink-500 text-sm mr-2 text-black" v-tippy="{ content: aryFADetail[1] }">!</button>
 					| Myristic
 				span(class="text-pink-500 ml-auto") {{soapProperties.Myristic}}
-			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-[var(--dark200)]")
+			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-(--LTheme3) dark:border-t-(--LTheme3)")
 				span(class="text-sm text-white flex items-center")
 					<button class="w-4 h-4 rounded-full flex items-center justify-center bg-pink-500 text-sm mr-2 text-black" v-tippy="{ content: aryFADetail[2] }">!</button>
 					| Palmitic
 				span(class="text-pink-500 ml-auto") {{soapProperties.Palmitic}}
-			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-[var(--dark200)]")
+			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-(--LTheme3) dark:border-t-(--LTheme3)")
 				span(class="text-sm text-white flex items-center")
 					<button class="w-4 h-4 rounded-full flex items-center justify-center bg-pink-500 text-sm mr-2 text-black" v-tippy="{ content: aryFADetail[3] }">!</button>
 					| Stearic
 				span(class="text-pink-500 ml-auto") {{soapProperties.Stearic}}
-			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-[var(--dark200)]")
+			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-(--LTheme3) dark:border-t-(--LTheme3)")
 				span(class="text-sm text-white flex items-center")
 					<button class="w-4 h-4 rounded-full flex items-center justify-center bg-pink-500 text-sm mr-2 text-black" v-tippy="{ content: aryFADetail[4] }">!</button>
 					| Ricinoleic
 				span(class="text-pink-500 ml-auto") {{soapProperties.Ricinoleic}}
-			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-[var(--dark200)]")
+			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-(--LTheme3) dark:border-t-(--LTheme3)")
 				span(class="text-sm text-white flex items-center")
 					<button class="w-4 h-4 rounded-full flex items-center justify-center bg-pink-500 text-sm mr-2 text-black" v-tippy="{ content: aryFADetail[5] }">!</button>
 					| Oleic
 				span(class="text-pink-500 ml-auto") {{soapProperties.Oleic}}
-			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-[var(--dark200)]")
+			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-(--LTheme3) dark:border-t-(--LTheme3)")
 				span(class="text-sm text-white flex items-center")
 					<button class="w-4 h-4 rounded-full flex items-center justify-center bg-pink-500 text-sm mr-2 text-black" v-tippy="{ content: aryFADetail[6] }">!</button>
 					| Linoleic
 				span(class="text-pink-500 ml-auto") {{soapProperties.Linoleic}}
-			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-[var(--dark200)]")
+			li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-(--LTheme3) dark:border-t-(--LTheme3)")
 				span(class="text-sm text-white flex items-center")
 					<button class="w-4 h-4 rounded-full flex items-center justify-center bg-pink-500 text-sm mr-2 text-black" v-tippy="{ content: aryFADetail[7] }">!</button>
 					| Linolenic

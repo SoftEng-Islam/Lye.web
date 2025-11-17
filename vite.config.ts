@@ -8,21 +8,21 @@ import vuePugPlugin from 'vite-plugin-pug'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    tailwindcss(),
-    vue({
-      template: {
-        preprocessOptions: {
-          // 'preprocessOptions' is passed through to the pug compiler
-          plugins: [vuePugPlugin],
-        },
-      },
-    }),
-    vueDevTools(),
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-    },
-  },
+	plugins: [
+		tailwindcss(),
+		vue({
+			template: {
+				preprocessOptions: {
+					// 'preprocessOptions' is passed through to the pug compiler
+					plugins: [vuePugPlugin],
+				},
+			},
+		}),
+		vueDevTools(),
+	],
+	resolve: {
+		alias: {
+			'@': fileURLToPath(new URL('./src', import.meta.url)),
+		},
+	},
 })

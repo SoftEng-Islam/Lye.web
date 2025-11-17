@@ -35,16 +35,16 @@ export default {
 			tailFADetail,
 			aryFADetail,
 			OilProperties
-		}
+		};
 	}
 };
 </script>
 <template lang="pug">
 //- Info Section
 div(class="lyeWidget flex flex-col min-h-[200px] border border-transparent hover:border-yellow-500")
-	div(class="Head bg-yellow-500 p-2 rounded-md")
-		span(class="text-black font-bold ") {{ OilProperties.Name }}.
-	ul(class="bg-[var(--dark400)] mt-4 p-2 rounded-md h-full flex flex-col")
+	div(class="Head bg-linear-to-r from-yellow-500 to-gray-950/40 p-2 rounded-md")
+		span(class="text-black dark:text-white font-bold") {{ OilProperties.Name }}.
+	ul(class="bg-(--LTheme3) dark:bg-(--Theme3) mt-4 p-2 rounded-md h-full flex flex-col")
 		//- {{key.charAt(0).toUpperCase() + key.slice(1)}}
 		li
 			span(class="float-left text-white flex items-center")

@@ -14,7 +14,7 @@ container_name = null;
 active_profiles = [ ];
 hostname = "android";
 username = "softeng";
-git_root = null;
+git_root = "/data/github/proj.LyeApp.web";
 
         in {
         git-hooks.url = "github:cachix/git-hooks.nix";
@@ -41,7 +41,7 @@ container_name = null;
 active_profiles = [ ];
 hostname = "android";
 username = "softeng";
-git_root = null;
+git_root = "/data/github/proj.LyeApp.web";
 
             devenv =
             if builtins.pathExists (devenv_dotfile_path + "/devenv.json")
