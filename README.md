@@ -1,5 +1,5 @@
 # Lye.web — Soap Lye Calculator
-<img width="1882" height="860" alt="image" src="https://github.com/user-attachments/assets/f9902594-294b-4f21-953f-3644f08cace2" />
+<img width="1879" height="869" alt="image" src="https://github.com/user-attachments/assets/36ba04ee-027d-462a-9e46-daa1781f275e" />
 
 
 A lightweight **client-side web app** to precisely calculate how much lye (sodium hydroxide || potassium hydroxide) you need for a soap recipe.
