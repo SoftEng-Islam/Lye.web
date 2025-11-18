@@ -42,87 +42,87 @@ export default {
 <template lang="pug">
 //- Info Section
 div(class="lyeWidget flex flex-col min-h-[200px] border border-transparent hover:border-yellow-500")
-	div(class="Head bg-linear-to-r from-yellow-500 to-gray-950/40 p-2 rounded-md")
-		span(class="text-black dark:text-white font-bold") {{ OilProperties.Name }}.
-	ul(class="bg-(--LTheme3) dark:bg-(--Theme3) mt-4 p-2 rounded-md h-full flex flex-col")
+	div(class="Head bg-linear-to-r from-yellow-600 to-gray-950/40 p-2 rounded-md")
+		span(class="text-black dark:text-white font-bold text-shadow-2xs text-shadow-yellow-950") {{ OilProperties.Name }}.
+	ul(class="bg-(--LTheme3) dark:bg-(--Theme3) mt-4 p-2 rounded-md h-full flex flex-col [&>li>span]:first-of-type:text-black [&>li>span]:first-of-type:dark:text-white [&>li>span]:last-of-type:text-shadow-2xs [&>li>span]:last-of-type:text-yellow-700 [&>li>span]:last-of-type:dark:text-yellow-500")
 		//- {{key.charAt(0).toUpperCase() + key.slice(1)}}
 		li
 			span(class="float-left text-white flex items-center")
-				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 text-black" v-tippy="{ content: aryRanges[0] }">!</button>
+				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 " v-tippy="{ content: aryRanges[0] }">!</button>
 				| Hardness#[span(class="text-yellow-500") :]
-			span(class="float-right text-yellow-500") {{OilProperties.Hardness}}
+			span(class="float-right") {{OilProperties.Hardness}}
 		li
 			span(class="float-left text-white flex items-center")
-				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 text-black" v-tippy="{ content: aryRanges[1] }">!</button>
+				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 " v-tippy="{ content: aryRanges[1] }">!</button>
 				| Cleansing#[span(class="text-yellow-500") :]
-			span(class="float-right text-yellow-500") {{OilProperties.Cleansing}}
+			span(class="float-right") {{OilProperties.Cleansing}}
 		li
 			span(class="float-left text-white flex items-center")
-				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 text-black" v-tippy="{ content: aryRanges[2] }">!</button>
+				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 " v-tippy="{ content: aryRanges[2] }">!</button>
 				| Condition#[span(class="text-yellow-500") :]
-			span(class="float-right text-yellow-500") {{OilProperties.Condition}}
+			span(class="float-right") {{OilProperties.Condition}}
 		li
 			span(class="float-left text-white flex items-center")
-				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 text-black" v-tippy="{ content: aryRanges[3] }">!</button>
+				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 " v-tippy="{ content: aryRanges[3] }">!</button>
 				| Bubbly#[span(class="text-yellow-500") :]
-			span(class="float-right text-yellow-500") {{OilProperties.Bubbly}}
+			span(class="float-right") {{OilProperties.Bubbly}}
 		li
 			span(class="float-left text-white flex items-center")
-				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 text-black" v-tippy="{ content: aryRanges[4] }">!</button>
+				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 " v-tippy="{ content: aryRanges[4] }">!</button>
 				| Creamy#[span(class="text-yellow-500") :]
-			span(class="float-right text-yellow-500") {{OilProperties.Creamy}}
+			span(class="float-right") {{OilProperties.Creamy}}
 		li
 			span(class="float-left text-white flex items-center")
-				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 text-black" v-tippy="{ content: aryRanges[5] }">!</button>
+				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 " v-tippy="{ content: aryRanges[5] }">!</button>
 				| Iodine#[span(class="text-yellow-500") :]
-			span(class="float-right text-yellow-500") {{OilProperties.Iodine}}
+			span(class="float-right") {{OilProperties.Iodine}}
 		li
 			span(class="float-left text-white flex items-center")
-				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 text-black" v-tippy="{ content: aryRanges[6] }">!</button>
+				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 " v-tippy="{ content: aryRanges[6] }">!</button>
 				| INS#[span(class="text-yellow-500") :]
-			span(class="float-right text-yellow-500") {{OilProperties.INS}}
+			span(class="float-right") {{OilProperties.INS}}
 		//- -------------------------------------------
 		li(class="p-4")
 			hr(class="opacity-50")
 		//- -------------------------------------------
 		li
 			span(class="float-left text-white flex items-center")
-				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 text-black" v-tippy="{ content: aryFADetail[0] }">!</button>
+				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 " v-tippy="{ content: aryFADetail[0] }">!</button>
 				| Lauric#[span(class="text-yellow-500") :]
-			span(class="float-right text-yellow-500") {{OilProperties.Lauric}}
+			span(class="float-right") {{OilProperties.Lauric}}
 		li
 			span(class="float-left text-white flex items-center")
-				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 text-black" v-tippy="{ content: aryFADetail[1] }">!</button>
+				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 " v-tippy="{ content: aryFADetail[1] }">!</button>
 				| Myristic#[span(class="text-yellow-500") :]
-			span(class="float-right text-yellow-500") {{OilProperties.Myristic}}
+			span(class="float-right") {{OilProperties.Myristic}}
 		li
 			span(class="float-left text-white flex items-center")
-				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 text-black" v-tippy="{ content: aryFADetail[2] }">!</button>
+				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 " v-tippy="{ content: aryFADetail[2] }">!</button>
 				| Palmitic#[span(class="text-yellow-500") :]
-			span(class="float-right text-yellow-500") {{OilProperties.Palmitic}}
+			span(class="float-right") {{OilProperties.Palmitic}}
 		li
 			span(class="float-left text-white flex items-center")
-				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 text-black" v-tippy="{ content: aryFADetail[3] }">!</button>
+				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 " v-tippy="{ content: aryFADetail[3] }">!</button>
 				| Stearic#[span(class="text-yellow-500") :]
-			span(class="float-right text-yellow-500") {{OilProperties.Stearic}}
+			span(class="float-right") {{OilProperties.Stearic}}
 		li
 			span(class="float-left text-white flex items-center")
-				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 text-black" v-tippy="{ content: aryFADetail[4] }">!</button>
+				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 " v-tippy="{ content: aryFADetail[4] }">!</button>
 				| Ricinoleic#[span(class="text-yellow-500") :]
-			span(class="float-right text-yellow-500") {{OilProperties.Ricinoleic}}
+			span(class="float-right") {{OilProperties.Ricinoleic}}
 		li
 			span(class="float-left text-white flex items-center")
-				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 text-black" v-tippy="{ content: aryFADetail[5] }">!</button>
+				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 " v-tippy="{ content: aryFADetail[5] }">!</button>
 				| Oleic#[span(class="text-yellow-500") :]
-			span(class="float-right text-yellow-500") {{OilProperties.Oleic}}
+			span(class="float-right") {{OilProperties.Oleic}}
 		li
 			span(class="float-left text-white flex items-center")
-				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 text-black" v-tippy="{ content: aryFADetail[6] }">!</button>
+				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 " v-tippy="{ content: aryFADetail[6] }">!</button>
 				| Linoleic#[span(class="text-yellow-500") :]
-			span(class="float-right text-yellow-500") {{OilProperties.Linoleic}}
+			span(class="float-right") {{OilProperties.Linoleic}}
 		li
 			span(class="float-left text-white flex items-center")
-				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 text-black" v-tippy="{ content: aryFADetail[7] }">!</button>
+				<button class="w-4 h-4 rounded-full flex items-center justify-center bg-yellow-500 text-sm mr-2 " v-tippy="{ content: aryFADetail[7] }">!</button>
 				| Linolenic#[span(class="text-yellow-500") :]
-			span(class="float-right text-yellow-500") {{OilProperties.Linolenic}}
+			span(class="float-right") {{OilProperties.Linolenic}}
 </template>

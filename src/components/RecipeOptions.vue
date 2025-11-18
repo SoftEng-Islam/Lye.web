@@ -1,102 +1,99 @@
-<script lang="ts">
-import { ref, Ref, WritableComputedRef } from 'vue';
+<script setup lang="ts">
+import { ref } from 'vue';
 import { computed } from 'vue';
 import { useOilStore } from "../store/index";
-export default {
-	setup() {
-		const OilStore: any = useOilStore();
-		// Set Type of Lye
-		let STypeLye: Ref<string> = ref("NaOH"); // Default => NaOH
-		const SetTypeOfLye: () => void = (): void => {
-			OilStore.setTypeOfLye(STypeLye.value);
-		};
-		// The Water Options
-		let TheWaterOption: Ref<number> = ref(0);
-		const TheWaterSelect: () => void = (): void => {
-			OilStore.headerOptions.water.selcted = TheWaterOption.value;
-		};
-		const TheWater: WritableComputedRef<any> = computed({
-			get(): any {
-				if (TheWaterOption.value == 0) {
-					return OilStore.headerOptions.water.waterAsOfOils;
-				} else if (TheWaterOption.value == 1) {
-					return OilStore.headerOptions.water.lyeConcentration;
-				} else {
-					return OilStore.headerOptions.water.WaterToLyeRatio;
-				}
-			},
-			set(value: any): void {
-				OilStore.WaterAsofOils(TheWaterOption.value, value);
-			}
-		});
-		// Set Super Fat
-		const SetsuperFat = computed({
-			get(): number {
-				return OilStore.headerOptions.superFat || 0;
-			},
-			set(value: number): void {
-				OilStore.ChangeSuperFat(value || 0);
-			}
-		});
-		// Set Fragrance
-		const SetFragrance = computed({
-			get(): number {
-				return OilStore.headerOptions.fragrance.value || 0;
-			},
-			set(value: number): void {
-				OilStore.ChangeFragrance(value || 0);
-			}
-		});
-		return {
-			OilStore,
-			STypeLye,
-			SetTypeOfLye,
-			TheWaterOption,
-			TheWater,
-			TheWaterSelect,
-			SetsuperFat,
-			SetFragrance
-		};
-	}
+
+const OilStore = useOilStore();
+
+
+let STypeLye = ref("NaOH"); // Default => NaOH
+
+const SetTypeOfLye = (): void => {
+	OilStore.setTypeOfLye(STypeLye.value);
 };
+
+// The Water Options
+const TheWaterOption = ref(0);
+
+const TheWaterSelect: () => void = (): void => {
+	OilStore.headerOptions.water.selcted = TheWaterOption.value;
+};
+
+
+// Set Water
+const TheWater = computed({
+	get() {
+		if (TheWaterOption.value === 0) {
+			return OilStore.headerOptions.water.waterAsOfOils;
+		} else if (TheWaterOption.value === 1) {
+			return OilStore.headerOptions.water.lyeConcentration;
+		} else {
+			return OilStore.headerOptions.water.WaterToLyeRatio;
+		}
+	},
+
+	set(value) {
+		OilStore.WaterAsofOils(TheWaterOption.value, value);
+	}
+});
+
+// Set Super Fat
+const SetSuperFat = computed({
+	get() {
+		return OilStore.headerOptions.superFat || 0;
+	},
+	set(value) {
+		OilStore.ChangeSuperFat(value || 0);
+	}
+});
+
+// Set Fragrance
+const SetFragrance = computed({
+	get() {
+		return OilStore.headerOptions.fragrance.value || 0;
+	},
+	set(value) {
+		OilStore.ChangeFragrance(value || 0);
+	}
+});
 </script>
 <template lang="pug">
-ul(class="w-full mb-5 p-2 flex flex-row flex-wrap items-stretch justify-center gap-2 bg-(--LTheme2) dark:bg-(--Theme2) *:md:flex-col *:flex *:items-center *:justify-center *:p-2 *:rounded-md *:bg-(--LTheme3) dark:*:bg-(--Theme4)")
+ul(class="w-full mb-5 p-2 flex flex-row flex-wrap md:flex-nowrap items-stretch justify-center gap-2 bg-(--LTheme2) dark:bg-(--Theme2) *:flex *:p-2 *:px-4 *:rounded-md *:bg-(--LTheme4) dark:*:bg-(--Theme4)")
 	//- Type Of Lye
-	li(class="bg-(--LTheme3) dark:bg-(--Theme3)")
-		span(class="text-white") Type of #[span(class="text-(--favColor)") Lye]:
-		select(class="ml-2 p-1 px-2 outline-none rounded-md border border-gray-700 text-green-500 bg-(--dark400)" id="Units" v-model="STypeLye" @change="SetTypeOfLye()")
+	li(class="w-full items-center justify-start")
+		span(class="text-(--dark-fav-color) dark:text-(--light-fav-color)") Type of #[span(class="font-bold text-(--dark-fav-color) dark:text-(--light-fav-color)") Lye]:
+		select(class="ml-auto p-2 px-4 outline-none rounded-md border bg-(--LTheme3) dark:bg-(--Theme3) border-gray-300 dark:border-gray-600 text-green-500" id="Units" v-model="STypeLye" @change="SetTypeOfLye()")
 			option(value="NaOH") NaOH
 			option(value="KOH") KOH
 	//- Weight of Oils
-	li(class="bg-(--LTheme3) dark:bg-(--Theme3)")
-		span(class="text-white") Weight of #[span(class="text-(--favColor)") Oils]:
-		input(type="number" readonly class="w-1/4 bg-(--dark200) placeholder:text-white text-white pl-2 py-1 rounded-md scale-90" v-model="OilStore.RecipeTotal.weightOils")
-		select(class="bg-(--dark200) text-red-500 pl-2 py-1 rounded-md scale-90")
+	li(class="w-full items-center")
+		span(class="text-(--dark-fav-color) dark:text-(--light-fav-color)") Weight of #[span(class="font-bold text-(--dark-fav-color) dark:text-(--light-fav-color)") Oils]:
+		input(type="number" readonly class="w-1/4 ml-auto placeholder:text-white text-black bg-(--LTheme3) dark:bg-(--Theme3) dark:text-white pl-2 py-1 rounded-md scale-90" v-model="OilStore.RecipeTotal.weightOils")
+		select(class="ml-auto p-2 px-4 outline-none rounded-md border bg-(--LTheme3) dark:bg-(--Theme3) border-gray-300 dark:border-gray-600 text-green-500")
 			option(value="Pounds") Pounds
 			option(value="Ounces") Ounces
 			option(value="Grams" selected) Grams
 			option(value="Kilo") Kilo
 			option(value="Tons") Tons
 	//- Water
-	li(class="bg-(--LTheme3) dark:bg-(--Theme3)")
-		span(class="text-(--favColor) mr-3") Water#[span(class="text-white") :]
-		input(class="w-12 pl-2 py-1 rounded-md scale-9 bg-(--dark200) placeholder:text-white text-white" type="text" v-model="TheWater")
-		select(class="bg-(--dark200) text-blue-300 pl-2 py-1 rounded-md scale-90" v-model="TheWaterOption" @change="TheWaterSelect")
+	li(class="w-full items-center")
+		span(class="text-(--dark-fav-color) dark:text-(--light-fav-color) mr-3") Water#[span(class="font-bold text-(--dark-fav-color) dark:text-(--light-fav-color)") :]
+		input(class="w-12 pl-2 py-1 rounded-md bg-(--LTheme3) dark:bg-(--Theme3) ml-auto placeholder:text-white text-black dark:text-white " type="text" v-model="TheWater")
+		select(class="ml-auto p-2 px-4 outline-none rounded-md border bg-(--LTheme3) dark:bg-(--Theme3) border-gray-300 dark:border-gray-600 text-green-500" v-model="TheWaterOption" @change="TheWaterSelect")
 			option(value="0") Water as % of Oils
 			option(value="1" ) Lye Concentration
 			option(value="2" ) Water : Lye Ratio
 	//- The Lest Section
-	li(class="bg-(--LTheme3) dark:bg-(--Theme3) flex-col items-start justify-start gap-2")
+	li(class="flex-col items-start justify-start gap-2 w-full")
 		//- Super Fat
 		div(class="w-full flex flex-row items-center justify-start")
-			span(class="text-orange-400") Super Fat
+			span(class="text-orange-400 font-bold") Super Fat
 			//- v-model="OilStore.headerOptions.superFat"
-			input(class="bg-(--dark200) placeholder:text-white text-white py-1 rounded-md scale-90" type="number" v-model="SetsuperFat")
-			span(class="text-orange-400") %
+			input(class="pl-4 ml-auto bg-(--LTheme3) dark:bg-(--Theme3) placeholder:text-white text-black dark:text-white py-1 rounded-md scale-90" type="number" v-model="SetsuperFat")
+			span(class="ml-4 w-10 text-orange-400") %
 		//- Fragrance
 		div(class="w-full flex flex-row items-center justify-start")
-			span(class="text-fuchsia-400") Fragrance
-			input(class="bg-(--dark200) placeholder:text-white text-white py-1 rounded-md scale-90" type="number" v-model="SetFragrance")
-			span(class="text-fuchsia-400") {{OilStore.headerOptions.fragrance.frWeight}}
+			span(class="text-fuchsia-400 font-bold") Fragrance
+			input(class="pl-4 ml-auto bg-(--LTheme3) dark:bg-(--Theme3) placeholder:text-white text-black dark:text-white  py-1 rounded-md scale-90" type="number" v-model="SetFragrance")
+			span(class="ml-4 w-10 text-fuchsia-400") {{OilStore.headerOptions.fragrance.frWeight}}
 </template>

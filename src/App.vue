@@ -10,15 +10,14 @@ import SoapProperties from "./components/SoapProperties.vue";
 import RecipeOptions from "./components/RecipeOptions.vue";
 import AppPreloader from "./components/AppPreloader.vue";
 import AppFooter from "./components/AppFooter.vue";
-import { useMouse, useCounter } from '@vueuse/core';
 
-const { x, y } = useMouse();
+// import { useMouse, useCounter } from '@vueuse/core';
+// const { x, y } = useMouse();
+// watch([x, y], () => {
+// 	console.log(`Mouse position: x=${x.value}, y=${y.value}`);
+// });
+
 const isLoading = ref(true);
-
-watch([x, y], () => {
-	console.log(`Mouse position: x=${x.value}, y=${y.value}`);
-});
-
 onMounted(() => {
 	// Simulate loading process (replace with actual async call)
 	// But What about the SEO?

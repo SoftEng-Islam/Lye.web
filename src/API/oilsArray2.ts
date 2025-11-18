@@ -1,26 +1,26 @@
 const oilsAPI: {
-	Name: string;
-	Id: number;
-	KOH: number;
-	NaOH: number;
-	Hardness: number;
-	Cleansing: number;
-	Condition: number;
-	Bubbly: number;
-	Creamy: number;
-	Iodine: number;
-	INS: number;
-	Lauric: number;
-	Myristic: number;
-	Palmitic: number;
-	Stearic: number;
-	Ricinoleic: number;
-	Oleic: number;
-	Linoleic: number;
-	Linolenic: number;
+	Name: string
+	Id: number
+	KOH: number
+	NaOH: number
+	Hardness: number
+	Cleansing: number
+	Condition: number
+	Bubbly: number
+	Creamy: number
+	Iodine: number
+	INS: number
+	Lauric: number
+	Myristic: number
+	Palmitic: number
+	Stearic: number
+	Ricinoleic: number
+	Oleic: number
+	Linoleic: number
+	Linolenic: number
 }[] = [
 	{
-		Name: "Abyssinian Oil",
+		Name: 'Abyssinian Oil',
 		Id: 145,
 		KOH: 0.168,
 		NaOH: 0.12,
@@ -38,10 +38,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 18,
 		Linoleic: 11,
-		Linolenic: 4
+		Linolenic: 4,
 	},
 	{
-		Name: "Almond Butter",
+		Name: 'Almond Butter',
 		Id: 114,
 		KOH: 0.188,
 		NaOH: 0.134,
@@ -59,10 +59,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 58,
 		Linoleic: 16,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Almond Oil, sweet",
+		Name: 'Almond Oil, sweet',
 		Id: 1,
 		KOH: 0.195,
 		NaOH: 0.139,
@@ -80,10 +80,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 71,
 		Linoleic: 18,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Aloe Butter",
+		Name: 'Aloe Butter',
 		Id: 68,
 		KOH: 0.24,
 		NaOH: 0.171,
@@ -101,10 +101,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 7,
 		Linoleic: 2,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Andiroba Oil,karaba,crabwood",
+		Name: 'Andiroba Oil,karaba,crabwood',
 		Id: 96,
 		KOH: 0.188,
 		NaOH: 0.134,
@@ -122,10 +122,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 51,
 		Linoleic: 9,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Apricot Kernal Oil",
+		Name: 'Apricot Kernal Oil',
 		Id: 2,
 		KOH: 0.195,
 		NaOH: 0.139,
@@ -143,10 +143,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 66,
 		Linoleic: 27,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Argan Oil",
+		Name: 'Argan Oil',
 		Id: 58,
 		KOH: 0.191,
 		NaOH: 0.136,
@@ -164,10 +164,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 46,
 		Linoleic: 34,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Avocado butter",
+		Name: 'Avocado butter',
 		Id: 53,
 		KOH: 0.187,
 		NaOH: 0.133,
@@ -185,10 +185,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 53,
 		Linoleic: 6,
-		Linolenic: 2
+		Linolenic: 2,
 	},
 	{
-		Name: "Avocado Oil",
+		Name: 'Avocado Oil',
 		Id: 3,
 		KOH: 0.186,
 		NaOH: 0.133,
@@ -206,10 +206,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 58,
 		Linoleic: 12,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Babassu Oil",
+		Name: 'Babassu Oil',
 		Id: 4,
 		KOH: 0.245,
 		NaOH: 0.175,
@@ -227,10 +227,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 10,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Baobab Oil",
+		Name: 'Baobab Oil',
 		Id: 59,
 		KOH: 0.2,
 		NaOH: 0.143,
@@ -248,10 +248,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 37,
 		Linoleic: 28,
-		Linolenic: 2
+		Linolenic: 2,
 	},
 	{
-		Name: "Beeswax",
+		Name: 'Beeswax',
 		Id: 5,
 		KOH: 0.094,
 		NaOH: 0.067,
@@ -269,10 +269,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 0,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Black Cumin Seed Oil, nigella sativa",
+		Name: 'Black Cumin Seed Oil, nigella sativa',
 		Id: 6,
 		KOH: 0.195,
 		NaOH: 0.139,
@@ -290,10 +290,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 22,
 		Linoleic: 60,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Black Current Seed Oil",
+		Name: 'Black Current Seed Oil',
 		Id: 136,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -311,10 +311,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 13,
 		Linoleic: 46,
-		Linolenic: 29
+		Linolenic: 29,
 	},
 	{
-		Name: "Borage Oil",
+		Name: 'Borage Oil',
 		Id: 66,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -332,10 +332,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 20,
 		Linoleic: 43,
-		Linolenic: 5
+		Linolenic: 5,
 	},
 	{
-		Name: "Brazil Nut Oil",
+		Name: 'Brazil Nut Oil',
 		Id: 146,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -353,10 +353,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 39,
 		Linoleic: 36,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Broccoli Seed Oil, Brassica Oleracea",
+		Name: 'Broccoli Seed Oil, Brassica Oleracea',
 		Id: 138,
 		KOH: 0.172,
 		NaOH: 0.123,
@@ -374,10 +374,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 14,
 		Linoleic: 11,
-		Linolenic: 9
+		Linolenic: 9,
 	},
 	{
-		Name: "Buriti Oil",
+		Name: 'Buriti Oil',
 		Id: 147,
 		KOH: 0.223,
 		NaOH: 0.159,
@@ -395,10 +395,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 71,
 		Linoleic: 7,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Camelina Seed Oil",
+		Name: 'Camelina Seed Oil',
 		Id: 60,
 		KOH: 0.188,
 		NaOH: 0.134,
@@ -416,10 +416,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 24,
 		Linoleic: 19,
-		Linolenic: 45
+		Linolenic: 45,
 	},
 	{
-		Name: "Camellia Oil, Tea Seed",
+		Name: 'Camellia Oil, Tea Seed',
 		Id: 80,
 		KOH: 0.193,
 		NaOH: 0.138,
@@ -437,10 +437,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 77,
 		Linoleic: 8,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Candelilla Wax",
+		Name: 'Candelilla Wax',
 		Id: 142,
 		KOH: 0.044,
 		NaOH: 0.031,
@@ -458,10 +458,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 0,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Canola Oil",
+		Name: 'Canola Oil',
 		Id: 7,
 		KOH: 0.186,
 		NaOH: 0.133,
@@ -479,10 +479,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 61,
 		Linoleic: 21,
-		Linolenic: 9
+		Linolenic: 9,
 	},
 	{
-		Name: "Canola Oil, high oleic",
+		Name: 'Canola Oil, high oleic',
 		Id: 84,
 		KOH: 0.186,
 		NaOH: 0.133,
@@ -500,10 +500,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 74,
 		Linoleic: 12,
-		Linolenic: 4
+		Linolenic: 4,
 	},
 	{
-		Name: "Carrot Seed Oil, cold pressed",
+		Name: 'Carrot Seed Oil, cold pressed',
 		Id: 144,
 		KOH: 0.144,
 		NaOH: 0.103,
@@ -521,10 +521,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 80,
 		Linoleic: 13,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Castor Oil",
+		Name: 'Castor Oil',
 		Id: 8,
 		KOH: 0.18,
 		NaOH: 0.128,
@@ -542,10 +542,10 @@ const oilsAPI: {
 		Ricinoleic: 90,
 		Oleic: 4,
 		Linoleic: 4,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Cherry Kern1 Oil, p. avium",
+		Name: 'Cherry Kern1 Oil, p. avium',
 		Id: 79,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -563,10 +563,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 31,
 		Linoleic: 45,
-		Linolenic: 11
+		Linolenic: 11,
 	},
 	{
-		Name: "Cherry Kern2 Oil, p. cerasus",
+		Name: 'Cherry Kern2 Oil, p. cerasus',
 		Id: 90,
 		KOH: 0.192,
 		NaOH: 0.137,
@@ -584,10 +584,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 50,
 		Linoleic: 40,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Chicken Fat",
+		Name: 'Chicken Fat',
 		Id: 56,
 		KOH: 0.195,
 		NaOH: 0.139,
@@ -605,10 +605,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 38,
 		Linoleic: 21,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Cocoa Butter",
+		Name: 'Cocoa Butter',
 		Id: 9,
 		KOH: 0.194,
 		NaOH: 0.138,
@@ -626,10 +626,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 35,
 		Linoleic: 3,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Coconut Oil, 76 deg",
+		Name: 'Coconut Oil, 76 deg',
 		Id: 10,
 		KOH: 0.257,
 		NaOH: 0.183,
@@ -647,10 +647,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 8,
 		Linoleic: 2,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Coconut Oil, 92 deg",
+		Name: 'Coconut Oil, 92 deg',
 		Id: 72,
 		KOH: 0.257,
 		NaOH: 0.183,
@@ -668,10 +668,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 8,
 		Linoleic: 2,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Coconut Oil, fractionated",
+		Name: 'Coconut Oil, fractionated',
 		Id: 65,
 		KOH: 0.325,
 		NaOH: 0.232,
@@ -689,10 +689,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 0,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Coffee Bean Oil, green",
+		Name: 'Coffee Bean Oil, green',
 		Id: 93,
 		KOH: 0.185,
 		NaOH: 0.132,
@@ -710,10 +710,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 9,
 		Linoleic: 39,
-		Linolenic: 2
+		Linolenic: 2,
 	},
 	{
-		Name: "Coffee Bean Oil, roasted",
+		Name: 'Coffee Bean Oil, roasted',
 		Id: 74,
 		KOH: 0.18,
 		NaOH: 0.128,
@@ -731,10 +731,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 8,
 		Linoleic: 38,
-		Linolenic: 2
+		Linolenic: 2,
 	},
 	{
-		Name: "Cohune Oil",
+		Name: 'Cohune Oil',
 		Id: 102,
 		KOH: 0.205,
 		NaOH: 0.146,
@@ -752,10 +752,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 18,
 		Linoleic: 3,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Corn Oil",
+		Name: 'Corn Oil',
 		Id: 11,
 		KOH: 0.192,
 		NaOH: 0.137,
@@ -773,10 +773,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 32,
 		Linoleic: 51,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Cottonseed Oil",
+		Name: 'Cottonseed Oil',
 		Id: 12,
 		KOH: 0.194,
 		NaOH: 0.138,
@@ -794,10 +794,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 18,
 		Linoleic: 52,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Cranberry Seed Oil",
+		Name: 'Cranberry Seed Oil',
 		Id: 92,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -815,10 +815,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 23,
 		Linoleic: 37,
-		Linolenic: 32
+		Linolenic: 32,
 	},
 	{
-		Name: "Crisco, new w/palm",
+		Name: 'Crisco, new w/palm',
 		Id: 104,
 		KOH: 0.193,
 		NaOH: 0.138,
@@ -836,10 +836,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 28,
 		Linoleic: 40,
-		Linolenic: 6
+		Linolenic: 6,
 	},
 	{
-		Name: "Crisco, old",
+		Name: 'Crisco, old',
 		Id: 13,
 		KOH: 0.192,
 		NaOH: 0.137,
@@ -857,10 +857,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 18,
 		Linoleic: 52,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Cupuacu Butter",
+		Name: 'Cupuacu Butter',
 		Id: 101,
 		KOH: 0.192,
 		NaOH: 0.137,
@@ -878,10 +878,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 42,
 		Linoleic: 2,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Duck Fat, flesh and skin",
+		Name: 'Duck Fat, flesh and skin',
 		Id: 87,
 		KOH: 0.194,
 		NaOH: 0.138,
@@ -899,10 +899,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 44,
 		Linoleic: 13,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Emu Oil",
+		Name: 'Emu Oil',
 		Id: 14,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -920,10 +920,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 47,
 		Linoleic: 8,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Evening Primrose Oil",
+		Name: 'Evening Primrose Oil',
 		Id: 15,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -941,10 +941,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 0,
 		Linoleic: 80,
-		Linolenic: 9
+		Linolenic: 9,
 	},
 	{
-		Name: "Flax Oil, linseed",
+		Name: 'Flax Oil, linseed',
 		Id: 16,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -962,10 +962,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 27,
 		Linoleic: 13,
-		Linolenic: 50
+		Linolenic: 50,
 	},
 	{
-		Name: "Ghee, any bovine",
+		Name: 'Ghee, any bovine',
 		Id: 95,
 		KOH: 0.227,
 		NaOH: 0.162,
@@ -983,10 +983,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 19,
 		Linoleic: 2,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Goose Fat",
+		Name: 'Goose Fat',
 		Id: 17,
 		KOH: 0.192,
 		NaOH: 0.137,
@@ -1004,10 +1004,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 54,
 		Linoleic: 10,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Grapeseed Oil",
+		Name: 'Grapeseed Oil',
 		Id: 18,
 		KOH: 0.181,
 		NaOH: 0.129,
@@ -1025,10 +1025,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 20,
 		Linoleic: 68,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Hazelnut Oil",
+		Name: 'Hazelnut Oil',
 		Id: 19,
 		KOH: 0.195,
 		NaOH: 0.139,
@@ -1046,10 +1046,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 75,
 		Linoleic: 10,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Hemp Oil",
+		Name: 'Hemp Oil',
 		Id: 20,
 		KOH: 0.193,
 		NaOH: 0.138,
@@ -1067,10 +1067,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 12,
 		Linoleic: 57,
-		Linolenic: 21
+		Linolenic: 21,
 	},
 	{
-		Name: "Horse Oil",
+		Name: 'Horse Oil',
 		Id: 94,
 		KOH: 0.196,
 		NaOH: 0.14,
@@ -1088,10 +1088,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 10,
 		Linoleic: 20,
-		Linolenic: 19
+		Linolenic: 19,
 	},
 	{
-		Name: "Illipe Butter",
+		Name: 'Illipe Butter',
 		Id: 62,
 		KOH: 0.185,
 		NaOH: 0.132,
@@ -1109,10 +1109,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 35,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Japan Wax",
+		Name: 'Japan Wax',
 		Id: 143,
 		KOH: 0.215,
 		NaOH: 0.153,
@@ -1130,10 +1130,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 4,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Jatropha Oil, soapnut seed oil",
+		Name: 'Jatropha Oil, soapnut seed oil',
 		Id: 108,
 		KOH: 0.193,
 		NaOH: 0.138,
@@ -1151,10 +1151,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 44,
 		Linoleic: 34,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Jojoba Oil (a Liquid Wax Ester)",
+		Name: 'Jojoba Oil (a Liquid Wax Ester)',
 		Id: 21,
 		KOH: 0.092,
 		NaOH: 0.066,
@@ -1172,10 +1172,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 12,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Karanja Oil",
+		Name: 'Karanja Oil',
 		Id: 51,
 		KOH: 0.183,
 		NaOH: 0.13,
@@ -1193,10 +1193,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 58,
 		Linoleic: 15,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Kokum Butter",
+		Name: 'Kokum Butter',
 		Id: 23,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -1214,10 +1214,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 36,
 		Linoleic: 1,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Kpangnan Butter",
+		Name: 'Kpangnan Butter',
 		Id: 86,
 		KOH: 0.191,
 		NaOH: 0.136,
@@ -1235,10 +1235,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 49,
 		Linoleic: 1,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Kukui nut Oil",
+		Name: 'Kukui nut Oil',
 		Id: 24,
 		KOH: 0.189,
 		NaOH: 0.135,
@@ -1256,10 +1256,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 20,
 		Linoleic: 42,
-		Linolenic: 29
+		Linolenic: 29,
 	},
 	{
-		Name: "Lanolin liquid Wax",
+		Name: 'Lanolin liquid Wax',
 		Id: 25,
 		KOH: 0.106,
 		NaOH: 0.076,
@@ -1277,10 +1277,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 0,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Lard, Pig Tallow (Manteca)",
+		Name: 'Lard, Pig Tallow (Manteca)',
 		Id: 26,
 		KOH: 0.198,
 		NaOH: 0.141,
@@ -1298,10 +1298,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 46,
 		Linoleic: 6,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Laurel Fruit Oil",
+		Name: 'Laurel Fruit Oil',
 		Id: 127,
 		KOH: 0.198,
 		NaOH: 0.141,
@@ -1319,10 +1319,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 31,
 		Linoleic: 26,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Lauric Acid",
+		Name: 'Lauric Acid',
 		Id: 125,
 		KOH: 0.28,
 		NaOH: 0.2,
@@ -1340,10 +1340,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 0,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Linseed Oil, flax",
+		Name: 'Linseed Oil, flax',
 		Id: 27,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -1361,10 +1361,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 27,
 		Linoleic: 13,
-		Linolenic: 50
+		Linolenic: 50,
 	},
 	{
-		Name: "Loofa Seed Oil, Luffa cylinderica",
+		Name: 'Loofa Seed Oil, Luffa cylinderica',
 		Id: 119,
 		KOH: 0.187,
 		NaOH: 0.133,
@@ -1382,10 +1382,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 30,
 		Linoleic: 47,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Macadamia Nut Butter",
+		Name: 'Macadamia Nut Butter',
 		Id: 124,
 		KOH: 0.188,
 		NaOH: 0.134,
@@ -1403,10 +1403,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 56,
 		Linoleic: 3,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Macadamia Nut Oil",
+		Name: 'Macadamia Nut Oil',
 		Id: 28,
 		KOH: 0.195,
 		NaOH: 0.139,
@@ -1424,10 +1424,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 59,
 		Linoleic: 2,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Mafura Butter, Trichilia emetica ",
+		Name: 'Mafura Butter, Trichilia emetica ',
 		Id: 141,
 		KOH: 0.198,
 		NaOH: 0.141,
@@ -1445,10 +1445,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 49,
 		Linoleic: 11,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Mango Seed Butter",
+		Name: 'Mango Seed Butter',
 		Id: 29,
 		KOH: 0.191,
 		NaOH: 0.136,
@@ -1466,10 +1466,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 45,
 		Linoleic: 3,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Mango Seed Oil",
+		Name: 'Mango Seed Oil',
 		Id: 30,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -1487,10 +1487,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 52,
 		Linoleic: 8,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Marula Oil",
+		Name: 'Marula Oil',
 		Id: 99,
 		KOH: 0.192,
 		NaOH: 0.137,
@@ -1508,10 +1508,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 75,
 		Linoleic: 4,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Meadowfoam Oil",
+		Name: 'Meadowfoam Oil',
 		Id: 31,
 		KOH: 0.169,
 		NaOH: 0.12,
@@ -1529,10 +1529,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 0,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Milk Fat, any bovine",
+		Name: 'Milk Fat, any bovine',
 		Id: 32,
 		KOH: 0.227,
 		NaOH: 0.162,
@@ -1550,10 +1550,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 19,
 		Linoleic: 2,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Milk Thistle Oil",
+		Name: 'Milk Thistle Oil',
 		Id: 130,
 		KOH: 0.196,
 		NaOH: 0.14,
@@ -1571,10 +1571,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 26,
 		Linoleic: 64,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Mink Oil",
+		Name: 'Mink Oil',
 		Id: 67,
 		KOH: 0.196,
 		NaOH: 0.14,
@@ -1592,10 +1592,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 0,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Monoi de Tahiti Oil",
+		Name: 'Monoi de Tahiti Oil',
 		Id: 69,
 		KOH: 0.255,
 		NaOH: 0.182,
@@ -1613,10 +1613,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 0,
 		Linoleic: 2,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Moringa Oil",
+		Name: 'Moringa Oil',
 		Id: 109,
 		KOH: 0.192,
 		NaOH: 0.137,
@@ -1634,10 +1634,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 71,
 		Linoleic: 2,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Mowrah Butter",
+		Name: 'Mowrah Butter',
 		Id: 63,
 		KOH: 0.194,
 		NaOH: 0.138,
@@ -1655,10 +1655,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 36,
 		Linoleic: 15,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Murumuru Butter",
+		Name: 'Murumuru Butter',
 		Id: 106,
 		KOH: 0.275,
 		NaOH: 0.196,
@@ -1676,10 +1676,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 15,
 		Linoleic: 3,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Mustard Oil, kachi ghani",
+		Name: 'Mustard Oil, kachi ghani',
 		Id: 103,
 		KOH: 0.173,
 		NaOH: 0.123,
@@ -1697,10 +1697,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 18,
 		Linoleic: 14,
-		Linolenic: 9
+		Linolenic: 9,
 	},
 	{
-		Name: "Myristic Acid",
+		Name: 'Myristic Acid',
 		Id: 76,
 		KOH: 0.247,
 		NaOH: 0.176,
@@ -1718,10 +1718,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 0,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Neatsfoot Oil",
+		Name: 'Neatsfoot Oil',
 		Id: 121,
 		KOH: 0.18,
 		NaOH: 0.128,
@@ -1739,10 +1739,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 0,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Neem Seed Oil",
+		Name: 'Neem Seed Oil',
 		Id: 33,
 		KOH: 0.193,
 		NaOH: 0.138,
@@ -1760,10 +1760,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 46,
 		Linoleic: 12,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Nutmeg Butter",
+		Name: 'Nutmeg Butter',
 		Id: 139,
 		KOH: 0.1624,
 		NaOH: 0.116,
@@ -1781,10 +1781,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 5,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Oat Oil",
+		Name: 'Oat Oil',
 		Id: 117,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -1802,10 +1802,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 40,
 		Linoleic: 39,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Oleic Acid",
+		Name: 'Oleic Acid',
 		Id: 88,
 		KOH: 0.202,
 		NaOH: 0.144,
@@ -1823,10 +1823,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 99,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Olive Oil",
+		Name: 'Olive Oil',
 		Id: 34,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -1844,10 +1844,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 69,
 		Linoleic: 12,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Olive Oil pomace",
+		Name: 'Olive Oil pomace',
 		Id: 52,
 		KOH: 0.188,
 		NaOH: 0.134,
@@ -1865,10 +1865,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 69,
 		Linoleic: 12,
-		Linolenic: 2
+		Linolenic: 2,
 	},
 	{
-		Name: "Ostrich Oil",
+		Name: 'Ostrich Oil',
 		Id: 82,
 		KOH: 0.1946,
 		NaOH: 0.139,
@@ -1886,10 +1886,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 37,
 		Linoleic: 17,
-		Linolenic: 3
+		Linolenic: 3,
 	},
 	{
-		Name: "Palm Kernel Oil",
+		Name: 'Palm Kernel Oil',
 		Id: 35,
 		KOH: 0.247,
 		NaOH: 0.176,
@@ -1907,10 +1907,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 15,
 		Linoleic: 3,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Palm Kernel Oil Flakes, hydrogenated",
+		Name: 'Palm Kernel Oil Flakes, hydrogenated',
 		Id: 126,
 		KOH: 0.247,
 		NaOH: 0.176,
@@ -1928,10 +1928,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 4,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Palm Oil",
+		Name: 'Palm Oil',
 		Id: 36,
 		KOH: 0.199,
 		NaOH: 0.142,
@@ -1949,10 +1949,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 39,
 		Linoleic: 10,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Palm Stearin",
+		Name: 'Palm Stearin',
 		Id: 113,
 		KOH: 0.199,
 		NaOH: 0.142,
@@ -1970,10 +1970,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 26,
 		Linoleic: 7,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Palmitic Acid",
+		Name: 'Palmitic Acid',
 		Id: 77,
 		KOH: 0.215,
 		NaOH: 0.153,
@@ -1991,10 +1991,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 0,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Palmolein",
+		Name: 'Palmolein',
 		Id: 131,
 		KOH: 0.2,
 		NaOH: 0.143,
@@ -2012,10 +2012,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 43,
 		Linoleic: 11,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Papaya seed oil, Carica papaya",
+		Name: 'Papaya seed oil, Carica papaya',
 		Id: 120,
 		KOH: 0.158,
 		NaOH: 0.113,
@@ -2033,10 +2033,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 76,
 		Linoleic: 3,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Passion Fruit Seed Oil",
+		Name: 'Passion Fruit Seed Oil',
 		Id: 37,
 		KOH: 0.183,
 		NaOH: 0.13,
@@ -2054,10 +2054,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 15,
 		Linoleic: 70,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Pataua (Patawa) Oil",
+		Name: 'Pataua (Patawa) Oil',
 		Id: 148,
 		KOH: 0.2,
 		NaOH: 0.143,
@@ -2075,10 +2075,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 78,
 		Linoleic: 3,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Peach Kernel Oil",
+		Name: 'Peach Kernel Oil',
 		Id: 70,
 		KOH: 0.191,
 		NaOH: 0.136,
@@ -2096,10 +2096,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 65,
 		Linoleic: 25,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Peanut Oil",
+		Name: 'Peanut Oil',
 		Id: 38,
 		KOH: 0.192,
 		NaOH: 0.137,
@@ -2117,10 +2117,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 56,
 		Linoleic: 26,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Pecan Oil",
+		Name: 'Pecan Oil',
 		Id: 137,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -2138,10 +2138,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 50,
 		Linoleic: 39,
-		Linolenic: 2
+		Linolenic: 2,
 	},
 	{
-		Name: "Perilla Seed Oil",
+		Name: 'Perilla Seed Oil',
 		Id: 75,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -2159,10 +2159,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 15,
 		Linoleic: 16,
-		Linolenic: 56
+		Linolenic: 56,
 	},
 	{
-		Name: "Pine Tar, lye calc only no FA",
+		Name: 'Pine Tar, lye calc only no FA',
 		Id: 85,
 		KOH: 0.06,
 		NaOH: 0.043,
@@ -2180,10 +2180,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 0,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Pistachio Oil",
+		Name: 'Pistachio Oil',
 		Id: 39,
 		KOH: 0.186,
 		NaOH: 0.133,
@@ -2201,10 +2201,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 63,
 		Linoleic: 25,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Plum Kernel Oil",
+		Name: 'Plum Kernel Oil',
 		Id: 107,
 		KOH: 0.194,
 		NaOH: 0.138,
@@ -2222,10 +2222,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 68,
 		Linoleic: 23,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Pomegranate Seed Oil",
+		Name: 'Pomegranate Seed Oil',
 		Id: 128,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -2243,10 +2243,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 7,
 		Linoleic: 7,
-		Linolenic: 78
+		Linolenic: 78,
 	},
 	{
-		Name: "Poppy Seed Oil",
+		Name: 'Poppy Seed Oil',
 		Id: 73,
 		KOH: 0.194,
 		NaOH: 0.138,
@@ -2264,10 +2264,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 17,
 		Linoleic: 69,
-		Linolenic: 2
+		Linolenic: 2,
 	},
 	{
-		Name: "Pracaxi (Pracachy) Seed Oil - hair conditioner",
+		Name: 'Pracaxi (Pracachy) Seed Oil - hair conditioner',
 		Id: 149,
 		KOH: 0.175,
 		NaOH: 0.125,
@@ -2285,10 +2285,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 44,
 		Linoleic: 2,
-		Linolenic: 2
+		Linolenic: 2,
 	},
 	{
-		Name: "Pumpkin Seed Oil virgin",
+		Name: 'Pumpkin Seed Oil virgin',
 		Id: 83,
 		KOH: 0.195,
 		NaOH: 0.139,
@@ -2306,10 +2306,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 33,
 		Linoleic: 50,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Rabbit Fat",
+		Name: 'Rabbit Fat',
 		Id: 91,
 		KOH: 0.201,
 		NaOH: 0.143,
@@ -2327,10 +2327,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 30,
 		Linoleic: 20,
-		Linolenic: 5
+		Linolenic: 5,
 	},
 	{
-		Name: "Rapeseed Oil, unrefined canola",
+		Name: 'Rapeseed Oil, unrefined canola',
 		Id: 40,
 		KOH: 0.175,
 		NaOH: 0.125,
@@ -2348,10 +2348,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 17,
 		Linoleic: 13,
-		Linolenic: 9
+		Linolenic: 9,
 	},
 	{
-		Name: "Raspberry Seed Oil",
+		Name: 'Raspberry Seed Oil',
 		Id: 129,
 		KOH: 0.187,
 		NaOH: 0.133,
@@ -2369,10 +2369,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 13,
 		Linoleic: 55,
-		Linolenic: 26
+		Linolenic: 26,
 	},
 	{
-		Name: "Red Palm Butter",
+		Name: 'Red Palm Butter',
 		Id: 89,
 		KOH: 0.199,
 		NaOH: 0.142,
@@ -2390,10 +2390,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 39,
 		Linoleic: 10,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Rice Bran Oil, refined",
+		Name: 'Rice Bran Oil, refined',
 		Id: 41,
 		KOH: 0.187,
 		NaOH: 0.133,
@@ -2411,10 +2411,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 38,
 		Linoleic: 34,
-		Linolenic: 2
+		Linolenic: 2,
 	},
 	{
-		Name: "Rosehip Oil",
+		Name: 'Rosehip Oil',
 		Id: 61,
 		KOH: 0.187,
 		NaOH: 0.133,
@@ -2432,10 +2432,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 12,
 		Linoleic: 46,
-		Linolenic: 31
+		Linolenic: 31,
 	},
 	{
-		Name: "Sacha Inchi, Plukenetia volubilis",
+		Name: 'Sacha Inchi, Plukenetia volubilis',
 		Id: 122,
 		KOH: 0.188,
 		NaOH: 0.134,
@@ -2453,10 +2453,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 10,
 		Linoleic: 35,
-		Linolenic: 48
+		Linolenic: 48,
 	},
 	{
-		Name: "Safflower Oil",
+		Name: 'Safflower Oil',
 		Id: 42,
 		KOH: 0.192,
 		NaOH: 0.137,
@@ -2474,10 +2474,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 15,
 		Linoleic: 75,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Safflower Oil, high oleic",
+		Name: 'Safflower Oil, high oleic',
 		Id: 78,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -2495,10 +2495,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 77,
 		Linoleic: 15,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Sal Butter",
+		Name: 'Sal Butter',
 		Id: 64,
 		KOH: 0.185,
 		NaOH: 0.132,
@@ -2516,10 +2516,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 40,
 		Linoleic: 2,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Salmon Oil",
+		Name: 'Salmon Oil',
 		Id: 140,
 		KOH: 0.185,
 		NaOH: 0.132,
@@ -2537,10 +2537,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 23,
 		Linoleic: 2,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Saw Palmetto Extract",
+		Name: 'Saw Palmetto Extract',
 		Id: 111,
 		KOH: 0.23,
 		NaOH: 0.164,
@@ -2558,10 +2558,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 35,
 		Linoleic: 4,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Saw Palmetto Oil",
+		Name: 'Saw Palmetto Oil',
 		Id: 110,
 		KOH: 0.22,
 		NaOH: 0.157,
@@ -2579,10 +2579,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 31,
 		Linoleic: 4,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Sea Buckthorn Oil, seed",
+		Name: 'Sea Buckthorn Oil, seed',
 		Id: 116,
 		KOH: 0.195,
 		NaOH: 0.139,
@@ -2600,10 +2600,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 14,
 		Linoleic: 36,
-		Linolenic: 38
+		Linolenic: 38,
 	},
 	{
-		Name: "Sea Buckthorn Oil, seed and berry",
+		Name: 'Sea Buckthorn Oil, seed and berry',
 		Id: 115,
 		KOH: 0.183,
 		NaOH: 0.13,
@@ -2621,10 +2621,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 28,
 		Linoleic: 10,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Sesame Oil",
+		Name: 'Sesame Oil',
 		Id: 43,
 		KOH: 0.188,
 		NaOH: 0.134,
@@ -2642,10 +2642,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 40,
 		Linoleic: 43,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Shea Butter",
+		Name: 'Shea Butter',
 		Id: 44,
 		KOH: 0.179,
 		NaOH: 0.128,
@@ -2663,10 +2663,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 48,
 		Linoleic: 6,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Shea Oil, fractionated",
+		Name: 'Shea Oil, fractionated',
 		Id: 22,
 		KOH: 0.185,
 		NaOH: 0.132,
@@ -2684,10 +2684,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 73,
 		Linoleic: 11,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "SoapQuick, conventional",
+		Name: 'SoapQuick, conventional',
 		Id: 133,
 		KOH: 0.212,
 		NaOH: 0.151,
@@ -2705,10 +2705,10 @@ const oilsAPI: {
 		Ricinoleic: 5,
 		Oleic: 42,
 		Linoleic: 8,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "SoapQuick, organic",
+		Name: 'SoapQuick, organic',
 		Id: 134,
 		KOH: 0.213,
 		NaOH: 0.152,
@@ -2726,10 +2726,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 45,
 		Linoleic: 10,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Soybean Oil",
+		Name: 'Soybean Oil',
 		Id: 45,
 		KOH: 0.191,
 		NaOH: 0.136,
@@ -2747,10 +2747,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 24,
 		Linoleic: 50,
-		Linolenic: 8
+		Linolenic: 8,
 	},
 	{
-		Name: "Soybean, 27.5% hydrogenated",
+		Name: 'Soybean, 27.5% hydrogenated',
 		Id: 81,
 		KOH: 0.191,
 		NaOH: 0.136,
@@ -2768,10 +2768,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 41,
 		Linoleic: 7,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Soybean, fully hydrogenated (soy wax)",
+		Name: 'Soybean, fully hydrogenated (soy wax)',
 		Id: 132,
 		KOH: 0.192,
 		NaOH: 0.137,
@@ -2789,10 +2789,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 0,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Stearic Acid",
+		Name: 'Stearic Acid',
 		Id: 46,
 		KOH: 0.198,
 		NaOH: 0.141,
@@ -2810,10 +2810,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 0,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Sunflower Oil",
+		Name: 'Sunflower Oil',
 		Id: 47,
 		KOH: 0.189,
 		NaOH: 0.135,
@@ -2831,10 +2831,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 16,
 		Linoleic: 70,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Sunflower Oil, high oleic",
+		Name: 'Sunflower Oil, high oleic',
 		Id: 71,
 		KOH: 0.189,
 		NaOH: 0.135,
@@ -2852,10 +2852,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 83,
 		Linoleic: 4,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Tallow Bear",
+		Name: 'Tallow Bear',
 		Id: 112,
 		KOH: 0.1946,
 		NaOH: 0.139,
@@ -2873,10 +2873,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 70,
 		Linoleic: 9,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Tallow Beef",
+		Name: 'Tallow Beef',
 		Id: 48,
 		KOH: 0.2,
 		NaOH: 0.143,
@@ -2894,10 +2894,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 36,
 		Linoleic: 3,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Tallow Deer",
+		Name: 'Tallow Deer',
 		Id: 54,
 		KOH: 0.193,
 		NaOH: 0.138,
@@ -2915,10 +2915,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 30,
 		Linoleic: 15,
-		Linolenic: 3
+		Linolenic: 3,
 	},
 	{
-		Name: "Tallow Goat",
+		Name: 'Tallow Goat',
 		Id: 123,
 		KOH: 0.192,
 		NaOH: 0.137,
@@ -2936,10 +2936,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 29,
 		Linoleic: 2,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Tallow Sheep",
+		Name: 'Tallow Sheep',
 		Id: 55,
 		KOH: 0.194,
 		NaOH: 0.138,
@@ -2957,10 +2957,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 26,
 		Linoleic: 5,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Tamanu Oil, kamani",
+		Name: 'Tamanu Oil, kamani',
 		Id: 57,
 		KOH: 0.208,
 		NaOH: 0.148,
@@ -2978,10 +2978,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 34,
 		Linoleic: 38,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Tucuma Seed Butter",
+		Name: 'Tucuma Seed Butter',
 		Id: 97,
 		KOH: 0.238,
 		NaOH: 0.17,
@@ -2999,10 +2999,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 13,
 		Linoleic: 0,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Ucuuba Butter",
+		Name: 'Ucuuba Butter',
 		Id: 100,
 		KOH: 0.205,
 		NaOH: 0.146,
@@ -3020,10 +3020,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 44,
 		Linoleic: 5,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Walmart GV Shortening, tallow, palm",
+		Name: 'Walmart GV Shortening, tallow, palm',
 		Id: 105,
 		KOH: 0.198,
 		NaOH: 0.141,
@@ -3041,10 +3041,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 37,
 		Linoleic: 6,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Walnut Oil",
+		Name: 'Walnut Oil',
 		Id: 49,
 		KOH: 0.189,
 		NaOH: 0.135,
@@ -3062,10 +3062,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 18,
 		Linoleic: 60,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Watermelon Seed Oil",
+		Name: 'Watermelon Seed Oil',
 		Id: 135,
 		KOH: 0.19,
 		NaOH: 0.135,
@@ -3083,10 +3083,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 18,
 		Linoleic: 60,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Wheat Germ Oil",
+		Name: 'Wheat Germ Oil',
 		Id: 50,
 		KOH: 0.183,
 		NaOH: 0.13,
@@ -3104,10 +3104,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 17,
 		Linoleic: 58,
-		Linolenic: 0
+		Linolenic: 0,
 	},
 	{
-		Name: "Yangu, cape chestnut",
+		Name: 'Yangu, cape chestnut',
 		Id: 98,
 		KOH: 0.192,
 		NaOH: 0.137,
@@ -3125,10 +3125,10 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 45,
 		Linoleic: 30,
-		Linolenic: 1
+		Linolenic: 1,
 	},
 	{
-		Name: "Zapote seed oil, (Aceite de Sapuyul or Mamey)",
+		Name: 'Zapote seed oil, (Aceite de Sapuyul or Mamey)',
 		Id: 118,
 		KOH: 0.188,
 		NaOH: 0.134,
@@ -3146,7 +3146,7 @@ const oilsAPI: {
 		Ricinoleic: 0,
 		Oleic: 52,
 		Linoleic: 13,
-		Linolenic: 0
-	}
-];
-export default oilsAPI;
+		Linolenic: 0,
+	},
+]
+export default oilsAPI
