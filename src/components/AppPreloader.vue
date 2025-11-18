@@ -7,8 +7,9 @@ defineProps({
 });
 </script>
 <template lang="pug">
-div(v-if="isLoading" class="preloader fixed flex items-center justify-center top-0 left-0 w-full h-full z-50 bg-linear-to-r from-gray-700/90 to-purple-700/50")
-	.upload.loading
+div(v-if="isLoading" class="fixed top-0 left-0 w-full h-full z-40 g-glass")
+div(v-if="isLoading" class="p-preloader fixed flex items-center justify-center top-0 left-0 w-full h-full z-50")
+	.upload.l-loading
 		.path
 			.arrow
 			svg
@@ -27,8 +28,8 @@ div(v-if="isLoading" class="preloader fixed flex items-center justify-center top
 </template>
 
 <style scoped lang="scss">
-$backWave: #6930fa;
-$frontWave: #9941fe;
+$backWave: #652af8;
+$frontWave: #a04cff;
 $border: $frontWave;
 $borderActive: #fff;
 
@@ -37,9 +38,9 @@ $borderActive: #fff;
 	width: 66px;
 	height: 66px;
 	border-radius: 50%;
-	border: 2px solid $border;
+	border: 3px solid $border;
 	cursor: pointer;
-	transform: translateZ(0);
+	transform: translateZ(0) scale(2);
 	transition: transform 0.2s ease;
 
 	.path {
@@ -53,24 +54,24 @@ $borderActive: #fff;
 
 		.arrow {
 			bottom: 27px;
-			width: 2px;
-			height: 21px;
+			width: 2.5px;
+			height: 20px;
 			position: absolute;
 			left: 50%;
 			border-radius: 1px;
-			margin: 0 0 0 -1px;
+			margin: 0 0 0 0px;
 			transform-origin: 50% 100%;
 
 			&:before,
 			&:after {
 				content: "";
 				display: block;
-				width: 2px;
-				height: 14px;
-				bottom: -2px;
+				width: 2.5px;
+				height: 12px;
+				bottom: -4px;
 				background: $borderActive;
 				position: absolute;
-				border-radius: 1px;
+				border-radius: 5px;
 				transform-origin: 50% 100%;
 			}
 
@@ -91,7 +92,7 @@ $borderActive: #fff;
 			display: block;
 			fill: none;
 			stroke: $borderActive;
-			stroke-width: 2px;
+			stroke-width: 3px;
 			stroke-linecap: round;
 			stroke-dashoffset: 592.73;
 			stroke-dasharray: 0 592.73 20 592.73;
@@ -140,7 +141,7 @@ $borderActive: #fff;
 		}
 	}
 
-	&.loading {
+	&.l-loading {
 		.path {
 			animation: movePath 0.4s linear forwards;
 

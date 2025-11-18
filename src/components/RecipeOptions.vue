@@ -68,7 +68,7 @@ ul(class="w-full mb-5 p-2 flex flex-row flex-wrap md:flex-nowrap items-stretch j
 	//- Weight of Oils
 	li(class="w-full items-center")
 		span(class="text-(--dark-fav-color) dark:text-(--light-fav-color)") Weight of #[span(class="font-bold text-(--dark-fav-color) dark:text-(--light-fav-color)") Oils]:
-		input(type="number" readonly class="w-1/4 ml-auto placeholder:text-white text-black bg-(--LTheme3) dark:bg-(--Theme3) dark:text-white pl-2 py-1 rounded-md scale-90" v-model="OilStore.RecipeTotal.weightOils")
+		input(type="number" readonly class="cursor-not-allowed w-1/4 ml-auto placeholder:text-white text-black bg-(--LTheme3) dark:bg-(--Theme3) dark:text-white pl-2 py-1 rounded-md scale-90" v-model="OilStore.RecipeTotal.weightOils")
 		select(class="ml-auto p-2 px-4 outline-none rounded-md border bg-(--LTheme3) dark:bg-(--Theme3) border-gray-300 dark:border-gray-600 text-green-500")
 			option(value="Pounds") Pounds
 			option(value="Ounces") Ounces
@@ -81,8 +81,8 @@ ul(class="w-full mb-5 p-2 flex flex-row flex-wrap md:flex-nowrap items-stretch j
 		input(class="w-12 pl-2 py-1 rounded-md bg-(--LTheme3) dark:bg-(--Theme3) ml-auto placeholder:text-white text-black dark:text-white " type="text" v-model="TheWater")
 		select(class="ml-auto p-2 px-4 outline-none rounded-md border bg-(--LTheme3) dark:bg-(--Theme3) border-gray-300 dark:border-gray-600 text-green-500" v-model="TheWaterOption" @change="TheWaterSelect")
 			option(value="0") Water as % of Oils
-			option(value="1" ) Lye Concentration
-			option(value="2" ) Water : Lye Ratio
+			option(value="1") Lye Concentration
+			option(value="2") Water : Lye Ratio
 	//- The Lest Section
 	li(class="flex-col items-start justify-start gap-2 w-full")
 		//- Super Fat
