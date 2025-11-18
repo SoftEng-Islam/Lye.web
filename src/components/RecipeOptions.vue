@@ -89,7 +89,7 @@ ul(class="w-full mb-5 p-2 flex flex-row flex-wrap md:flex-nowrap items-stretch j
 		div(class="w-full flex flex-row items-center justify-start")
 			span(class="text-orange-400 font-bold") Super Fat
 			//- v-model="OilStore.headerOptions.superFat"
-			input(class="pl-4 ml-auto bg-(--LTheme3) dark:bg-(--Theme3) placeholder:text-white text-black dark:text-white py-1 rounded-md scale-90" type="number" v-model="SetsuperFat")
+			input(class="pl-4 ml-auto bg-(--LTheme3) dark:bg-(--Theme3) placeholder:text-white text-black dark:text-white py-1 rounded-md scale-90" type="number" v-model="SetSuperFat")
 			span(class="ml-4 w-10 text-orange-400") %
 		//- Fragrance
 		div(class="w-full flex flex-row items-center justify-start")
