@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from "vue";
-
-import AppHeader from "./components/AppHeader.vue";
+import AppHeader from "./components/layout/AppHeader.vue";
 import OilsList from "./components/OilsList.vue";
 import OilProperties from "./components/OilProperties.vue";
 import AddedOils from "./components/AddedOils.vue";
@@ -9,7 +8,7 @@ import TotalRecipe from "./components/TotalRecipe.vue";
 import SoapProperties from "./components/SoapProperties.vue";
 import RecipeOptions from "./components/RecipeOptions.vue";
 import AppPreloader from "./components/AppPreloader.vue";
-import AppFooter from "./components/AppFooter.vue";
+import AppFooter from "./components/layout/AppFooter.vue";
 
 // import { useMouse, useCounter } from '@vueuse/core';
 // const { x, y } = useMouse();
@@ -17,18 +16,21 @@ import AppFooter from "./components/AppFooter.vue";
 // 	console.log(`Mouse position: x=${x.value}, y=${y.value}`);
 // });
 
+const EnablePreloader = ref(false);
 const isLoading = ref(true);
 onMounted(() => {
 	// Simulate loading process (replace with actual async call)
 	// But What about the SEO?
-	setTimeout(() => {
-		isLoading.value = false;
-	}, 4500);
+	if (EnablePreloader.value) {
+		setTimeout(() => {
+			isLoading.value = false;
+		}, 4500);
+	}
 });
 
 </script>
 <template lang="pug">
-<AppPreloader :isLoading="isLoading" />
+<AppPreloader v-if="EnablePreloader" :isLoading="isLoading" />
 <app-header/>
 div(class="pb-6 w-full h-full flex flex-wrap items-start bg-(--LTheme3) dark:bg-(--Theme3)")
 	<RecipeOptions/>

@@ -66,13 +66,13 @@ export const useOilStore = defineStore('taskStore', {
 		},
 	}),
 	getters: {
-		GetOil(): Object {
+		GetOil(): object {
 			return this.Oils.filter((O: { Name: any }) => O.Name)
 		},
 		GetHeaderOptions(value: any): any {
 			return this.headerOptions[value]
 		},
-		GetSelectedOils(): Object {
+		GetSelectedOils(): object {
 			return this.AddedOils
 		},
 		getTypeOfLye(): string {
@@ -94,7 +94,7 @@ export const useOilStore = defineStore('taskStore', {
 
 				this.AddedOils.forEach((oi: { weight: number; NaOH: number; KOH: number }) => {
 					if (this.headerOptions.typeOfLye === 'NaOH') {
-						let NaOH: number = oi.weight * oi.NaOH
+						const NaOH: number = oi.weight * oi.NaOH
 
 						this.RecipeTotal.weightLye += parseInt(NaOH.toFixed(0))
 					} else {
@@ -137,7 +137,7 @@ export const useOilStore = defineStore('taskStore', {
 			// this.RecipeTotal.weightWater = 0;
 			this.AddedOils.forEach((oi: { weight: number; NaOH: number; KOH: number }) => {
 				if (this.headerOptions.typeOfLye === 'NaOH') {
-					let NaOH = oi.weight * oi.NaOH
+					const NaOH = oi.weight * oi.NaOH
 					this.RecipeTotal.weightLye += parseInt(NaOH.toFixed(0))
 				} else {
 					this.RecipeTotal.weightLye += parseInt((oi.weight * oi.KOH).toFixed(0))
@@ -258,7 +258,7 @@ export const useOilStore = defineStore('taskStore', {
 					oi.weight = OilWeight
 				}
 				if (this.headerOptions.typeOfLye === 'NaOH') {
-					let NaOH: number = oi.weight * oi.NaOH
+					const NaOH: number = oi.weight * oi.NaOH
 
 					this.RecipeTotal.weightLye += parseInt(NaOH.toFixed(0))
 				} else {

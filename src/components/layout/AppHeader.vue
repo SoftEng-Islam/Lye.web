@@ -43,7 +43,9 @@ function setColorTheme(color: number): void {
 	};
 
 	const [darkName, darkTh] = darkMap[color];
+	console.log(darkName);
 	const [lightName, lightTh] = lightMap[color];
+	console.log(lightName);
 
 	// Dark
 	rootElement.style.setProperty("--dark-fav-color", `var(--${darkName})`);
