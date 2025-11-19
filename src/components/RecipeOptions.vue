@@ -5,7 +5,7 @@ import { useOilStore } from "../store/index";
 const OilStore = useOilStore();
 
 
-let STypeLye = ref("NaOH"); // Default => NaOH
+const STypeLye = ref("NaOH"); // Default => NaOH
 
 const SetTypeOfLye = (): void => {
 	OilStore.setTypeOfLye(STypeLye.value);

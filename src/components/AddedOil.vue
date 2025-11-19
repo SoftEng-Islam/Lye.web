@@ -2,9 +2,19 @@
 import { ref, defineProps } from "vue";
 import { useOilStore } from "../store/index";
 
-const props = defineProps({
-	oil: null
-});
+interface Props {
+	oil: null;
+	// size?: number
+	// count: number;
+	// isActive?: boolean;
+}
+
+const props = defineProps<Props>();
+
+// for Default Values
+// const props = withDefaults(defineProps<Props>(), {
+// 	size: 14
+// })
 
 const theme = ref({
 	color: 'green-500'
@@ -29,7 +39,7 @@ li( class="hover:shadow-2xl duration-200 flex overflow-hidden items-center py-2 
 	//- Oil Name
 	span(class="pr-2 w-3/5 text-sm text-black dark:text-white overflow-hidden overflow-ellipsis whitespace-wrap") {{ props.oil.Name }}
 	div(class="overflow-hidden w-1/5 flex flex-col gap-1 items-center justify-center ml-auto")
-		select(class="w-full p-1 outline-none rounded-md border bg-(--LTheme3) dark:bg-(--Theme3) border-gray-300 dark:border-gray-600 text-green-500" id="Units")
+		select(class="w-full p-1 outline-none rounded-md border bg-(--LTheme3) dark:bg-(--Theme3) border-gray-300 dark:border-gray-600 text-green-500" id="oilUnits" name="oilunits")
 			option(value="Gram") g
 			option(value="Kilo") K.g
 		input(class="w-full p-1 text-black dark:text-white outline-none rounded-md border bg-(--LTheme3) dark:bg-(--Theme3)" type="number" maxlength="3" v-model="weightOfOil" @input="SetOilWeight(props.oil.Name)")

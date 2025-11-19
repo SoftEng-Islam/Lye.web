@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { useOilStore } from "../store/index";
+import { ref } from 'vue';
+import { useOilStore } from '../store/index';
 
 const { Oils } = useOilStore();
 
-const enteredValue = <string>"";
-const show = "hidden";
+const enteredValue = <string>'';
+const show = 'hidden';
 const clkOil = <object>{};
 const count = ref(0);
-const searchForOil = ref("");
-
+const searchForOil = ref('');
 
 function filteredOils(): string {
 	return Oils.filter((oil) => oil.Name.toLowerCase().includes(searchForOil.value.toLowerCase()));
@@ -17,11 +16,10 @@ function filteredOils(): string {
 function ClickdOnOil(val: object): void {
 	useOilStore().ClickedOil(val);
 	// console.log(val)
-};
+}
 function ShowTheInfo(val: object): void {
 	useOilStore().showTheInfo(val);
-};
-
+}
 </script>
 <template lang="pug">
 //- Oils list Section

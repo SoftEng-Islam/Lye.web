@@ -20,11 +20,14 @@ watch(darkModeChecked, (isDark) => {
 	document.documentElement.classList.toggle("dark", isDark);
 });
 
+type ColorIndex = 1 | 2 | 3 | 4 | 5 | 6;
+
+
 // change color theme
-function setColorTheme(color: number): void {
+function setColorTheme(color: ColorIndex): void {
 	LiColorActive.value = color;
 
-	const darkMap = {
+	const darkMap: Record<ColorIndex, [string, string]> = {
 		1: ["D-gra", "th_gra"],
 		2: ["D-pur", "th_pur"],
 		3: ["D-pin", "th_pin"],
@@ -33,7 +36,7 @@ function setColorTheme(color: number): void {
 		6: ["D-yel", "th_yel"],
 	};
 
-	const lightMap = {
+	const lightMap: Record<ColorIndex, [string, string]> = {
 		1: ["L-gra", "Lth_gra"],
 		2: ["L-pur", "Lth_pur"],
 		3: ["L-pin", "Lth_pin"],
@@ -42,10 +45,9 @@ function setColorTheme(color: number): void {
 		6: ["L-yel", "Lth_yel"],
 	};
 
-	const [darkName, darkTh] = darkMap[color];
-	console.log(darkName);
-	const [lightName, lightTh] = lightMap[color];
-	console.log(lightName);
+	const [darkName, darkTh] = darkMap[color as ColorIndex];
+	const [lightName, lightTh] = lightMap[color as ColorIndex];
+
 
 	// Dark
 	rootElement.style.setProperty("--dark-fav-color", `var(--${darkName})`);
