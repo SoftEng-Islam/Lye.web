@@ -10,16 +10,15 @@ const clkOil = <object>{};
 const count = ref(0);
 const searchForOil = ref('');
 
-function filteredOils(): string {
-	return Oils.filter((oil) => oil.Name.toLowerCase().includes(searchForOil.value.toLowerCase()));
-}
-function ClickdOnOil(val: object): void {
+const filteredOils = () => Oils.filter((oil) => oil.Name.toLowerCase().includes(searchForOil.value.toLowerCase()));
+
+const ClickdOnOil = (val: object): void => {
 	useOilStore().ClickedOil(val);
 	// console.log(val)
-}
-function ShowTheInfo(val: object): void {
+};
+const ShowTheInfo = (val: object): void => {
 	useOilStore().showTheInfo(val);
-}
+};
 </script>
 <template lang="pug">
 //- Oils list Section

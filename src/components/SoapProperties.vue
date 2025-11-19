@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
 import { useOilStore } from "../store/index";
-import { setDefaultProps, directive } from 'vue-tippy';
 const { soapProperties } = storeToRefs(useOilStore());
 
 const aryRanges: string[] = Array(7);
