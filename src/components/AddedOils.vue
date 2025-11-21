@@ -34,13 +34,15 @@ const EmptyAddedOilsList = computed({
 </script>
 <template lang="pug">
 //- The Added Oils
-div(class="lyeWidget flex flex-col min-h-[280px] border border-transparent hover:border-green-500")
+div(class="lyeWidget flex flex-col min-h-[280px] max-h-120 border border-transparent hover:border-green-500")
 	div(class="Head bg-linear-to-r from-green-600 to-gray-950/40 p-2 rounded-md")
 		span(class="text-black dark:text-white font-bold text-shadow-2xs text-shadow-green-950") Added Oils.
 	//- List of added oils
-	ul(class="bg-(--LTheme3) dark:bg-(--Theme3) mt-4 p-2 rounded-md h-full overflow-hidden flex flex-col gap-3")
-		li(v-if="EmptyAddedOilsList" class="text-red-500 font-bold p-2 bg-(--LTheme2) dark:bg-(--Theme2) rounded-md") Please add oil from the Oils list To Start!
-		added-oil(v-for="oil of AddedOils" :oil="oil")
+	div(class="bg-(--LTheme3) dark:bg-(--Theme3) mt-4 rounded-md h-full overflow-hidden flex flex-col gap-3")
+		PerfectScrollbar(class="h-full w-full pb-4 overflow-hidden")
+			transition-group(name="list" tag="ul" class="w-full *:my-4 px-4")
+				added-oil(v-for="oil of AddedOils" :oil="oil")
+				div(v-if="EmptyAddedOilsList" class="text-red-500 p-2 bg-(--LTheme2) dark:bg-(--Theme2) rounded-md") Please add oil from the #[span(class="font-bold italic text-purple-500") "All Oils"] list To Start!
 	//- weight of all oils
 	div(class="flex items-center overflow-hidden pt-4")
 		span(class="text-sm text-black dark:text-white ") Oils

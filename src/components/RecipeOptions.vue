@@ -57,7 +57,7 @@ const SetFragrance = computed({
 });
 </script>
 <template lang="pug">
-ul(class="recipeOptions overflow-hidden w-full mb-5 p-2 bg-(--LTheme2) dark:bg-(--Theme2) *:flex *:p-2 *:px-4 *:rounded-md *:bg-(--LTheme4) dark:*:bg-(--Theme4) *:overflow-hidden flex flex-col items-stretch justify-center gap-2 *:w-full sm:flex-col *:sm:w-1/2 md:flex-row md:flex-wrap md:items-center*:md:w-1/2")
+ul(class="recipeOptions overflow-hidden w-full mb-6 p-3 bg-(--LTheme2) dark:bg-(--Theme2) *:flex *:p-4 *:rounded-md *:bg-(--LTheme4) dark:*:bg-(--Theme4) *:overflow-hidden flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:*:grow sm:*:basis-1/3 md:flex-nowrap")
 	//- Type Of Lye
 	li(class="flex-wrap items-center justify-center gap-2")
 		span(class="text-(--dark-fav-color) dark:text-(--light-fav-color)") Type of #[span(class="font-bold text-(--dark-fav-color) dark:text-(--light-fav-color)") Lye]:
@@ -65,19 +65,20 @@ ul(class="recipeOptions overflow-hidden w-full mb-5 p-2 bg-(--LTheme2) dark:bg-(
 			option(value="NaOH") NaOH
 			option(value="KOH") KOH
 	//- Weight of Oils
-	li(class="flex-wrap items-center justify-center gap-2")
+	li(class="flex-col flex-wrap sm:flex-nowrap items-center justify-center gap-2")
 		span(class="text-(--dark-fav-color) dark:text-(--light-fav-color)") Weight of #[span(class="font-bold text-(--dark-fav-color) dark:text-(--light-fav-color)") Oils]:
-		input(type="number" name="weightOils" id="weightOils" readonly class="cursor-not-allowed placeholder:text-white text-black bg-(--LTheme3) dark:bg-(--Theme3) dark:text-white pl-2 py-1 rounded-md scale-90" v-model="OilStore.RecipeTotal.weightOils")
-		select(name="weightOilsUnit" id="weightOilsUnit" class="p-2 px-4 outline-none rounded-md border bg-(--LTheme3) dark:bg-(--Theme3) border-gray-300 dark:border-gray-600 text-green-500")
-			option(value="Pounds") Pounds
-			option(value="Ounces") Ounces
-			option(value="Grams" selected) Grams
-			option(value="Kilo") Kilo
-			option(value="Tons") Tons
+		div
+			input(type="number" name="weightOils" id="weightOils" readonly class="pl-2 py-1 rounded-md scale-90 cursor-not-allowed placeholder:text-white text-black bg-(--LTheme3) dark:bg-(--Theme3) dark:text-white" v-model="OilStore.RecipeTotal.weightOils")
+			select(name="weightOilsUnit" id="weightOilsUnit" class="p-2 px-4 outline-none rounded-md border bg-(--LTheme3) dark:bg-(--Theme3) border-gray-300 dark:border-gray-600 text-green-500")
+				option(value="Pounds") Pounds
+				option(value="Ounces") Ounces
+				option(value="Grams" selected) Grams
+				option(value="Kilo") Kilo
+				option(value="Tons") Tons
 	//- Water
-	li(class="flex-wrap items-center justify-center gap-2")
-		span(class="text-(--dark-fav-color) dark:text-(--light-fav-color) mr-3") Water#[span(class="font-bold text-(--dark-fav-color) dark:text-(--light-fav-color)") :]
-		input(class="pl-2 py-1 rounded-md bg-(--LTheme3) dark:bg-(--Theme3) ml-auto placeholder:text-white text-black dark:text-white" name="water" id="water" type="text" v-model="TheWater")
+	li(class="flex-col flex-wrap sm:flex-nowrap items-center justify-center gap-2")
+		span(class="text-(--dark-fav-color) dark:text-(--light-fav-color)") Water#[span(class="font-bold text-(--dark-fav-color) dark:text-(--light-fav-color)") :]
+		input(class="pl-2 py-1 rounded-md bg-(--LTheme3) dark:bg-(--Theme3) placeholder:text-white text-black dark:text-white" name="water" id="water" type="text" v-model="TheWater")
 		select(name="waterOption" id="waterOption" class="p-2 px-4 outline-none rounded-md border bg-(--LTheme3) dark:bg-(--Theme3) border-gray-300 dark:border-gray-600 text-green-500" v-model="TheWaterOption" @change="TheWaterSelect")
 			option(value="0") Water as % of Oils
 			option(value="1") Lye Concentration
@@ -85,14 +86,14 @@ ul(class="recipeOptions overflow-hidden w-full mb-5 p-2 bg-(--LTheme2) dark:bg-(
 	//- The Lest Section
 	li(class="flex-col items-center justify-center gap-2")
 		//- Super Fat
-		div(class="w-full flex flex-wrap sm:flex-nowrap items-center justify-center")
+		div(class="w-full flex flex-wrap sm:flex-nowrap gap-2 items-center justify-center")
 			span(class="text-orange-400 font-bold") Super Fat
 			//- v-model="OilStore.headerOptions.superFat"
 			div(class="w-full px-2 flex flex-row gap-2 items-center justify-center overflow-hidden bg-(--LTheme3) dark:bg-(--Theme3) rounded-md")
 				input(class="w-full pl-1 py-1 placeholder:text-white text-black dark:text-white" name="superFat" id="superFat" type="number" v-model="SetSuperFat")
 				span(class="font-bold text-orange-400") %
 		//- Fragrance
-		div(class="w-full flex flex-wrap sm:flex-nowrap items-center justify-center")
+		div(class="w-full flex flex-wrap sm:flex-nowrap gap-2 items-center justify-center")
 			span(class="text-fuchsia-400 font-bold") Fragrance
 			div(class="w-full px-2 flex flex-row gap-2 items-center justify-center overflow-hidden  rounded-md bg-(--LTheme3) dark:bg-(--Theme3)")
 				input(class="w-full pl-1 py-1 placeholder:text-white text-black dark:text-white" name="fragrance" id="fragrance" type="number" v-model="SetFragrance")

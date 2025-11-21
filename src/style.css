@@ -43,7 +43,7 @@
 
 @font-face {
 	font-family: JetBrains;
-	src: url(./fonts/ttf/JetBrainsMonoNL-Regular.ttf);
+	src: url(@/fonts/ttf/JetBrainsMonoNL-Regular.ttf);
 }
 
 :root {
