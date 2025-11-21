@@ -61,7 +61,7 @@ ul(class="recipeOptions overflow-hidden w-full mb-6 p-3 bg-(--LTheme2) dark:bg-(
 	//- Type Of Lye
 	li(class="flex-wrap items-center justify-center gap-2")
 		span(class="text-(--dark-fav-color) dark:text-(--light-fav-color)") Type of #[span(class="font-bold text-(--dark-fav-color) dark:text-(--light-fav-color)") Lye]:
-		select(class="p-2 px-4 outline-none rounded-md border bg-(--LTheme3) dark:bg-(--Theme3) border-gray-300 dark:border-gray-600 text-green-500" id="Units" v-model="STypeLye" @change="SetTypeOfLye()")
+		select(class="p-2 px-4 border-r-4 border-(--LTheme3) dark:border-(--Theme3) outline-none rounded-md bg-(--LTheme3) dark:bg-(--Theme3) text-green-500" id="Units" v-model="STypeLye" @change="SetTypeOfLye()")
 			option(value="NaOH") NaOH
 			option(value="KOH") KOH
 	//- Weight of Oils
@@ -69,7 +69,7 @@ ul(class="recipeOptions overflow-hidden w-full mb-6 p-3 bg-(--LTheme2) dark:bg-(
 		span(class="text-(--dark-fav-color) dark:text-(--light-fav-color)") Weight of #[span(class="font-bold text-(--dark-fav-color) dark:text-(--light-fav-color)") Oils]:
 		div
 			input(type="number" name="weightOils" id="weightOils" readonly class="pl-2 py-1 rounded-md scale-90 cursor-not-allowed placeholder:text-white text-black bg-(--LTheme3) dark:bg-(--Theme3) dark:text-white" v-model="OilStore.RecipeTotal.weightOils")
-			select(name="weightOilsUnit" id="weightOilsUnit" class="p-2 px-4 outline-none rounded-md border bg-(--LTheme3) dark:bg-(--Theme3) border-gray-300 dark:border-gray-600 text-green-500")
+			select(name="weightOilsUnit" id="weightOilsUnit" class="p-2 px-4 outline-none rounded-md  bg-(--LTheme3) dark:bg-(--Theme3) border-r-4 border-(--LTheme3) dark:border-(--Theme3) text-green-500")
 				option(value="Pounds") Pounds
 				option(value="Ounces") Ounces
 				option(value="Grams" selected) Grams
@@ -79,7 +79,7 @@ ul(class="recipeOptions overflow-hidden w-full mb-6 p-3 bg-(--LTheme2) dark:bg-(
 	li(class="flex-col flex-wrap sm:flex-nowrap items-center justify-center gap-2")
 		span(class="text-(--dark-fav-color) dark:text-(--light-fav-color)") Water#[span(class="font-bold text-(--dark-fav-color) dark:text-(--light-fav-color)") :]
 		input(class="pl-2 py-1 rounded-md bg-(--LTheme3) dark:bg-(--Theme3) placeholder:text-white text-black dark:text-white" name="water" id="water" type="text" v-model="TheWater")
-		select(name="waterOption" id="waterOption" class="p-2 px-4 outline-none rounded-md border bg-(--LTheme3) dark:bg-(--Theme3) border-gray-300 dark:border-gray-600 text-green-500" v-model="TheWaterOption" @change="TheWaterSelect")
+		select(name="waterOption" id="waterOption" class="p-2 px-4 outline-none rounded-md bg-(--LTheme3) dark:bg-(--Theme3) border-r-4 border-(--LTheme3) dark:border-(--Theme3) text-green-500" v-model="TheWaterOption" @change="TheWaterSelect")
 			option(value="0") Water as % of Oils
 			option(value="1") Lye Concentration
 			option(value="2") Water : Lye Ratio
