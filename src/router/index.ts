@@ -7,6 +7,11 @@ const router = createRouter({
 			name: 'home',
 			component: () => import('../views/HomeView.vue'),
 		},
+		{
+			path: '/calculator',
+			name: 'calculator',
+			component: () => import('../views/CalculatorView.vue'),
+		},
 		// {
 		// path: '/settings',
 		// name: 'settings',

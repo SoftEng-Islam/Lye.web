@@ -1,4 +1,5 @@
 @forward "vendor/tailwind.css";
+
 // @use "./PerfectScrollbar";
 
 
@@ -139,7 +140,7 @@ html.dark {
 
 body {
 	font-family: JetBrains;
-	/* @apply h-screen w-screen overflow-hidden flex items-center justify-center bg-(--LTheme4) dark:bg-(--Theme4); */
+	@apply bg-(--LTheme4) dark:bg-(--Theme4);
 }
 
 ::selection {

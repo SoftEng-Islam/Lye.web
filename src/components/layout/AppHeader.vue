@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from "vue";
 const ProjectName = "Lye.web";
-
+const Calc = "Calculator";
 const darkModeChecked = ref(true);
 const LiColorActive = ref(1);
 
@@ -68,14 +68,20 @@ function setColorTheme(color: ColorIndex): void {
 //- Our Header
 header(class=" overflow-hidden w-full top-0 left-0 h-20 flex items-center justify-between px-4 bg-(--LTheme1) dark:bg-(--Theme1)")
 	//- App Name or The Logo
-	h1(class="text-black dark:text-white font-bold mr-auto")
-		RouterLink(to="/") {{ ProjectName }}
+	h1(class="text-black dark:text-white font-bold")
+		RouterLink(to="/" class="logo") {{ ProjectName }}
+
+	div(class="h-15 flex flex-row gap-2 items-center justify-center ml-auto *:rounded-md")
+		RouterLink(to="/" class="p-2 text-black dark:text-white font-medium")
+			i(class="ri-home-2-line ri-lg")
+		RouterLink(to="/calculator" class="p-2 text-black dark:text-white font-medium")
+			i(class="ri-calculator-line ri-lg")
 	//- Settings
 	button(type="button", v-if='false' v-tippy="{content: 'Settings'}" class="w-7 h-7 mx-2 pt-1 rounded-full flex items-center justify-center bg-(--LTheme4) dark:bg-(--Theme4)")
 		RouterLink(to="/Settings")
 			<i class="ri-settings-2-line ri-lg text-black dark:text-white"></i>
 	//- Change App Colors and Theme
-	div(class="scale-75 sm:scale-90 px-2 h-8 overflow-hidden rounded-full flex items-center justify-center gap-x-2 bg-(--LTheme4) dark:bg-(--Theme4)")
+	div(class="scale-75 sm:scale-90 ml-auto px-2 h-8 overflow-hidden rounded-full flex items-center justify-center gap-x-2 bg-(--LTheme4) dark:bg-(--Theme4)")
 		//- button(type="button", @click="setColorTheme(1)" :class="LiColorActive.value === 1 ? 'scale-110 mx-1': ''" class="w-5 h-5 shadow-md rounded-full cursor-pointer hover:scale-90 duration-150 bg-linear-to-r from-(--L-gra) to-gray-950/70")
 		button(type="button", @click="setColorTheme(1)" :class="['w-5 h-5 shadow-md rounded-full cursor-pointer hover:scale-90 duration-150 bg-linear-to-r from-(--L-gra) to-gray-950/70', LiColorActive == 1 ? 'scale-125 mx-1.5' : '']")
 		button(type="button", @click="setColorTheme(2)" :class="['w-5 h-5 shadow-md rounded-full cursor-pointer hover:scale-90 duration-150 bg-linear-to-r from-(--L-pur) to-gray-950/70', LiColorActive == 2 ? 'scale-125 mx-1.5' : '']")
@@ -135,4 +141,15 @@ header(class=" overflow-hidden w-full top-0 left-0 h-20 flex items-center justif
 
 		&:active:after
 			@apply w-10
+
+.logo
+	&.router-link-active
+		@apply text-black dark:text-white font-bold bg-transparent
+	&.router-link-exact-active
+		@apply text-black dark:text-white font-bold bg-transparent
+
+.router-link-active
+	@apply bg-indigo-700
+.router-link-exact-active
+	@apply bg-indigo-900
 </style>

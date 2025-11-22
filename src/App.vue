@@ -25,7 +25,7 @@ onMounted(() => {
 </script>
 <template lang="pug">
 <app-preloader v-if="EnablePreloader" :isLoading="isLoading" />
-<app-header/>
+<app-header class="w-full p-4"/>
 router-view
 <app-footer/>
 </template>
