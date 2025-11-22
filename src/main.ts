@@ -3,7 +3,7 @@ import { createApp } from 'vue'
 import router from './router/index'
 import App from './App.vue'
 
-import './style.css'
+import './styles/main.scss'
 import 'animate.css'
 import 'remixicon/fonts/remixicon.css'
 

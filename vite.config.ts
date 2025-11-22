@@ -7,7 +7,8 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import vuePugPlugin from 'vite-plugin-pug'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+	base: process.env.BASE_URL,
 	plugins: [
 		tailwindcss(),
 		vue({
@@ -20,9 +21,12 @@ export default defineConfig({
 		}),
 		vueDevTools(),
 	],
+	css: {
+		devSourcemap: mode === 'development',
+	},
 	resolve: {
 		alias: {
 			'@': fileURLToPath(new URL('./src', import.meta.url)),
 		},
 	},
-})
+}))
