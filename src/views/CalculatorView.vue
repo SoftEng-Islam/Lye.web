@@ -9,7 +9,7 @@ import RecipeOptions from "@/components/RecipeOptions.vue";
 <template lang="pug">
 div(class="pb-6 w-full h-full flex flex-wrap items-start bg-(--LTheme3) dark:bg-(--Theme3)")
 	<recipe-options/>
-	PerfectScrollbar(class="h-[90%] w-full flex items-center justify-center")
+	PerfectScrollbar(class="h-[90%] pt-14 w-full flex items-center justify-center")
 		div(class="bg-(--LTheme3) dark:bg-(--Theme3) px-4 h-full w-full flex flex-row gap-4 flex-wrap justify-center items-stretch [&_.lyeWidget]:w-72 [&_.lyeWidget]:p-2 [&_.lyeWidget]:rounded-lg [&_.lyeWidget]:bg-(--LTheme2) dark:[&_.lyeWidget]:bg-(--Theme2)")
 			<oils-list/>
 			<oil-properties/>

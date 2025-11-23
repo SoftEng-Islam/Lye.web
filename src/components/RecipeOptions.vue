@@ -4,7 +4,6 @@ import { useOilStore } from "../store/index";
 
 const OilStore = useOilStore();
 
-
 const STypeLye = ref("NaOH"); // Default => NaOH
 
 const SetTypeOfLye = (): void => {
@@ -17,7 +16,6 @@ const TheWaterOption = ref(0);
 const TheWaterSelect: () => void = (): void => {
 	OilStore.headerOptions.water.selcted = TheWaterOption.value;
 };
-
 
 // Set Water
 const TheWater = computed({
@@ -57,7 +55,7 @@ const SetFragrance = computed({
 });
 </script>
 <template lang="pug">
-ul(class="recipeOptions overflow-hidden w-full mb-6 p-3 bg-(--LTheme2) dark:bg-(--Theme2) *:flex *:p-4 *:rounded-md *:bg-(--LTheme4) dark:*:bg-(--Theme4) *:overflow-hidden flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:*:grow sm:*:basis-1/3 md:flex-nowrap")
+ul(class="recipeOptions overflow-hidden w-full mb-6 p-3 py-4 bg-(--LTheme2) dark:bg-(--Theme2) *:flex *:p-4 *:rounded-md *:bg-(--LTheme4) dark:*:bg-(--Theme4) *:overflow-hidden flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:*:grow sm:*:basis-1/3 md:flex-nowrap")
 	//- Type Of Lye
 	li(class="flex-wrap items-center justify-center gap-2")
 		span(class="text-(--dark-fav-color) dark:text-(--light-fav-color)") Type of #[span(class="font-bold text-(--dark-fav-color) dark:text-(--light-fav-color)") Lye]:

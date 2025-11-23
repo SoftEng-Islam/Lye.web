@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import { useOilStore } from "../store/index";
+import { useOilStore } from "@/store/index";
 const { soapProperties } = storeToRefs(useOilStore());
 
 const aryRanges: string[] = Array(7);

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useOilStore } from '../store/index';
+import { useOilStore } from '@/store/index';
 
 const { Oils } = useOilStore();
 
@@ -22,11 +22,11 @@ const ShowTheInfo = (val: object): void => {
 </script>
 <template lang="pug">
 //- Oils list Section
-div(class="lyeWidget p-2 flex flex-col gap-2 min-h-[510px] max-h-[600px] rounded-md overflow-hidden  border border-purple-400 hover:border-purple-500" id="notes")
-	div(class="w-full Head p-2 rounded-md bg-linear-to-r from-purple-600 to-gray-950/40")
+div(class="relative lyeWidget p-2 flex flex-col gap-2 min-h-[510px] max-h-[600px] rounded-md border border-purple-400 hover:border-purple-500")
+	div(class="absolute z-40 pl-4 flex items-center justify-start -top-5 left-[50%] -translate-x-1/2 w-[90%] Head p-2 rounded-full bg-linear-to-r from-purple-600 to-gray-950")
 		span(class="text-black dark:text-white font-bold text-shadow-2xs text-shadow-purple-950") All Oils.
 	//- Search
-	div(class="relative w-full p-2 pb-0 pt-4 flex items-center justify-center")
+	div(class="relative w-full p-2 pb-0 pt-6 flex items-center justify-center")
 		div(class="z-10 w-full pl-4 h-12 flex items-center justify-center rounded-xl bg-(--LTheme1) dark:bg-(--Theme1) shadow")
 			input(name="searchForOil" id="searchForOil" v-on:focusin="show = ''" v-on:focusout="show = 'hidden'" v-model="searchForOil" class="h-7 w-4/5 outline-none text-black dark:text-white font-bold placeholder:focus:opacity-40 bg-transparent border-none focus:border-none" type="text" placeholder="Search...")
 			button(class="outline-none")

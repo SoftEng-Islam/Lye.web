@@ -1,14 +1,29 @@
 <script setup lang="ts">
-defineProps({
-	isLoading: {
-		type: Boolean,
-		required: true,
-	},
+import { ref, onMounted } from 'vue';
+
+interface Preloader {
+	enablePreloader: boolean;
+}
+
+const props = withDefaults(defineProps<Preloader>(), {
+	enablePreloader: true
 });
+
+const isLoading = ref(true);
+onMounted(() => {
+	// Simulate loading process (replace with actual async call)
+	// But What about the SEO?
+	if (props.enablePreloader) {
+		setTimeout(() => {
+			isLoading.value = false;
+		}, 4500);
+	}
+});
+
 </script>
 <template lang="pug">
-div(v-if="isLoading" class="fixed top-0 left-0 w-full h-full z-40 g-glass")
-div(v-if="isLoading" class="p-preloader fixed flex items-center justify-center top-0 left-0 w-full h-full z-50")
+div(v-if="props.enablePreloader && isLoading" class="fixed top-0 left-0 w-full h-full z-40 g-glass")
+div(v-if="props.enablePreloader && isLoading" class="p-preloader fixed flex items-center justify-center top-0 left-0 w-full h-full z-50")
 	.upload.l-loading
 		.path
 			.arrow

@@ -1,30 +1,30 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { storeToRefs } from 'pinia';
-import { useOilStore } from "../store/index";
+import { useOilStore } from "@/store/index";
 const OilStore = storeToRefs(useOilStore());
 
-// reactive formatted water amount
+// Reactive formatted water amount
 const AmountOfWater = computed(() =>
 	Number(OilStore.RecipeTotal.value.weightWater.toFixed(1))
 );
 
-// reactive formatted lye amount
+// Reactive formatted lye amount
 const AmountOfLye = computed(() =>
 	Number(OilStore.RecipeTotal.value.weightLye.toFixed(1))
 );
 
-// reactive formatted oils amount
+// Reactive formatted oils amount
 const AmountOfOils = computed(() =>
 	Number(OilStore.RecipeTotal.value.weightOils.toFixed(1))
 );
 
-// reactive formatted fragrance amount
+// Reactive formatted fragrance amount
 const AmountOfFragrance = computed(() =>
 	Number(OilStore.RecipeTotal.value.FragranceWeight.toFixed(1))
 );
 
-// reactive formatted total amount
+// Reactive formatted total amount
 const TotalAmount = computed(() =>
 	Number((
 		AmountOfWater.value +
