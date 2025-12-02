@@ -30,11 +30,6 @@ const router = createRouter({
 			component: () => import('../views/CalculatorView.vue'),
 			meta: { breadcrumb: 'Calculator' },
 		},
-		// {
-		// path: '/settings',
-		// name: 'settings',
-		// component: () => import('../views/SettingsView.vue'),
-		// },
 	],
 })
 
