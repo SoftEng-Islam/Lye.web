@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import { ref, onMounted, watch } from "vue";
-import ThePreloader from "./components/ThePreloader.vue";
-import TheHeader from "./components/layout/header/TheHeader.vue";
-import TheFooter from "./components/layout/TheFooter.vue";
-import TheBreadcrumb from "./components/layout/TheBreadcrumb.vue";
-
+import ThePreloader from "@/components/layout/ThePreloader.vue";
+import TheHeader from "@/components/layout/header/TheHeader.vue";
+import TheFooter from "@/components/layout/TheFooter.vue";
+import TheNavbar from "@/components/layout/TheNavbar.vue";
 
 </script>
 <template lang="pug">
-<the-preloader :enablePreloader="false" />
-<the-header class="w-full p-4"/>
-<the-breadcrumb/>
+the-preloader(:enablePreloader="false")
+the-header
+the-navbar
 router-view
-<the-footer/>
+the-footer
 </template>

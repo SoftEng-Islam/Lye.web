@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import OilsList from "@/components/OilsList.vue";
-import OilProperties from "@/components/OilProperties.vue";
-import AddedOils from "@/components/AddedOils.vue";
-import TotalRecipe from "@/components/TotalRecipe.vue";
-import SoapProperties from "@/components/SoapProperties.vue";
-import RecipeOptions from "@/components/RecipeOptions.vue";
+import AllOilsList from "@/components/calc/AllOilsList.vue";
+import OilProperties from "@/components/calc/OilProperties.vue";
+import OilsList from "@/components/calc/AddedOilsList/OilsList.vue";
+import TotalRecipe from "@/components/calc/TotalRecipe.vue";
+import SoapProperties from "@/components/calc/SoapProperties.vue";
+import RecipeOptions from "@/components/calc/RecipeOptions.vue";
 </script>
 <template lang="pug">
-div(class="pb-6 w-full h-full flex flex-wrap items-start bg-(--LTheme3) dark:bg-(--Theme3)")
+div(class="pb-6 pt-16 main-padding-x w-full h-full flex flex-wrap items-start justify-between")
 	<recipe-options/>
-	PerfectScrollbar(class="h-[90%] pt-14 w-full flex items-center justify-center")
-		div(class="bg-(--LTheme3) dark:bg-(--Theme3) px-4 h-full w-full flex flex-row gap-4 flex-wrap justify-center items-stretch [&_.lyeWidget]:w-72 [&_.lyeWidget]:p-2 [&_.lyeWidget]:rounded-lg [&_.lyeWidget]:bg-(--LTheme2) dark:[&_.lyeWidget]:bg-(--Theme2)")
-			<oils-list/>
+	PerfectScrollbar(class="pt-14 w-full flex items-center justify-center")
+		div(class="lye-container")
+			<All-Oils-List/>
 			<oil-properties/>
-			<added-oils/>
+			<oils-list/>
 			<total-recipe/>
 			<soap-properties/>
 </template>

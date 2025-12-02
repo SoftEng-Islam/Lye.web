@@ -11,6 +11,9 @@ importers:
       '@remixicon/vue':
         specifier: ^4.7.0
         version: 4.7.0(vue@3.5.24(typescript@5.9.3))
+      '@reusable-ui-tr/vue3-type-writer-effect':
+        specifier: ^1.0.12
+        version: 1.0.12(vue@3.5.24(typescript@5.9.3))
       '@vueuse/core':
         specifier: ^14.0.0
         version: 14.0.0(vue@3.5.24(typescript@5.9.3))
@@ -640,6 +643,11 @@ packages:
     resolution: {integrity: sha512-kwl1BIEnNoZ5IZ4NJZPOQmA2PfxKlOmogWcJBStuDynoyYpsYSvU22ZkerpdofgjsLS/FiLKhJ/ddpP8U8znVw==}
     peerDependencies:
       vue: '>= 3'
+
+  '@reusable-ui-tr/vue3-type-writer-effect@1.0.12':
+    resolution: {integrity: sha512-hFp4hvSErOCHVGkLWiYW/9uANJoRhruG7ol2V8Y9DXAcGHJH8EbBIy2jcBJ7y2podRtvhgVHI+9uquHYX+fwew==}
+    peerDependencies:
+      vue: ^3.2.47
 
   '@rolldown/pluginutils@1.0.0-beta.29':
     resolution: {integrity: sha512-NIJgOsMjbxAXvoGq/X0gD7VPMQ8j9g0BiDaNjVNVjvl+iKXxL3Jre0v31RmBYeLEmkbj2s02v8vFTbUXi5XS2Q==}
@@ -3084,6 +3092,10 @@ snapshots:
   '@popperjs/core@2.11.8': {}
 
   '@remixicon/vue@4.7.0(vue@3.5.24(typescript@5.9.3))':
+    dependencies:
+      vue: 3.5.24(typescript@5.9.3)
+
+  '@reusable-ui-tr/vue3-type-writer-effect@1.0.12(vue@3.5.24(typescript@5.9.3))':
     dependencies:
       vue: 3.5.24(typescript@5.9.3)
 

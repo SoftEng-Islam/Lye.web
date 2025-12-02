@@ -135,13 +135,13 @@ html.dark
 
 body
 	font-family: JetBrains
-	@apply bg-(--LTheme4) dark:bg-(--Theme4)
+	@apply bg-(--LTheme2) dark:bg-(--Theme2)
 
 ::selection
 	background: var(--favColor)
 
-button
-	user-select: none
+// button
+// 	user-select: none
 
 // .container-center
 // 	@apply container mx-auto px-4
@@ -151,12 +151,20 @@ button
 	border: none
 	backdrop-filter: blur(var(--glass-blur, 40px))
 	background-color: #0000
-	/* background-image: linear-gradient(135deg, oklch(100% 0 0 / var(--glass-opacity, 30%)) 0%, oklch(0% 0 0 / 0%) 100%), linear-gradient(var(--glass-reflect-degree, 100deg), oklch(100% 0 0 / var(--glass-reflect-opacity, 5%)) 25%, oklch(0% 0 0 / 0%) 25%) */
 	box-shadow: 0 0 0 1px oklch(100% 0 0 / var(--glass-border-opacity, 20%)) inset, 0 0 0 2px oklch(0% 0 0 / 5%)
 	text-shadow: 0 1px oklch(0% 0 0 / var(--glass-text-shadow-opacity, 5%))
 
-.router-link-active
-	@apply p-2 text-white dark:bg-(--dark-fav-color) bg-(--light-fav-color)
+// Lye Styles
+.lye-container
+	@apply w-full flex flex-row gap-4 flex-wrap justify-between items-stretch
+	.lyeWidget
+		@apply relative w-full sm:w-72 min-h-[280px] max-h-120 px-2 border-3 pb-4 pt-6 my-4 rounded-2xl flex flex-col gap-2 bg-(--LTheme2) dark:bg-(--Theme2)
+		.lye-head
+			@apply absolute z-10 pl-4 flex items-center justify-between -top-5 left-[50%] -translate-x-[50%] w-[90%] p-2 rounded-full bg-linear-to-r to-zinc-500 dark:to-zinc-700
+			span.lye-label
+				@apply text-zinc-800 dark:text-zinc-100 font-bold
+			button.lye-help
+				@apply w-5 h-5 rounded-full flex items-center justify-center text-sm mr-2 text-black dark:text-white font-bold
 
-.router-link-exact-active
-	@apply p-2 text-white dark:bg-(--dark-fav-color) bg-(--light-fav-color)
+.main-padding-x
+	@apply px-8
