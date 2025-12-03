@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useOilStore } from "@/store/index";
+import type { Oil } from '@/store/index';  // <-- type-only import
 
 interface Props {
 	oil: null;
@@ -22,7 +23,7 @@ const theme = ref({
 
 const weightOfOil = ref(0);
 
-const RemoveThisOil = (val: object) => {
+const RemoveThisOil = (val: Oil) => {
 	useOilStore().RemoveOils(val);
 };
 

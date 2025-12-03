@@ -30,7 +30,7 @@ const TheWater = computed({
 	},
 
 	set(value) {
-		OilStore.WaterAsofOils(TheWaterOption.value, value);
+		OilStore.WaterAsOfOils(TheWaterOption.value, value);
 	}
 });
 
