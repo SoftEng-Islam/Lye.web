@@ -3,12 +3,12 @@ import { watch, ref, computed } from "vue";
 import { storeToRefs } from "pinia";
 import { useOilStore } from "@/store/index";
 import OilItem from "./OilItem.vue";
-
+import type { Oil } from '@/store/index';  // <-- type-only import
 const OilStore = storeToRefs(useOilStore());
 const { AddedOils } = storeToRefs(useOilStore());
 const weightOils = OilStore.RecipeTotal.value.weightOils;
 
-const RemoveThisOil = (val: object): void => {
+const RemoveThisOil = (val: Oil): void => {
 	useOilStore().RemoveOils(val);
 };
 
@@ -21,13 +21,11 @@ const RemoveThisOil = (val: object): void => {
 // 	}
 // });
 
-const EmptyAddedOilsList = computed({
-	get() {
-		if (AddedOils.value.length === 0 || AddedOils.value.length === null) {
-			return true;
-		} else {
-			return false;
-		}
+const EmptyAddedOilsList = computed(() => {
+	if (AddedOils.value.length === 0 || AddedOils.value.length === null) {
+		return true;
+	} else {
+		return false;
 	}
 });
 

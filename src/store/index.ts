@@ -22,7 +22,7 @@ interface SoapProperties {
 	PolyUnsaturated: number
 }
 
-interface Oil {
+export interface Oil {
 	Name: string
 	weight?: number
 	NaOH: number
@@ -91,8 +91,9 @@ interface OilStoreState {
 	soapProperties: SoapProperties
 }
 
-export const useOilStore = defineStore<'taskStore', OilStoreState>('taskStore', {
-	state: () => ({
+// export const useOilStore = defineStore<'oilStore', OilStoreState>('oilStore', {
+export const useOilStore = defineStore('oilStore', {
+	state: (): OilStoreState => ({
 		Oils: OilsAPIJsonFile,
 		headerOptions: {
 			typeOfLye: 'NaOH',
@@ -222,7 +223,7 @@ export const useOilStore = defineStore<'taskStore', OilStoreState>('taskStore', 
 			this.RecipeTotal.weightWater =
 				(this.RecipeTotal.weightOils / 100) * this.headerOptions.water.waterAsOfOils
 		},
-		calcLye() {
+		calcLye(): void {
 			this.RecipeTotal.weightOils = 0
 			this.RecipeTotal.weightLye = 0
 			// this.RecipeTotal.weightWater = 0;

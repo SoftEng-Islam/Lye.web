@@ -1,25 +1,25 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
 import { ref } from 'vue';
 import { useOilStore } from '@/store/index';
+import type { Oil } from '@/store/index';  // <-- type-only import
 
-const { Oils } = useOilStore();
+const oilStore = useOilStore();
+const { Oils, AddedOils, soapProperties } = storeToRefs(oilStore);
 
-const enteredValue = <string>'';
-const show = 'hidden';
-const clkOil = <object>{};
-const count = ref(0);
 const searchForOil = ref('');
 
-const filteredOils = () => Oils.filter((oil) => oil.Name.toLowerCase().includes(searchForOil.value.toLowerCase()));
+const filteredOils = () =>
+	Oils.value.filter(oil =>
+		oil.Name.toLowerCase().includes(searchForOil.value.toLowerCase())
+	);
 
-const ClickdOnOil = (val: object): void => {
-	useOilStore().ClickedOil(val);
-	// console.log(val)
-};
-const ShowTheInfo = (val: object): void => {
-	useOilStore().showTheInfo(val);
-};
+const clickedOnOil = (val: Oil) => oilStore.ClickedOil(val);
+const showTheInfo = (val: Oil) => oilStore.showTheInfo(val);
 </script>
+
+
+
 <template lang="pug">
 //- Oils list Section
 div(class="lyeWidget hover:shadow-2xl dark:shadow-none border-purple-800 dark:border-purple-500")
