@@ -8,7 +8,7 @@ import vuePugPlugin from 'vite-plugin-pug'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-	base: process.env.BASE_URL,
+	base: 'softeng-islam.github.io',
 	plugins: [
 		tailwindcss(),
 		vue({
