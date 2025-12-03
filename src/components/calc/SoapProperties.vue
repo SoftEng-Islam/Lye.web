@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import { useOilStore } from "@/store/index";
-const { soapProperties } = storeToRefs(useOilStore());
+import { useOilStore } from "@/store/index.ts";
+const oilStore = useOilStore();
+const { soapProperties } = storeToRefs(oilStore);
 
 const aryRanges: string[] = Array(7);
 aryRanges[0] = "Hardness (in the All column): 29 to 54, higher is harder.";

@@ -1,6 +1,97 @@
 import { defineStore } from 'pinia'
 import OilsAPIJsonFile from '../API/oilsArray2'
-export const useOilStore = defineStore('taskStore', {
+
+interface SoapProperties {
+	Hardness: number
+	Cleansing: number
+	Conditioning: number
+	Bubbly: number
+	Creamy: number
+	Iodine: number
+	INS: number
+	Lauric: number
+	Myristic: number
+	Palmitic: number
+	Stearic: number
+	Ricinoleic: number
+	Oleic: number
+	Linoleic: number
+	Linolenic: number
+	Saturated: number
+	MonoUnsaturated: number
+	PolyUnsaturated: number
+}
+
+interface Oil {
+	Name: string
+	weight?: number
+	NaOH: number
+	KOH: number
+	Hardness: number
+	Cleansing: number
+	Condition: number
+	Bubbly: number
+	Creamy: number
+	Iodine: number
+	INS: number
+	Lauric: number
+	Myristic: number
+	Palmitic: number
+	Stearic: number
+	Ricinoleic: number
+	Oleic: number
+	Linoleic: number
+	Linolenic: number
+	Saturated?: number
+}
+
+interface OilStoreState {
+	Oils: Oil[]
+	headerOptions: {
+		typeOfLye: string
+		weightOfOilsValue: number
+		weightOfOilsUnit: string
+		water: {
+			selcted: number
+			waterAsOfOils: number
+			lyeConcentration: number
+			WaterToLyeRatio: string
+		}
+		superFat: number
+		fragrance: {
+			value: number
+			frWeight: string
+		}
+	}
+	OilProperties: {
+		Name: string
+		Hardness: number
+		Cleansing: number
+		Condition: number
+		Bubbly: number
+		Creamy: number
+		Iodine: number
+		INS: number
+		Lauric: number
+		Myristic: number
+		Palmitic: number
+		Stearic: number
+		Ricinoleic: number
+		Oleic: number
+		Linoleic: number
+		Linolenic: number
+	}
+	RecipeTotal: {
+		weightLye: number
+		weightWater: number
+		weightOils: number
+		FragranceWeight: number
+	}
+	AddedOils: Oil[]
+	soapProperties: SoapProperties
+}
+
+export const useOilStore = defineStore<'taskStore', OilStoreState>('taskStore', {
 	state: () => ({
 		Oils: OilsAPIJsonFile,
 		headerOptions: {
@@ -13,9 +104,9 @@ export const useOilStore = defineStore('taskStore', {
 				lyeConcentration: 70,
 				WaterToLyeRatio: '2:1',
 			},
-			superFat: 0,
+			superFat: 5,
 			fragrance: {
-				value: 0,
+				value: 31.25,
 				frWeight: 'g/Kg',
 			},
 		},
@@ -67,10 +158,10 @@ export const useOilStore = defineStore('taskStore', {
 	}),
 	getters: {
 		GetOil(): object {
-			return this.Oils.filter((O: { Name: any }) => O.Name)
+			return this.Oils.filter((O: { Name: string }) => O.Name)
 		},
-		GetHeaderOptions(value: any): any {
-			return this.headerOptions[value]
+		GetHeaderOptions(): typeof this.headerOptions {
+			return this.headerOptions
 		},
 		GetSelectedOils(): object {
 			return this.AddedOils
@@ -78,10 +169,10 @@ export const useOilStore = defineStore('taskStore', {
 		getTypeOfLye(): string {
 			return this.headerOptions.typeOfLye
 		},
-		getRecipeTotal(): any {
+		getRecipeTotal(): typeof this.RecipeTotal {
 			return this.RecipeTotal
 		},
-		getSoapProperties(): any {
+		getSoapProperties(): SoapProperties {
 			return this.soapProperties
 		},
 	},
@@ -92,18 +183,18 @@ export const useOilStore = defineStore('taskStore', {
 				this.RecipeTotal.weightLye = 0
 				// this.weightWater = 0;
 
-				this.AddedOils.forEach((oi: { weight: number; NaOH: number; KOH: number }) => {
+				this.AddedOils.forEach((oi: Oil) => {
 					if (this.headerOptions.typeOfLye === 'NaOH') {
-						const NaOH: number = oi.weight * oi.NaOH
+						const NaOH: number = (oi.weight ?? 0) * oi.NaOH
 
 						this.RecipeTotal.weightLye += parseInt(NaOH.toFixed(0))
 					} else {
-						this.RecipeTotal.weightLye += parseInt((oi.weight * oi.KOH).toFixed(0))
+						this.RecipeTotal.weightLye += parseInt(((oi.weight ?? 0) * oi.KOH).toFixed(0))
 					}
 				})
 			}
 		},
-		ClickedOil(selectedOil: any): void {
+		ClickedOil(selectedOil: Oil): void {
 			if (this.AddedOils.includes(selectedOil) === false) {
 				// console.log(this.selectedOilArray);
 				// console.log(selectedOil);
@@ -112,16 +203,16 @@ export const useOilStore = defineStore('taskStore', {
 				console.log(this.AddedOils)
 			}
 		},
-		showTheInfo(selectedOil: any): void {
+		showTheInfo(selectedOil: Oil): void {
 			this.OilProperties = selectedOil
 		},
-		WaterAsofOils(valueOne: any, valueTwo: any): void {
+		WaterAsOfOils(valueOne: number, valueTwo: number | string): void {
 			if (valueOne == 0) {
-				this.headerOptions.water.waterAsOfOils = valueTwo
+				this.headerOptions.water.waterAsOfOils = valueTwo as number
 			} else if (valueOne == 1) {
-				this.headerOptions.water.lyeConcentration = valueTwo
+				this.headerOptions.water.lyeConcentration = valueTwo as number
 			} else {
-				this.headerOptions.water.WaterToLyeRatio = valueTwo
+				this.headerOptions.water.WaterToLyeRatio = valueTwo as string
 			}
 			console.log('weightWater', this.RecipeTotal.weightWater)
 			console.log('waterAsOfOils', this.headerOptions.water.waterAsOfOils)
@@ -135,21 +226,22 @@ export const useOilStore = defineStore('taskStore', {
 			this.RecipeTotal.weightOils = 0
 			this.RecipeTotal.weightLye = 0
 			// this.RecipeTotal.weightWater = 0;
-			this.AddedOils.forEach((oi: { weight: number; NaOH: number; KOH: number }) => {
+			this.AddedOils.forEach((oi: Oil) => {
+				const weight = oi.weight ?? 0
 				if (this.headerOptions.typeOfLye === 'NaOH') {
-					const NaOH = oi.weight * oi.NaOH
+					const NaOH = weight * oi.NaOH
 					this.RecipeTotal.weightLye += parseInt(NaOH.toFixed(0))
 				} else {
-					this.RecipeTotal.weightLye += parseInt((oi.weight * oi.KOH).toFixed(0))
+					this.RecipeTotal.weightLye += parseInt((weight * oi.KOH).toFixed(0))
 				}
-				this.RecipeTotal.weightOils += parseInt(oi.weight.toFixed(0))
+				this.RecipeTotal.weightOils += parseInt(weight.toFixed(0))
 			})
 			// this.RecipeTotal.weightWater += parseInt((this.RecipeTotal.weightLye * 3).toFixed(0));
-			this.WaterAsofOils()
+			this.WaterAsOfOils(0, this.headerOptions.water.waterAsOfOils)
 		},
-		RemoveOils(OilToRemove: object): void {
+		RemoveOils(OilToRemove: Oil): void {
 			if (this.AddedOils.includes(OilToRemove) === true) {
-				this.AddedOils = this.AddedOils.filter((o: object) => {
+				this.AddedOils = this.AddedOils.filter((o: Oil) => {
 					return o != OilToRemove
 				})
 				this.calcLye()
@@ -174,78 +266,59 @@ export const useOilStore = defineStore('taskStore', {
 			this.soapProperties.Saturated = 0
 			this.soapProperties.MonoUnsaturated = 0
 			this.soapProperties.PolyUnsaturated = 0
-			this.AddedOils.forEach(
-				(ele: {
-					Hardness: number
-					weight: number
-					Cleansing: number
-					Condition: number
-					Bubbly: number
-					Creamy: number
-					Iodine: number
-					INS: number
-					Lauric: number
-					Myristic: number
-					Palmitic: number
-					Stearic: number
-					Ricinoleic: number
-					Oleic: number
-					Linoleic: number
-					Linolenic: number
-					Saturated: number
-				}) => {
-					this.soapProperties.Hardness += Math.round(
-						(ele.Hardness * ((ele.weight * 100) / this.RecipeTotal.weightOils)) / 100,
-					)
-					this.soapProperties.Cleansing += Math.round(
-						(ele.Cleansing * ((ele.weight * 100) / this.RecipeTotal.weightOils)) / 100,
-					)
-					this.soapProperties.Conditioning += Math.round(
-						(ele.Condition * ((ele.weight * 100) / this.RecipeTotal.weightOils)) / 100,
-					)
-					this.soapProperties.Bubbly += Math.round(
-						(ele.Bubbly * ((ele.weight * 100) / this.RecipeTotal.weightOils)) / 100,
-					)
-					this.soapProperties.Creamy += Math.round(
-						(ele.Creamy * ((ele.weight * 100) / this.RecipeTotal.weightOils)) / 100,
-					)
-					this.soapProperties.Iodine += Math.round(
-						(ele.Iodine * ((ele.weight * 100) / this.RecipeTotal.weightOils)) / 100,
-					)
-					this.soapProperties.INS += Math.round(
-						(ele.INS * ((ele.weight * 100) / this.RecipeTotal.weightOils)) / 100,
-					)
-					this.soapProperties.Lauric += Math.round(
-						(ele.Lauric * ((ele.weight * 100) / this.RecipeTotal.weightOils)) / 100,
-					)
-					this.soapProperties.Myristic += Math.round(
-						(ele.Myristic * ((ele.weight * 100) / this.RecipeTotal.weightOils)) / 100,
-					)
-					this.soapProperties.Palmitic += Math.round(
-						(ele.Palmitic * ((ele.weight * 100) / this.RecipeTotal.weightOils)) / 100,
-					)
-					this.soapProperties.Stearic += Math.round(
-						(ele.Stearic * ((ele.weight * 100) / this.RecipeTotal.weightOils)) / 100,
-					)
-					this.soapProperties.Ricinoleic += Math.round(
-						(ele.Ricinoleic * ((ele.weight * 100) / this.RecipeTotal.weightOils)) / 100,
-					)
-					this.soapProperties.Oleic += Math.round(
-						(ele.Oleic * ((ele.weight * 100) / this.RecipeTotal.weightOils)) / 100,
-					)
-					this.soapProperties.Linoleic += Math.round(
-						(ele.Linoleic * ((ele.weight * 100) / this.RecipeTotal.weightOils)) / 100,
-					)
-					this.soapProperties.Linolenic += Math.round(
-						(ele.Linolenic * ((ele.weight * 100) / this.RecipeTotal.weightOils)) / 100,
-					)
-					this.soapProperties.Saturated += Math.round(
-						(ele.Saturated * ((ele.weight * 100) / this.RecipeTotal.weightOils)) / 100,
-					)
-					// this.soapProperties.MonoUnsaturated += Math.round(ele.Id * (ele.weight * 100 / this.RecipeTotal.weightOils) /100);
-					// this.soapProperties.PolyUnsaturated += Math.round(ele.Id * (ele.weight * 100 / this.RecipeTotal.weightOils) /100);
-				},
-			)
+			this.AddedOils.forEach((ele: Oil) => {
+				const weight = ele.weight ?? 0
+				this.soapProperties.Hardness += Math.round(
+					(ele.Hardness * ((weight * 100) / this.RecipeTotal.weightOils)) / 100,
+				)
+				this.soapProperties.Cleansing += Math.round(
+					(ele.Cleansing * ((weight * 100) / this.RecipeTotal.weightOils)) / 100,
+				)
+				this.soapProperties.Conditioning += Math.round(
+					(ele.Condition * ((weight * 100) / this.RecipeTotal.weightOils)) / 100,
+				)
+				this.soapProperties.Bubbly += Math.round(
+					(ele.Bubbly * ((weight * 100) / this.RecipeTotal.weightOils)) / 100,
+				)
+				this.soapProperties.Creamy += Math.round(
+					(ele.Creamy * ((weight * 100) / this.RecipeTotal.weightOils)) / 100,
+				)
+				this.soapProperties.Iodine += Math.round(
+					(ele.Iodine * ((weight * 100) / this.RecipeTotal.weightOils)) / 100,
+				)
+				this.soapProperties.INS += Math.round(
+					(ele.INS * ((weight * 100) / this.RecipeTotal.weightOils)) / 100,
+				)
+				this.soapProperties.Lauric += Math.round(
+					(ele.Lauric * ((weight * 100) / this.RecipeTotal.weightOils)) / 100,
+				)
+				this.soapProperties.Myristic += Math.round(
+					(ele.Myristic * ((weight * 100) / this.RecipeTotal.weightOils)) / 100,
+				)
+				this.soapProperties.Palmitic += Math.round(
+					(ele.Palmitic * ((weight * 100) / this.RecipeTotal.weightOils)) / 100,
+				)
+				this.soapProperties.Stearic += Math.round(
+					(ele.Stearic * ((weight * 100) / this.RecipeTotal.weightOils)) / 100,
+				)
+				this.soapProperties.Ricinoleic += Math.round(
+					(ele.Ricinoleic * ((weight * 100) / this.RecipeTotal.weightOils)) / 100,
+				)
+				this.soapProperties.Oleic += Math.round(
+					(ele.Oleic * ((weight * 100) / this.RecipeTotal.weightOils)) / 100,
+				)
+				this.soapProperties.Linoleic += Math.round(
+					(ele.Linoleic * ((weight * 100) / this.RecipeTotal.weightOils)) / 100,
+				)
+				this.soapProperties.Linolenic += Math.round(
+					(ele.Linolenic * ((weight * 100) / this.RecipeTotal.weightOils)) / 100,
+				)
+				this.soapProperties.Saturated += Math.round(
+					((ele.Saturated ?? 0) * ((weight * 100) / this.RecipeTotal.weightOils)) / 100,
+				)
+				// this.soapProperties.MonoUnsaturated += Math.round(ele.Id * (weight * 100 / this.RecipeTotal.weightOils) /100);
+				// this.soap_properties.PolyUnsaturated += Math.round(ele.Id * (weight * 100 / this.RecipeTotal.weightOils) /100);
+			})
 		},
 		AddedOilsWeight(OilName: string, OilWeight: number): void {
 			this.RecipeTotal.weightLye = 0
@@ -253,38 +326,38 @@ export const useOilStore = defineStore('taskStore', {
 			this.RecipeTotal.weightOils = 0
 			this.RecipeTotal.FragranceWeight = 0
 
-			this.AddedOils.forEach((oi: any): void => {
+			this.AddedOils.forEach((oi: Oil): void => {
 				if (OilName === oi.Name) {
 					oi.weight = OilWeight
 				}
 				if (this.headerOptions.typeOfLye === 'NaOH') {
-					const NaOH: number = oi.weight * oi.NaOH
+					const NaOH: number = (oi.weight ?? 0) * oi.NaOH
 
 					this.RecipeTotal.weightLye += parseInt(NaOH.toFixed(0))
 				} else {
-					this.RecipeTotal.weightLye += parseInt((oi.weight * oi.KOH).toFixed(0))
+					this.RecipeTotal.weightLye += parseInt(((oi.weight ?? 0) * oi.KOH).toFixed(0))
 				}
-				this.RecipeTotal.weightOils += parseInt(oi.weight.toFixed(0))
+				this.RecipeTotal.weightOils += parseInt((oi.weight ?? 0).toFixed(0))
 			})
 			// this.RecipeTotal.weightWater += parseInt((this.RecipeTotal.weightLye * 3).toFixed(0));
 			this.RecipeTotal.FragranceWeight = Math.round(
 				(((this.RecipeTotal.weightOils / 100) * this.headerOptions.fragrance.value) / 1000) * 100,
 			)
-			this.WaterAsofOils()
+			this.WaterAsOfOils(0, this.headerOptions.water.waterAsOfOils)
 			this.getProperties()
 			this.ChangeSuperFat(this.headerOptions.superFat)
-		},
-		ChangeSuperFat(value: number): void {
-			this.calcLye()
-			this.headerOptions.superFat = value
-			this.RecipeTotal.weightLye =
-				((100 - this.headerOptions.superFat) / 100) * this.RecipeTotal.weightLye
 		},
 		ChangeFragrance(value: number): void {
 			this.headerOptions.fragrance.value = value
 			this.RecipeTotal.FragranceWeight = Math.round(
 				(((this.RecipeTotal.weightOils / 100) * this.headerOptions.fragrance.value) / 1000) * 100,
 			)
+		},
+		ChangeSuperFat(value: number): void {
+			this.calcLye()
+			this.headerOptions.superFat = value
+			this.RecipeTotal.weightLye =
+				((100 - this.headerOptions.superFat) / 100) * this.RecipeTotal.weightLye
 		},
 	},
 })
