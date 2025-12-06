@@ -5,13 +5,9 @@ import type { Oil } from '@/store/index';  // <-- type-only import
 
 interface Props {
 	oil: null;
-	// size?: number
-	// count: number;
-	// isActive?: boolean;
 }
 
 const props = defineProps<Props>();
-
 // for Default Values
 // const props = withDefaults(defineProps<Props>(), {
 // 	size: 14

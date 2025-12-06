@@ -2,8 +2,10 @@
 import { watch, ref, computed } from "vue";
 import { storeToRefs } from "pinia";
 import { useOilStore } from "@/store/index";
-import OilItem from "./OilItem.vue";
 import type { Oil } from '@/store/index';  // <-- type-only import
+
+import OilItem from "./OilItem.vue";
+
 const OilStore = storeToRefs(useOilStore());
 const { AddedOils } = storeToRefs(useOilStore());
 const weightOils = OilStore.RecipeTotal.value.weightOils;
@@ -21,13 +23,7 @@ const RemoveThisOil = (val: Oil): void => {
 // 	}
 // });
 
-const EmptyAddedOilsList = computed(() => {
-	if (AddedOils.value.length === 0 || AddedOils.value.length === null) {
-		return true;
-	} else {
-		return false;
-	}
-});
+const EmptyAddedOilsList = computed(() => AddedOils.value.length === 0 || AddedOils.value.length === null ? true : false);
 
 </script>
 <template lang="pug">
@@ -41,7 +37,7 @@ div(class="lyeWidget hover:shadow-2xl dark:shadow-none border-green-800 dark:bor
 	div(class="bg-(--LTheme3) dark:bg-(--Theme3) mt-4 rounded-lg h-full overflow-hidden flex flex-col gap-3")
 		PerfectScrollbar(class="h-full w-full pb-4 overflow-hidden")
 			transition-group(name="list" tag="ul" class="w-full *:my-4 px-4")
-				oil-item(v-for="oil of AddedOils" :oil="oil")
+				oil-item(v-for="(oil, index) of AddedOils" key="index" :oil="oil")
 				div(v-if="EmptyAddedOilsList" class="text-red-500 p-2 bg-(--LTheme2) dark:bg-(--Theme2) rounded-md") Please add oil from the #[span(class="font-bold italic text-purple-500") "All Oils"] list To Start!
 	//- weight of all oils
 	div(class="flex items-center overflow-hidden pt-3 pb-2 px-4")

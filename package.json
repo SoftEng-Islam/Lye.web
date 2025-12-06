@@ -14,7 +14,7 @@
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix --cache",
     "format": "prettier --write src/",
-    "predeploy": "pnpm run build",
+    "predeploy": "pnpm run build && git add --all && git commit -m 'new commit' && git push -u origin main || git push -u origin main",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -66,6 +66,7 @@
     "tailwindcss": "^4.1.17",
     "typescript": "~5.9.0",
     "vite": "^7.1.11",
+    "vite-plugin-imagemin": "^0.6.1",
     "vite-plugin-node": "^7.0.0",
     "vite-plugin-pug": "^0.4.1",
     "vite-plugin-vue-devtools": "^8.0.3",

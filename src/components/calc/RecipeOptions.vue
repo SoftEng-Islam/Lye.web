@@ -11,28 +11,60 @@ const SetTypeOfLye = (): void => {
 };
 
 // The Water Options
-const TheWaterOption = ref(0);
+// const TheWaterOption = ref(0);
 
-const TheWaterSelect: () => void = (): void => {
-	OilStore.headerOptions.water.selcted = TheWaterOption.value;
-};
+// const TheWaterSelect: () => void = (): void => {
+// 	OilStore.headerOptions.water.selected = TheWaterOption.value;
+// };
 
-// Set Water
-const TheWater = computed({
+// waterPerOils
+// - water 20% oils 100g water 20gram
+// lyeConcentration
+// -
+// Water: Lye Ratio
+
+// setWaterLyePercent is a method in Pinia store that will handle the water for us
+
+// waterPerOils (water as percent of oil weight)
+const waterPerOils = computed({
 	get() {
-		if (TheWaterOption.value === 0) {
-			return OilStore.headerOptions.water.waterAsOfOils;
-		} else if (TheWaterOption.value === 1) {
-			return OilStore.headerOptions.water.lyeConcentration;
-		} else {
-			return OilStore.headerOptions.water.WaterToLyeRatio;
-		}
+		return OilStore.headerOptions.water.waterAsOfOils;
 	},
-
-	set(value) {
-		OilStore.WaterAsOfOils(TheWaterOption.value, value);
+	set(value: number) {
+		OilStore.setWaterLyePercent(0, value);
 	}
 });
+
+// lyeConcentration
+const lyeCon = computed({
+	get(): number {
+		return OilStore.headerOptions.water.lyeConcentration;
+	},
+	set(value: number): void {
+		OilStore.setWaterLyePercent(1, value);
+	}
+});
+
+// Water Ratio
+const waterRatio = computed({
+	get(): number {
+		return OilStore.headerOptions.water.WaterToLyeRatio.water;
+	},
+	set(value: number): void {
+		OilStore.setWaterLyePercent(2, { water: value });
+	}
+});
+
+// Lye Ratio
+const lyeRatio = computed({
+	get(): number {
+		return OilStore.headerOptions.water.WaterToLyeRatio.lye;
+	},
+	set(value: number): void {
+		OilStore.setWaterLyePercent(2, { lye: value });
+	}
+});
+
 
 // Set Super Fat
 const SetSuperFat = computed({
@@ -57,37 +89,55 @@ const SetFragrance = computed({
 <template lang="pug">
 ul(class="recipe-options")
 	//- Type Of Lye
-	li(class="widget md:flex-col bg-(--LTheme4) dark:bg-(--Theme4)")
+	li(class="widget md:flex-col bg-(--LTheme4) dark:bg-(--Theme4)" tabindex="2")
 		div(class="w-full flex items-center py-2")
 			button(class="lye-help bg-blue-400 dark:bg-blue-600 text-black dark:text-white" v-tippy="{ content: 'Empty Content' }") !
 			span(class="text-(--dark-fav-color) dark:text-(--light-fav-color)") Type of #[span(class="font-bold text-(--dark-fav-color) dark:text-(--light-fav-color)") Lye]:
 		select(class="w-full p-2 px-4 border-r-4 border-(--LTheme3) dark:border-(--Theme3) outline-none rounded-md bg-(--LTheme3) dark:bg-(--Theme3) text-green-500" id="Units" v-model="STypeLye" @change="SetTypeOfLye()")
 			option(value="NaOH") NaOH
 			option(value="KOH") KOH
+			option(value="KOH70") KOH 70%
 	//- Weight of Oils
-	li(class="widget md:flex-col bg-(--LTheme4) dark:bg-(--Theme4)")
+	li(class="widget md:flex-col bg-(--LTheme4) dark:bg-(--Theme4)" tabindex="3")
+		//- Help
 		div(class="w-full flex items-center py-2")
 			button(class="lye-help bg-blue-400 dark:bg-blue-600 text-black dark:text-white" v-tippy="{ content: 'Empty Content' }") !
 			span(class="text-(--dark-fav-color) dark:text-(--light-fav-color)") Weight of #[span(class="font-bold text-(--dark-fav-color) dark:text-(--light-fav-color)") Oils]:
-		input(type="number" name="weightOils" id="weightOils" readonly class="w-full pl-2 py-1 rounded-md cursor-not-allowed placeholder:text-white text-black bg-(--LTheme3) dark:bg-(--Theme3) dark:text-white" v-model="OilStore.RecipeTotal.weightOils")
+
+		input(type="number" name="weightOils" id="weightOils" readonly class="w-full pl-2 py-1 rounded-md cursor-not-allowed placeholder:text-white text-black bg-(--LTheme3) dark:bg-(--Theme3) dark:text-white" v-model.number.trim="OilStore.RecipeTotal.weightOils")
 		select(name="weightOilsUnit" id="weightOilsUnit" class="w-full p-2 px-4 outline-none rounded-md bg-(--LTheme3) dark:bg-(--Theme3) border-r-4 border-(--LTheme3) dark:border-(--Theme3) text-green-500")
 			option(value="Pounds") Pounds
 			option(value="Ounces") Ounces
 			option(value="Grams" selected) Grams
 			option(value="Kilo") Kilo
 			option(value="Tons") Tons
-	//- Water
-	li(class="widget md:flex-col bg-(--LTheme4) dark:bg-(--Theme4)")
-		div(class="w-full flex items-center py-2")
-			button(class="lye-help bg-blue-400 dark:bg-blue-600 text-black dark:text-white" v-tippy="{ content: 'Empty Content' }") !
+	//- Water Section
+	li(class="widget md:flex-col bg-(--LTheme4) dark:bg-(--Theme4)" tabindex="4")
+		//- Help
+		div(v-if="false" class="w-full flex items-center py-2")
+			button(class="lye-help bg-blue-400 dark:bg-blue-600 text-black dark:text-white" v-tippy="{ content: 'Water is calculated as a percentage of total oils.' }") !
 			span(class="text-(--dark-fav-color) dark:text-(--light-fav-color)") Water#[span(class="font-bold text-(--dark-fav-color) dark:text-(--light-fav-color)") :]
-		input(class="w-full pl-2 py-1 rounded-md bg-(--LTheme3) dark:bg-(--Theme3) placeholder:text-white text-black dark:text-white" name="water" id="water" type="text" v-model="TheWater")
-		select(name="waterOption" id="waterOption" class="w-full p-2 px-3 outline-none overflow-hidden rounded-md bg-(--LTheme3) dark:bg-(--Theme3) border-r-4 border-(--LTheme3) dark:border-(--Theme3) text-green-500" v-model="TheWaterOption" @change="TheWaterSelect")
-			option(value="0") Water as % of Oils
-			option(value="1") Lye Concentration
-			option(value="2") Water : Lye Ratio
-	//- The Lest Section
-	li(class="widget flex-col bg-(--LTheme4) dark:bg-(--Theme4)")
+		//- [ waterPerOils ] Water is calculated as a percentage of total oils.
+		div(class="relative w-full h-12 px-2 hover:border-blue-500 rounded-md flex justify-between items-center gap-2 border border-gray-500  text-black dark:text-white")
+			button(class="lye-help bg-blue-400 dark:bg-blue-600 text-black dark:text-white" v-tippy="{ content: 'Water is calculated as a percentage of total oils.' }") !
+			span(class="absolute left-3 -top-3 rounded-full text-xs h-5 p-2 flex items-center justify-center bg-(--LTheme4) dark:bg-(--Theme4)") Water:Oils
+			span(class="") %
+			input(class="w-full" type="number" name="" id="" v-model.number.trim="waterPerOils")
+		//- [lyeConcentration] Percentage of NaOH (lye) in the total lye solution.
+		div(class="relative w-full my-4 h-12 px-2 hover:border-blue-500 rounded-md flex justify-between items-center gap-2 border border-gray-500  text-black dark:text-white")
+			button(class="lye-help bg-blue-400 dark:bg-blue-600 text-black dark:text-white" v-tippy="{ content: 'Water is calculated as a percentage of total oils.' }") !
+			span(class="absolute left-3 -top-3 rounded-full text-xs h-5 p-2 flex items-center justify-center bg-(--LTheme4) dark:bg-(--Theme4)") Lye Concentration
+			span(class="") %
+			input(class="w-full" type="number" name="" id="" v-model.number.trim="lyeCon")
+		//- Water: Lye Ratio
+		div(class="relative rounded-md flex items-center gap-2 px-2 hover:border-blue-500 h-12 w-full text-black dark:text-white border border-gray-500")
+			//- button(class="lye-help bg-blue-400 dark:bg-blue-600 text-black dark:text-white" v-tippy="{ content: 'Water is calculated as a percentage of total oils.' }") !
+			span(class="absolute left-3 -top-3 rounded-full text-xs h-5 p-2 flex items-center justify-center bg-(--LTheme4) dark:bg-(--Theme4)") Water:Lye Ratio
+			input(class="w-1/2 pl-2 py-1 rounded-md bg-(--LTheme3) dark:bg-(--Theme3) placeholder:text-white" name="waterRatio" id="waterRatio" type="number" v-model.number="waterRatio")
+			span(class="font-bold") :
+			input(class="w-1/2 pl-2 py-1 rounded-md bg-(--LTheme3) dark:bg-(--Theme3) placeholder:text-white" name="lyeRatio" id="lyeRatio" type="number" v-model.number="lyeRatio")
+	//- The Last Section
+	li(class="widget flex-col bg-(--LTheme4) dark:bg-(--Theme4)" tabindex="5")
 		//- Super Fat
 		div(class="w-full flex flex-nowrap md:flex-wrap gap-2 items-center justify-between")
 			div(class="w-full flex items-center py-2")
@@ -95,7 +145,7 @@ ul(class="recipe-options")
 				span(class="text-orange-400 font-bold") Super Fat
 			//- v-model="OilStore.headerOptions.superFat"
 			div(class="w-full px-2 flex flex-row gap-2 items-center justify-center overflow-hidden bg-(--LTheme3) dark:bg-(--Theme3) rounded-md")
-				input(class="w-full pl-1 py-1 placeholder:text-white text-black dark:text-white" name="superFat" id="superFat" type="number" v-model="SetSuperFat")
+				input(class="w-full pl-1 py-1 placeholder:text-white text-black dark:text-white" name="superFat" id="superFat" type="number" v-model.number="SetSuperFat")
 				span(class="font-bold text-orange-400") %
 		//- Fragrance
 		div(class="w-full flex flex-nowrap md:flex-wrap gap-2 items-center justify-between")
@@ -103,7 +153,7 @@ ul(class="recipe-options")
 				button(class="lye-help bg-fuchsia-400 dark:bg-fuchsia-600 text-black dark:text-white" v-tippy="{ content: 'Empty Content' }") !
 				span(class="text-fuchsia-400 font-bold") Fragrance
 			div(class="w-full px-2 flex flex-row gap-2 items-center justify-center overflow-hidden bg-(--LTheme3) dark:bg-(--Theme3) rounded-md")
-				input(class="w-full pl-1 py-1 placeholder:text-white text-black dark:text-white" name="fragrance" id="fragrance" type="number" v-model="SetFragrance")
+				input(class="w-full pl-1 py-1 placeholder:text-white text-black dark:text-white" name="fragrance" id="fragrance" type="number" v-model.number="SetFragrance")
 				span(class="font-bold text-fuchsia-400") {{OilStore.headerOptions.fragrance.frWeight}}
 </template>
 <style scoped lang="sass">

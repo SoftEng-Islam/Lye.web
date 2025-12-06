@@ -9,7 +9,7 @@ import GetStarted from "./GetStarted.vue";
 
 <template lang="pug">
 //- Our Header
-header(class="fixed z-30 w-full top-0 left-0 h-14 overflow-hidden main-padding-x flex items-center justify-between bg-(--LTheme1) dark:bg-(--Theme1)")
+header(tabindex="1" class="fixed z-30 w-full top-0 left-0 h-14 overflow-hidden main-padding-x flex items-center justify-between bg-(--LTheme1) dark:bg-(--Theme1)")
 	//- Left Section
 	div(class="mr-auto flex items-center justify-center h-full")
 		//- App Name or The Logo
@@ -22,9 +22,9 @@ header(class="fixed z-30 w-full top-0 left-0 h-14 overflow-hidden main-padding-x
 
 	//- Middle Section
 	div(class="mx-auto")
-		div(class="links flex flex-row gap-x-3 items-center justify-center *:p-2 *:text-gray-500")
-			RouterLink(to="/") #[i(class="ri-home-2-line ri-lg")] Home
-			RouterLink(to="/calculator") #[i(class="ri-calculator-line ri-lg")] Lye-Calculator
+		div(class="links flex flex-row gap-x-3 text-sm items-center justify-center *:p-2 *:text-gray-500")
+			RouterLink(to="/") Home
+			RouterLink(to="/calculator") Lye-Calc
 
 	//- Right Section
 	div(class="ml-auto flex items-center h-full gap-4")

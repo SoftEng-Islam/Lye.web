@@ -12,7 +12,7 @@ div(class="container relative mx-auto w-full h-auto flex flex-col justify-center
 	//- Section 1 [ Overview ]
 	div(class="child")
 		h1(class="text-black dark:text-white") Accurate Lye Calculations for Perfect Soap, Every Time
-		type-writer(:text="fullText" class="text-black dark:text-white")
+		type-writer(:text="fullText" :speed="50" :repeating="false" class="text-black dark:text-white")
 		//- TypeWriterEffect(class="text-black dark:text-white" blink-duration="1s" cursor-color="blue" font-family="Lucida Console" font-size="20px" highlight-color="" :text="fulltext" text-color="white" text-wrapper-element-type="p" typing-speed="fast")
 		RouterLink(to="/calculator" class="start-now py-2 px-4 mt-4 rounded-full text-white dark:text-black font-bold bg-(--dark-fav-color) dark:bg-(--light-fav-color)") Get Started
 		div( class="w-full")

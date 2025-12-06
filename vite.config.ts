@@ -5,11 +5,39 @@ import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import vuePugPlugin from 'vite-plugin-pug'
+import viteImagemin from 'vite-plugin-imagemin'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-	base: 'softeng-islam.github.io',
+	base: '/Lye.web/',
 	plugins: [
+		viteImagemin({
+			gifsicle: {
+				optimizationLevel: 7,
+				interlaced: false,
+			},
+			optipng: {
+				optimizationLevel: 7,
+			},
+			mozjpeg: {
+				quality: 20,
+			},
+			pngquant: {
+				quality: [0.8, 0.9],
+				speed: 4,
+			},
+			svgo: {
+				plugins: [
+					{
+						name: 'removeViewBox',
+					},
+					{
+						name: 'removeEmptyAttrs',
+						active: false,
+					},
+				],
+			},
+		}),
 		tailwindcss(),
 		vue({
 			template: {

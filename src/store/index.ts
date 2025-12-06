@@ -52,10 +52,13 @@ interface OilStoreState {
 		weightOfOilsValue: number
 		weightOfOilsUnit: string
 		water: {
-			selcted: number
+			selected: number
 			waterAsOfOils: number
 			lyeConcentration: number
-			WaterToLyeRatio: string
+			WaterToLyeRatio: {
+				water: number
+				lye: number
+			}
 		}
 		superFat: number
 		fragrance: {
@@ -100,10 +103,20 @@ export const useOilStore = defineStore('oilStore', {
 			weightOfOilsValue: 0,
 			weightOfOilsUnit: 'Grams',
 			water: {
-				selcted: 0,
-				waterAsOfOils: 38,
-				lyeConcentration: 70,
-				WaterToLyeRatio: '2:1',
+				// The selected option
+				selected: 0,
+				// Typical range for waterAsOfOils:
+				//-  30–38% of oils (most calculators default to ~33%).
+				waterAsOfOils: 32,
+				// Typical range for lyeConcentration :
+				//- 28% to 40%
+				//-- Low concentration = more water (slower trace)
+				//-- High concentration = less water (faster trace)
+				lyeConcentration: 33,
+				WaterToLyeRatio: {
+					water: 2,
+					lye: 1,
+				},
 			},
 			superFat: 5,
 			fragrance: {
@@ -112,7 +125,7 @@ export const useOilStore = defineStore('oilStore', {
 			},
 		},
 		OilProperties: {
-			Name: 'Oil Properties',
+			Name: 'Oil Name',
 			Hardness: 0,
 			Cleansing: 0,
 			Condition: 0,
@@ -195,30 +208,68 @@ export const useOilStore = defineStore('oilStore', {
 				})
 			}
 		},
-		ClickedOil(selectedOil: Oil): void {
+		ClickedOil(selectedOil: Oil) {
 			if (this.AddedOils.includes(selectedOil) === false) {
 				// console.log(this.selectedOilArray);
 				// console.log(selectedOil);
 				selectedOil['weight'] = 0
 				this.AddedOils.push(selectedOil)
-				console.log(this.AddedOils)
+				// console.log(this.AddedOils)
 			}
 		},
 		showTheInfo(selectedOil: Oil): void {
 			this.OilProperties = selectedOil
 		},
-		WaterAsOfOils(valueOne: number, valueTwo: number | string): void {
-			if (valueOne == 0) {
+		setWaterLyePercent(whichOption: number, valueTwo: number | object): void {
+			// whichOption: must be on of three value and they are 0,1,2
+			// ---------------------
+			//- 0: waterPerOils
+			// ---------------------
+			//==== Definition:
+			//----- Water is calculated as a percentage of total oils.
+			//==== Formula: Water = Oil Weight × (Water % / 100)
+			//==== Example:
+			//----- Oil weight = 1000 g
+			//----- Water% = 33%
+			//----- Water = 1000 × 0.33 = 330 g
+			// ---------------------
+			//- 1: lyeConcentration
+			// ---------------------
+			//==== Definition:
+			//----- Percentage of NaOH (lye) in the total lye solution.
+			//==== Formula:
+			//----- Lye Concentration = NaOH / (NaOH + Water)
+			//----- Rearranged to find water:
+			//------ Water = (NaOH / Lye Concentration) − NaOH
+			//==== Example:
+			//----- NaOH needed = 140 g
+			//----- Target concentration = 33% (0.33)
+			//----- Water = (140 / 0.33) − 140
+			//----- Water = 424.24 − 140
+			//----- Water = **284.24 g**
+			// ---------------------
+			//- 2: Water: Lye Ratio
+			// ---------------------
+
+			if (whichOption == 0) {
 				this.headerOptions.water.waterAsOfOils = valueTwo as number
-			} else if (valueOne == 1) {
+			} else if (whichOption == 1) {
 				this.headerOptions.water.lyeConcentration = valueTwo as number
 			} else {
-				this.headerOptions.water.WaterToLyeRatio = valueTwo as string
+				const getTheObject: { water: number; lye: number } = valueTwo as {
+					water: number
+					lye: number
+				}
+				if (getTheObject.water) {
+					this.headerOptions.water.WaterToLyeRatio.water = getTheObject.water
+				} else {
+					this.headerOptions.water.WaterToLyeRatio.lye = getTheObject.lye
+				}
 			}
-			console.log('weightWater', this.RecipeTotal.weightWater)
-			console.log('waterAsOfOils', this.headerOptions.water.waterAsOfOils)
-			console.log('weightOils', this.RecipeTotal.weightOils)
-			console.log('weightWater', this.RecipeTotal.weightWater)
+			// console.log('weightWater', this.RecipeTotal.weightWater)
+			// console.log('setWaterLyePercent', this.headerOptions.water.waterAsOfOils)
+			// console.log('weightOils', this.RecipeTotal.weightOils)
+			// console.log('weightWater', this.RecipeTotal.weightWater)
 
 			this.RecipeTotal.weightWater =
 				(this.RecipeTotal.weightOils / 100) * this.headerOptions.water.waterAsOfOils
@@ -238,7 +289,7 @@ export const useOilStore = defineStore('oilStore', {
 				this.RecipeTotal.weightOils += parseInt(weight.toFixed(0))
 			})
 			// this.RecipeTotal.weightWater += parseInt((this.RecipeTotal.weightLye * 3).toFixed(0));
-			this.WaterAsOfOils(0, this.headerOptions.water.waterAsOfOils)
+			this.setWaterLyePercent(0, this.headerOptions.water.waterAsOfOils)
 		},
 		RemoveOils(OilToRemove: Oil): void {
 			if (this.AddedOils.includes(OilToRemove) === true) {
@@ -344,7 +395,7 @@ export const useOilStore = defineStore('oilStore', {
 			this.RecipeTotal.FragranceWeight = Math.round(
 				(((this.RecipeTotal.weightOils / 100) * this.headerOptions.fragrance.value) / 1000) * 100,
 			)
-			this.WaterAsOfOils(0, this.headerOptions.water.waterAsOfOils)
+			this.setWaterLyePercent(0, this.headerOptions.water.waterAsOfOils)
 			this.getProperties()
 			this.ChangeSuperFat(this.headerOptions.superFat)
 		},
