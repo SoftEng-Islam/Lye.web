@@ -3,34 +3,36 @@
 
 A lightweight **client-side web app** to precisely calculate how much lye (sodium hydroxide || potassium hydroxide) you need for a soap recipe.
 
+You can see live here: [Lye.web](https://softeng-islam.github.io/Lye.web/)
+
 ---
 
 ## ✨ Why Lye.web?
 
 Making soap safely requires accurate calculations: get too much lye and your soap is harsh, get too little and it's oily. **Lye.web** helps you:
 
-- Convert your oils/butters into the right amount of lye.  
-- Adjust for superfat or discount rates.  
+- Convert your oils/butters into the right amount of lye.
+- Adjust for superfat or discount rates.
 - Experiment with different recipes confidently.
 
 ---
 
 ## 🚀 Features
 
-- Input your oils (type & weight)  
-- Choose a superfat percentage  
-- See exactly how much lye and water is needed  
+- Input your oils (type & weight)
+- Choose a superfat percentage
+- See exactly how much lye and water is needed
 - Lightweight and web‑based — no installation required
-- 
+-
 
 ---
 
 ## 🛠️ How to Use
 
-1. Clone the repo or open the live version (if available)  
-2. Open `index.html` in your browser  
-3. Enter your oils (in grams or ounces)  
-4. Set your superfat rate  
+1. Clone the repo or open the live version (if available)
+2. Open `index.html` in your browser
+3. Enter your oils (in grams or ounces)
+4. Set your superfat rate
 5. voilà! you get the lye and water amounts and a lot of info about the Recipe.
 
 ---
