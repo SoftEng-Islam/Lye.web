@@ -10,6 +10,10 @@ import viteImagemin from 'vite-plugin-imagemin'
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
 	base: '/Lye.web/',
+	server: {
+		// vite server configs, for details see [vite doc](https://vitejs.dev/config/#server-host)
+		port: Number(process?.env?.APP_CLIENT_PORT || 3001),
+	},
 	plugins: [
 		viteImagemin({
 			gifsicle: {

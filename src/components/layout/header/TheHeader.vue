@@ -15,21 +15,14 @@ header(tabindex="1" class="fixed z-30 w-full top-0 left-0 h-14 overflow-hidden m
 		//- App Name or The Logo
 		lye-logo
 
-		//- Settings
-		button(type="button", v-if='false' v-tippy="{content: 'Settings'}" class="w-7 h-7 mx-2 pt-1 rounded-full flex items-center justify-center bg-(--LTheme4) dark:bg-(--Theme4)")
-			RouterLink(to="/Settings")
-				<i class="ri-settings-2-line ri-lg text-black dark:text-white"></i>
-
 	//- Middle Section
 	div(class="mx-auto")
-		div(class="links flex flex-row gap-x-3 text-sm items-center justify-center *:p-2 *:text-gray-500")
-			RouterLink(to="/") Home
-			RouterLink(to="/calculator") Lye-Calc
+
 
 	//- Right Section
 	div(class="ml-auto flex items-center h-full gap-4")
 		//- Change App Colors and Theme
-		theme-controller
+		theme-controller(class="hidden sm:flex")
 
 		//- Dark Mode Toggle Button
 		dark-mode
@@ -41,9 +34,12 @@ header(tabindex="1" class="fixed z-30 w-full top-0 left-0 h-14 overflow-hidden m
 @reference "tailwindcss"
 .router-link-active
 	color: var(--dark-fav-color)
+	border-bottom: 2px solid var(--dark-fav-color)
 
 .dark .router-link-active
 	color: var(--light-fav-color)
+	border-bottom: 2px solid var(--light-fav-color)
+
 
 // .router-link-exact-active
 	// @apply text-#{$fav-color} dark:text-(--#{$dark-fav-color})
