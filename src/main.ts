@@ -5,7 +5,7 @@ import App from './App.vue'
 
 import './styles/main.sass'
 import 'animate.css'
-import 'remixicon/fonts/remixicon.css'
+// import 'remixicon/fonts/remixicon.css'
 
 // Minimalistic but perfect custom scrollbar plugin
 import { PerfectScrollbarPlugin } from 'vue3-perfect-scrollbar'
@@ -26,7 +26,7 @@ createApp(App)
 		defaultProps: {
 			placement: 'auto-end',
 			allowHTML: true,
-		}, // => Global default options * ssee all props
+		},
 	})
 	.use(PerfectScrollbarPlugin)
 	.mount('#app')

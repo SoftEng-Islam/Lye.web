@@ -30,7 +30,7 @@ const satUnsat = "Empty";
 div(class="lyeWidget hover:shadow-2xl dark:shadow-none border-pink-800 dark:border-pink-500")
 	div(class="lye-head from-pink-400 dark:from-pink-600")
 		span(class="lye-label") Soap Bar Quality.
-		button(class="lye-help bg-pink-400 dark:bg-pink-600" v-tippy="{ content: 'Empty Content' }") !
+		<svg v-tippy="{ content: 'Water is calculated as a percentage of total oils.' }" class="w-6 flex-none fill-pink-400 dark:fill-pink-600 dark:stroke-pink-300 stroke-pink-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>
 	perfect-scrollbar(class="w-full mt-4 rounded-lg bg-(--LTheme3) dark:bg-(--Theme3)")
 		ul(class="p-2 pt-4 rounded-md overflow-hidden")
 			li(class="flex overflow-hidden py-2 border-t border-t-zinc-500 first-of-type:border-t-0 last-of-type:border-b-0" v-for="(value, name, index) in soapProperties" :key="index")

@@ -27,7 +27,7 @@ const filteredOils = () =>
 div(class="lyeWidget hover:shadow-2xl dark:shadow-none border-purple-800 dark:border-purple-500")
 	div(class="lye-head from-purple-400 dark:from-purple-600")
 		span(class="lye-label") All Oils.
-		button(class="lye-help bg-purple-400 dark:bg-purple-600" v-tippy="{ content: 'Empty Content' }") !
+		<svg v-tippy="{ content: 'Water is calculated as a percentage of total oils.' }" class="w-6 flex-none fill-purple-400 dark:fill-purple-600 dark:stroke-purple-300 stroke-purple-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>
 	//- Search
 	div(class="relative w-full p-2 flex items-center justify-center")
 		div(class="z-10 w-full pl-4 h-12 flex items-center justify-center rounded-xl bg-(--LTheme3) dark:bg-(--Theme3) shadow-2xl")

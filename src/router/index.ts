@@ -31,6 +31,8 @@ const router = createRouter({
 			meta: { breadcrumb: 'Calculator' },
 		},
 	],
+	// linkActiveClass: '',
+	// linkExactActiveClass: '',
 })
 
 export default router

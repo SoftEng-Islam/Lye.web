@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 
-import LyeLogo from "./LyeLogo.vue";
+import LyeLogo from "../LyeLogo.vue";
 import ThemeController from "./ThemeController.vue";
 import DarkMode from "./DarkMode.vue";
 import GetStarted from "./GetStarted.vue";
@@ -29,18 +29,8 @@ header(tabindex="1" class="fixed z-30 w-full top-0 left-0 h-14 overflow-hidden m
 
 		//- Get Started Button
 		get-started
+
+		//- Right Menu Button that will appear in small screen size like mobile phones
+		button(type="button" class="sm:hidden")
+			<svg class="w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="10" x2="7" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="7" y2="18"></line></svg>
 </template>
-<style scoped lang="sass">
-@reference "tailwindcss"
-.router-link-active
-	color: var(--dark-fav-color)
-	border-bottom: 2px solid var(--dark-fav-color)
-
-.dark .router-link-active
-	color: var(--light-fav-color)
-	border-bottom: 2px solid var(--light-fav-color)
-
-
-// .router-link-exact-active
-	// @apply text-#{$fav-color} dark:text-(--#{$dark-fav-color})
-</style>

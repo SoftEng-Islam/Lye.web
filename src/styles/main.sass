@@ -1,6 +1,5 @@
 @forward "vendor/tailwind.css"
-
-// @use "./PerfectScrollbar"
+@use "./PerfectScrollbar"
 
 @font-face
 	font-family: JetBrains
@@ -136,7 +135,7 @@ html.dark
 
 body
 	font-family: JetBrains
-	@apply bg-(--LTheme2) dark:bg-(--Theme2)
+	@apply bg-(--LTheme2) dark:bg-(--Theme2) pt-11
 
 ::selection
 	background: var(--favColor)

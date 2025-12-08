@@ -31,8 +31,7 @@ const EmptyAddedOilsList = computed(() => AddedOils.value.length === 0 || AddedO
 div(class="lyeWidget hover:shadow-2xl dark:shadow-none border-green-800 dark:border-green-500")
 	div(class="lye-head from-green-400 dark:from-green-600")
 		span(class="lye-label") Added Oils.
-		button(class="lye-help bg-green-400 dark:bg-green-600" v-tippy="{ content: 'Empty Content' }") !
-
+		<svg v-tippy="{ content: 'Water is calculated as a percentage of total oils.' }" class="w-6 flex-none fill-green-400 dark:fill-green-600 dark:stroke-green-300 stroke-green-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>
 	//- List of added oils
 	div(class="bg-(--LTheme3) dark:bg-(--Theme3) mt-4 rounded-lg h-full overflow-hidden flex flex-col gap-3")
 		PerfectScrollbar(class="h-full w-full pb-4 overflow-hidden")

@@ -38,8 +38,7 @@ const TotalAmount = computed(() =>
 div(class="lyeWidget hover:shadow-2xl dark:shadow-none border-blue-800 dark:border-blue-500")
 	div(class="lye-head from-blue-400 dark:from-blue-600")
 		span(class="lye-label") Total Recipe.
-		button(class="lye-help bg-blue-400 dark:bg-blue-600" v-tippy="{ content: 'Empty Content' }") !
-
+		<svg v-tippy="{ content: 'Water is calculated as a percentage of total oils.' }" class="w-6 flex-none fill-blue-400 dark:fill-blue-600 dark:stroke-blue-300 stroke-blue-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>
 	ul(class="bg-(--LTheme3) dark:bg-(--Theme3) mt-4 p-2 pb-0 rounded-lg h-full")
 		li(class="flex overflow-hidden py-2 first-of-type:border-none border-t border-t-(--LTheme2) dark:border-t-(--Theme2)")
 			span(class="text-sm text-black dark:text-white ") Water

@@ -2,15 +2,14 @@
 import TypeWriter from '@/components/TypeWriter.vue';
 import TypeWriterEffect from "@reusable-ui-tr/vue3-type-writer-effect";
 import { ref } from 'vue';
-
 const fullText = "Enter your oils, choose your superfat, and get instant lye & water measurements.";
 
 </script>
 <template lang="pug">
-div(class="container relative mx-auto w-full h-auto flex flex-col justify-center")
-	img(class="fixed z-0 top-0 left-0 w-full bg-cover bg-no-repeat blur-lg" src="../assets/images/2.png")
+div(class="container relative mx-auto w-full overflow-hidden flex flex-col justify-center")
 	//- Section 1 [ Overview ]
-	div(class="child")
+	div(class="relative overflow-hidden w-full child")
+		//- img(class="absolute z-0 top-0 left-0 w-full bg-cover bg-no-repeat blur-lg" src="../assets/images/2.png")
 		h1(class="text-black dark:text-white") Accurate Lye Calculations for Perfect Soap, Every Time
 		type-writer(:text="fullText" :speed="50" :repeating="false" class="text-black dark:text-white")
 		//- TypeWriterEffect(class="text-black dark:text-white" blink-duration="1s" cursor-color="blue" font-family="Lucida Console" font-size="20px" highlight-color="" :text="fulltext" text-color="white" text-wrapper-element-type="p" typing-speed="fast")
@@ -25,8 +24,7 @@ div(class="container relative mx-auto w-full h-auto flex flex-col justify-center
 			li(class="w-60 h-60 rounded-lg bg-amber-600")
 			li(class="w-60 h-60 rounded-lg bg-amber-600")
 		div(v-if="false" class="w-full")
-			img(class="ml-auto  h-full" src="../assets/images/Oil.png")
-
+			img(class="ml-auto h-full" src="../assets/images/Oil.png")
 
 	//- What is Lye.web?
 	//- Why Use Lye.web?
@@ -57,6 +55,10 @@ div(class="container relative mx-auto w-full h-auto flex flex-col justify-center
 		typewriter with soap and bubbles
 </template>
 <style scoped lang="sass">
+// .test
+	// corner-shape: scoop;
+
+
 @reference "tailwindcss"
 .container
 	.child
