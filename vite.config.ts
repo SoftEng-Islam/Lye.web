@@ -6,6 +6,7 @@ import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import vuePugPlugin from 'vite-plugin-pug'
 import viteImagemin from 'vite-plugin-imagemin'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -51,6 +52,7 @@ export default defineConfig(({ mode }) => ({
 				},
 			},
 		}),
+		visualizer({ open: true }), // generates a graph of bundle content
 		vueDevTools(),
 	],
 	css: {

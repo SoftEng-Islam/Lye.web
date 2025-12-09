@@ -2,7 +2,6 @@
 import { ref, onMounted, watch } from 'vue';
 
 const displayedText = ref("");
-
 const props = defineProps<{
 	text: string;
 	speed?: number;       // ms per character
@@ -40,9 +39,8 @@ onMounted(() => {
 });
 </script>
 
-
 <template>
-	<p :class="cursor ? '' : 'animate-none! border-none!'">{{ displayedText }}</p>
+	<p v-font-size="100" :class="cursor ? '' : 'animate-none! border-none!'">{{ displayedText }}</p>
 	<!-- <p>{{ displayedText }}</p> -->
 </template>
 

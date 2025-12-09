@@ -6,12 +6,7 @@ import type { Oil } from '@/store/index';  // <-- type-only import
 interface Props {
 	oil: null;
 }
-
 const props = defineProps<Props>();
-// for Default Values
-// const props = withDefaults(defineProps<Props>(), {
-// 	size: 14
-// })
 
 const theme = ref({
 	color: 'green-500'

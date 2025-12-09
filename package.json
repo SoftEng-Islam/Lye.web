@@ -29,6 +29,7 @@
     "remixicon": "^4.7.0",
     "tippy.js": "^6.3.7",
     "vue": "^3.5.22",
+    "vue-lazyload": "^3.0.0",
     "vue-router": "^4.6.3",
     "vue-tour": "^2.0.0",
     "vue3-perfect-scrollbar": "^2.0.0"
@@ -47,6 +48,7 @@
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.6.0",
     "@vue/language-plugin-pug": "^3.1.3",
+    "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.8.1",
     "autoprefixer": "^10.4.21",
     "daisyui": "^5.5.5",
@@ -61,6 +63,7 @@
     "prettier": "3.6.2",
     "pug": "^3.0.3",
     "pug-plain-loader": "^1.1.0",
+    "rollup-plugin-visualizer": "^6.0.5",
     "sass": "^1.93.3",
     "sass-loader": "^16.0.6",
     "tailwindcss": "^4.1.17",

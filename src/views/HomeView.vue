@@ -8,14 +8,14 @@ const fullText = "Enter your oils, choose your superfat, and get instant lye & w
 <template lang="pug">
 div(class="container relative mx-auto w-full overflow-hidden flex flex-col justify-center")
 	//- Section 1 [ Overview ]
-	div(class="topSection relative overflow-hidden w-full child")
-		//- img(class="absolute z-0 top-0 left-0 w-full bg-cover bg-no-repeat" src="@/assets/images/2.png")
+	div(class="topSection relative flex items-center justify-center overflow-hidden w-full child")
+		//- img(alt="background Image" class="absolute z-0 top-0 left-0 w-full bg-cover bg-no-repeat" src="@/assets/images/2.png")
 		h1(class="text-black dark:text-white") Accurate Lye Calculations for Perfect Soap, Every Time
-		type-writer(:text="fullText" :speed="50" :repeating="false" class="text-black dark:text-white")
+		type-writer(:text="fullText" :speed="50" :repeating="false" class="flex-none mx-auto text-black dark:text-white text-wrap")
 		//- TypeWriterEffect(class="text-black dark:text-white" blink-duration="1s" cursor-color="blue" font-family="Lucida Console" font-size="20px" highlight-color="" :text="fulltext" text-color="white" text-wrapper-element-type="p" typing-speed="fast")
 		RouterLink(to="/calculator" class="start-now py-2 px-4 mt-4 rounded-full text-white dark:text-black font-bold bg-(--dark-fav-color) dark:bg-(--light-fav-color)") Get Started
 		div( class="w-full")
-			img(class="mx-auto h-full rotate-12" src="../assets/images/oil-splash.png")
+			img(alt="Oil Splash" class="mx-auto h-full rotate-12" src="../assets/images/oil-splash.png")
 
 	//- How to Start Using Lye.web (Quick Example)
 	div(class="child")
@@ -24,7 +24,7 @@ div(class="container relative mx-auto w-full overflow-hidden flex flex-col justi
 			li(class="w-60 h-60 rounded-lg bg-amber-600")
 			li(class="w-60 h-60 rounded-lg bg-amber-600")
 		div(v-if="false" class="w-full")
-			img(class="ml-auto h-full" src="../assets/images/Oil.png")
+			img(alt="Oil" class="ml-auto h-full" src="/images/Oil.png")
 
 	//- What is Lye.web?
 	//- Why Use Lye.web?
@@ -41,7 +41,7 @@ div(class="container relative mx-auto w-full overflow-hidden flex flex-col justi
 			li(class="w-60 h-60 rounded-lg bg-amber-600")
 			li(class="w-60 h-60 rounded-lg bg-amber-600")
 		div(v-if="false" class="w-full")
-			img(class="ml-auto  h-full" src="../assets/images/Oil.png")
+			img(alt="Oil" class="ml-auto  h-full" src="/images/Oil.png")
 
 	//- div(class="resources")
 	//- 	div(class="youtube-channels")
