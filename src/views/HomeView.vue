@@ -8,8 +8,8 @@ const fullText = "Enter your oils, choose your superfat, and get instant lye & w
 <template lang="pug">
 div(class="container relative mx-auto w-full overflow-hidden flex flex-col justify-center")
 	//- Section 1 [ Overview ]
-	div(class="relative overflow-hidden w-full child")
-		//- img(class="absolute z-0 top-0 left-0 w-full bg-cover bg-no-repeat blur-lg" src="../assets/images/2.png")
+	div(class="topSection relative overflow-hidden w-full child")
+		//- img(class="absolute z-0 top-0 left-0 w-full bg-cover bg-no-repeat" src="@/assets/images/2.png")
 		h1(class="text-black dark:text-white") Accurate Lye Calculations for Perfect Soap, Every Time
 		type-writer(:text="fullText" :speed="50" :repeating="false" class="text-black dark:text-white")
 		//- TypeWriterEffect(class="text-black dark:text-white" blink-duration="1s" cursor-color="blue" font-family="Lucida Console" font-size="20px" highlight-color="" :text="fulltext" text-color="white" text-wrapper-element-type="p" typing-speed="fast")
