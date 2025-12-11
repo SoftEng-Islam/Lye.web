@@ -3,7 +3,6 @@ import TypeWriter from '@/components/TypeWriter.vue';
 import TypeWriterEffect from "@reusable-ui-tr/vue3-type-writer-effect";
 import { ref } from 'vue';
 const fullText = "Enter your oils, choose your superfat, and get instant lye & water measurements.";
-
 </script>
 <template lang="pug">
 div(class="container relative mx-auto w-full overflow-hidden flex flex-col justify-center")
@@ -11,7 +10,7 @@ div(class="container relative mx-auto w-full overflow-hidden flex flex-col justi
 	div(class="topSection relative flex items-center justify-center overflow-hidden w-full child")
 		//- img(alt="background Image" class="absolute z-0 top-0 left-0 w-full bg-cover bg-no-repeat" src="@/assets/images/2.png")
 		h1(class="text-black dark:text-white") Accurate Lye Calculations for Perfect Soap, Every Time
-		type-writer(:text="fullText" :speed="50" :repeating="false" class="flex-none mx-auto text-black dark:text-white text-wrap")
+		type-writer(:text="fullText" :typingSpeed="250" :erasingSpeed="150" :repeating="false" class="flex-none mx-auto text-black dark:text-white text-wrap")
 		//- TypeWriterEffect(class="text-black dark:text-white" blink-duration="1s" cursor-color="blue" font-family="Lucida Console" font-size="20px" highlight-color="" :text="fulltext" text-color="white" text-wrapper-element-type="p" typing-speed="fast")
 		RouterLink(to="/calculator" class="start-now py-2 px-4 mt-4 rounded-full text-white dark:text-black font-bold bg-(--dark-fav-color) dark:bg-(--light-fav-color)") Get Started
 		div( class="w-full")

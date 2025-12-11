@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue';
-
 const close = defineEmits(['close']);
 
 interface Props {
