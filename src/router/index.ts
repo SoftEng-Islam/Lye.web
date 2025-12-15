@@ -6,7 +6,11 @@ const router = createRouter({
 			path: '/',
 			name: 'home',
 			component: () => import('../views/HomeView.vue'),
-			meta: { breadcrumb: 'Home' },
+			meta: {
+				breadcrumb: 'Home',
+				enterClass: 'animate__animated animate__fadeInLeft',
+				leaveClass: 'animate__animated animate__fadeOutRight',
+			},
 			children: [
 				// {
 				// 	path: 'users',
@@ -28,7 +32,11 @@ const router = createRouter({
 			path: '/calculator',
 			name: 'calculator',
 			component: () => import('../views/CalculatorView.vue'),
-			meta: { breadcrumb: 'Calculator' },
+			meta: {
+				breadcrumb: 'Calculator',
+				enterClass: 'animate__animated animate__fadeInRight',
+				leaveClass: 'animate__animated animate__fadeOutLeft',
+			},
 		},
 	],
 	// linkActiveClass: '',

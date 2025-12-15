@@ -8,7 +8,7 @@ import 'animate.css'
 import { PerfectScrollbarPlugin } from 'vue3-perfect-scrollbar'
 import 'vue3-perfect-scrollbar/style.css'
 import VueTippy from 'vue-tippy'
-import 'tippy.js/dist/tippy.css' // optional for styling
+// import 'tippy.js/themes/material.css' // optional for styling
 
 import directives from './directives/index'
 

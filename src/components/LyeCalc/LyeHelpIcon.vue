@@ -15,8 +15,8 @@ const props = withDefaults(defineProps<Props>(), {
 	width: "w-6",
 	strokeColor: "stroke-blue-500",
 	darkStrokeColor: "stroke-blue-300",
-	fillColor: "fill-blue-500",
-	darkFillColor: "fill-blue-300"
+	fillColor: "",
+	darkFillColor: ""
 });
 </script>
 
@@ -26,3 +26,8 @@ svg(v-tippy="{ content }" :class="[width, strokeColor, darkStrokeColor, fillColo
 	line(x1="12" y1="8" x2="12" y2="12")
 	line(x1="12" y1="16" x2="12" y2="16")
 </template>
+<style scoped lang="sass">
+@reference "tailwindcss"
+svg.lye-help
+	@apply w-6 flex-none mr-2
+</style>

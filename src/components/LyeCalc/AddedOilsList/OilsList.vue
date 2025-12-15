@@ -2,7 +2,7 @@
 import { watch, ref, computed } from "vue";
 import { storeToRefs } from "pinia";
 import { useOilStore } from "@/store/index";
-import type { Oil } from '@/store/index';  // <-- type-only import
+import type { Oil } from '@/store/index';
 
 import OilItem from "./OilItem.vue";
 
@@ -37,7 +37,7 @@ div(class="lyeWidget hover:shadow-2xl dark:shadow-none border-green-800 dark:bor
 		PerfectScrollbar(class="h-full w-full pb-4 overflow-hidden")
 			transition-group(name="list" tag="ul" class="w-full *:my-4 px-4")
 				oil-item(v-for="(oil, index) of AddedOils" key="index" :oil="oil")
-				div(v-if="EmptyAddedOilsList" class="text-red-500 p-2 bg-(--LTheme2) dark:bg-(--Theme2) rounded-md") Please add oil from the #[span(class="font-bold italic text-purple-500") "All Oils"] list To Start!
+				div(v-if="EmptyAddedOilsList" class="text-red-500 p-2 bg-(--LTheme2) dark:bg-(--Theme2) rounded-md") Please add oil from the #[br] #[span(class="font-bold italic text-purple-500 mr-1") "All Oils" ] list To Start!
 	//- weight of all oils
 	div(class="flex items-center overflow-hidden pt-3 pb-2 px-4")
 		span(class="text-sm text-black dark:text-white ") Oils Weight

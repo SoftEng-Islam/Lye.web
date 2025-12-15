@@ -16,9 +16,11 @@ teleport(to="body")
 			div(class="w-1/4 flex flex-col items-start gap-2 p-2")
 				h4(class="font-bold") Contact
 				ul(class="")
+					li(class="") #[a(href="https://github.com/SoftEng-Islam/Lye.web") Twitter]
 					li(class="") #[a(href="https://github.com/SoftEng-Islam/Lye.web") GitHub]
-					li(class="") #[a(href="https://github.com/SoftEng-Islam/Lye.web") GitHub]
-					li(class="") #[a(href="https://github.com/SoftEng-Islam/Lye.web") GitHub]
+					li(class="") #[a(href="https://github.com/SoftEng-Islam/Lye.web") Facebook]
+					li(class="") #[a(href="https://github.com/SoftEng-Islam/Lye.web") Telegram]
+					li(class="") #[a(href="https://github.com/SoftEng-Islam/Lye.web") WhatsApp]
 			//- Contact US
 			div(class="w-1/4 flex flex-col items-start gap-2 p-2")
 				h4(class="font-bold") links
@@ -35,5 +37,5 @@ teleport(to="body")
 					li(class="") #[a(href="https://github.com/SoftEng-Islam/Lye.web") GitHub]
 		//- End Section
 		div(class="w-full h-16 mt-5 flex items-center justify-center bg-(--LTheme1) dark:bg-(--Theme1) rounded-lg")
-			p(class="text--gray-600 dark:text-gray-300") Lye.web Project Made With Love by #[a(class="text-(--light-fav-color) underline") Islam Ahmed]
+			p(class="text--gray-600 dark:text-gray-300") Lye.web Project Made With Love by #[a(href="#" class="text-(--light-fav-color) font-bold") Islam Ahmed]
 </template>

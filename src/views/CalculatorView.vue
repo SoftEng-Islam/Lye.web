@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import AllOilsList from "@/components/calc/AllOilsList.vue";
-import OilProperties from "@/components/calc/OilProperties.vue";
-import OilsList from "@/components/calc/AddedOilsList/OilsList.vue";
-import TotalRecipe from "@/components/calc/TotalRecipe.vue";
-import SoapProperties from "@/components/calc/SoapProperties.vue";
-import RecipeOptions from "@/components/calc/RecipeOptions.vue";
+import AllOilsList from "@/components/LyeCalc/AllOilsList.vue";
+import OilProperties from "@/components/LyeCalc/OilProperties.vue";
+import OilsList from "@/components/LyeCalc/AddedOilsList/OilsList.vue";
+import TotalRecipe from "@/components/LyeCalc/TotalRecipe.vue";
+import SoapProperties from "@/components/LyeCalc/SoapProperties.vue";
+import RecipeOptions from "@/components/LyeCalc/RecipeOptions.vue";
 </script>
 <template lang="pug">
 div(class="pb-6 pt-20 main-padding-x w-full h-full flex flex-wrap items-start justify-between")

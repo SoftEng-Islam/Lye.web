@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { acceptHMRUpdate, defineStore } from 'pinia'
 import OilsAPIJsonFile from '../API/oilsArray2'
 
 interface SoapProperties {
@@ -413,3 +413,8 @@ export const useOilStore = defineStore('oilStore', {
 		},
 	},
 })
+
+// What this does?
+if (import.meta.hot) {
+	import.meta.hot.accept(acceptHMRUpdate(useOilStore, import.meta.hot))
+}
