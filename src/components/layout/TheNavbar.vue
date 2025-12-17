@@ -6,7 +6,7 @@ const breadcrumb = 'working';
 
 </script>
 <template lang="pug">
-nav(class="fixed z-30 w-full border-b border-(--LTheme4) dark:border-(--Theme4) top-14 left-0 h-14 main-padding-x flex flex-row items-center justify-between bg-(--LTheme2) dark:bg-(--Theme2)")
+nav(class="fixed z-30 w-full border-b border-(--LTheme4) dark:border-(--Theme4) top-(--nav-top) left-0 h-(--nav-height) main-padding-x flex flex-row items-center justify-between bg-(--LTheme2) dark:bg-(--Theme2)")
 	bread-crumb(v-if="false")
 	//- Pages
 	div(class="links flex flex-row gap-x-3 mx-auto text-sm items-center justify-center *:p-1 *:text-black dark:*:text-white")

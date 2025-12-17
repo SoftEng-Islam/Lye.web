@@ -10,7 +10,7 @@ import RightMenuHandler from "./RightMenu/RightMenuHandler.vue";
 
 <template lang="pug">
 //- Our Header
-header(tabindex="1" class="fixed z-30 w-full top-0 left-0 h-14 overflow-hidden main-padding-x flex items-center justify-between bg-(--LTheme1) dark:bg-(--Theme1)")
+header(tabindex="1" class="fixed z-30 w-full top-0 left-0 h-(--header-height) overflow-hidden main-padding-x flex items-center justify-between bg-(--LTheme1) dark:bg-(--Theme1)")
 	//- Left Section
 	div(class="mr-auto flex items-center justify-center h-full")
 		//- App Name or The Logo

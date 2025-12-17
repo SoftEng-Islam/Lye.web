@@ -87,14 +87,14 @@
 	--LTheme3: var(--Lth_gra3)
 	--LTheme4: var(--Lth_gra4)
 
-	/* Header Height */
-	--HeaderHeight: 3.5rem
+	/* Layout */
+	--header-height: 5rem
+	--nav-height: calc(var(--header-height) - 1rem)
+	--nav-top: var(--header-height)
+	--router-view-top: calc( var(--header-height) + var(--nav-height) )
 
 	/* Status bar Height */
 	/* --StatusBarHeight: 4.5rem */
-
-	/* LeftSides Height */
-	--DokuListsHeight: calc(100vh - var(--HeaderHeight))
 
 	/* Dark Border */
 	--borderFavColor: var(--D-gra)

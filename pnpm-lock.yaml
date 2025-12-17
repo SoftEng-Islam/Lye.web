@@ -8,15 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@globalhive/vuejs-tour':
+        specifier: ^2.6.0
+        version: 2.6.0(typescript@5.9.3)
       '@heroicons/vue':
         specifier: ^2.2.0
         version: 2.2.0(vue@3.5.25(typescript@5.9.3))
       '@remixicon/vue':
         specifier: ^4.7.0
         version: 4.7.0(vue@3.5.25(typescript@5.9.3))
-      '@reusable-ui-tr/vue3-type-writer-effect':
-        specifier: ^1.0.12
-        version: 1.0.12(vue@3.5.25(typescript@5.9.3))
       '@vueuse/core':
         specifier: ^14.1.0
         version: 14.1.0(vue@3.5.25(typescript@5.9.3))
@@ -35,6 +35,9 @@ importers:
       remixicon:
         specifier: ^4.7.0
         version: 4.7.0
+      three:
+        specifier: ^0.169.0
+        version: 0.169.0
       tippy.js:
         specifier: ^6.3.7
         version: 6.3.7
@@ -546,6 +549,9 @@ packages:
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  '@globalhive/vuejs-tour@2.6.0':
+    resolution: {integrity: sha512-zq3jQ6LEnL+/w7DLzd6qi/Zkn8Ebah/fxD/zOib2segMraaixZPb65PREYlIp4Au9gTam0tMiwUJAxDcDUGSEg==}
+
   '@heroicons/vue@2.2.0':
     resolution: {integrity: sha512-G3dbSxoeEKqbi/DFalhRxJU4mTXJn7GwZ7ae8NuEQzd1bqdd0jAbdaBZlHPcvPD2xI1iGzNVB4k20Un2AguYPw==}
     peerDependencies:
@@ -714,11 +720,6 @@ packages:
     resolution: {integrity: sha512-kwl1BIEnNoZ5IZ4NJZPOQmA2PfxKlOmogWcJBStuDynoyYpsYSvU22ZkerpdofgjsLS/FiLKhJ/ddpP8U8znVw==}
     peerDependencies:
       vue: '>= 3'
-
-  '@reusable-ui-tr/vue3-type-writer-effect@1.0.12':
-    resolution: {integrity: sha512-hFp4hvSErOCHVGkLWiYW/9uANJoRhruG7ol2V8Y9DXAcGHJH8EbBIy2jcBJ7y2podRtvhgVHI+9uquHYX+fwew==}
-    peerDependencies:
-      vue: ^3.2.47
 
   '@rolldown/pluginutils@1.0.0-beta.50':
     resolution: {integrity: sha512-5e76wQiQVeL1ICOZVUg4LSOVYg9jyhGCin+icYozhsUzM+fHE7kddi1bdiE0jwVqTfkjba3jUFbEkoC9WkdvyA==}
@@ -3038,6 +3039,9 @@ packages:
     engines: {node: ^18 || >=20}
     hasBin: true
 
+  nanopop@2.4.2:
+    resolution: {integrity: sha512-NzOgmMQ+elxxHeIha+OG/Pv3Oc3p4RU2aBhwWwAqDpXrdTbtRylbRLQztLy8dMMwfl6pclznBdfUhccEn9ZIzw==}
+
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
@@ -3877,6 +3881,9 @@ packages:
     resolution: {integrity: sha512-ZOn6nJUgvgC09+doCEF3oB+r3ag7kUvlsXEGX069QRD60p+P3uP7XG9N2/at+EyIRGSN//ZY3LyEotA1YpmjuA==}
     engines: {node: '>=4'}
 
+  three@0.169.0:
+    resolution: {integrity: sha512-Ed906MA3dR4TS5riErd4QBsRGPcx+HBDX2O5yYE5GqJeFQTPU+M56Va/f/Oph9X7uZo3W3o4l2ZhBZ6f6qUv0w==}
+
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
 
@@ -4666,6 +4673,14 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
+  '@globalhive/vuejs-tour@2.6.0(typescript@5.9.3)':
+    dependencies:
+      jump.js: 1.0.2
+      nanopop: 2.4.2
+      vue: 3.5.25(typescript@5.9.3)
+    transitivePeerDependencies:
+      - typescript
+
   '@heroicons/vue@2.2.0(vue@3.5.25(typescript@5.9.3))':
     dependencies:
       vue: 3.5.25(typescript@5.9.3)
@@ -4827,10 +4842,6 @@ snapshots:
   '@popperjs/core@2.11.8': {}
 
   '@remixicon/vue@4.7.0(vue@3.5.25(typescript@5.9.3))':
-    dependencies:
-      vue: 3.5.25(typescript@5.9.3)
-
-  '@reusable-ui-tr/vue3-type-writer-effect@1.0.12(vue@3.5.25(typescript@5.9.3))':
     dependencies:
       vue: 3.5.25(typescript@5.9.3)
 
@@ -7291,6 +7302,8 @@ snapshots:
 
   nanoid@5.1.6: {}
 
+  nanopop@2.4.2: {}
+
   natural-compare@1.4.0: {}
 
   neo-async@2.6.2: {}
@@ -8070,6 +8083,8 @@ snapshots:
     dependencies:
       temp-dir: 1.0.0
       uuid: 3.4.0
+
+  three@0.169.0: {}
 
   through@2.3.8: {}
 
