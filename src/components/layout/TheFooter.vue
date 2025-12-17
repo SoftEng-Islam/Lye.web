@@ -2,7 +2,7 @@
 import LyeLogo from './LyeLogo.vue';
 </script>
 <template lang="pug">
-footer(class="left-0 mt-auto w-full py-4 text-black dark:text-white main-padding-x border-t border-(--LTheme4) dark:border-(--Theme4) flex flex-col items-center justify-center bg-(--LTheme3) dark:bg-(--Theme3)")
+footer(class="relative left-0 w-full py-4 text-black dark:text-white main-padding-x border-t border-(--LTheme4) dark:border-(--Theme4) flex flex-col items-center justify-center bg-(--LTheme3) dark:bg-(--Theme3)")
 	//- Top section
 	div(class="w-full flex flex-row items-center gap-4 justify-between")
 		//- The Logo

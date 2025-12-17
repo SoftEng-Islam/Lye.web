@@ -14,9 +14,10 @@ import TheNavbar from "@/components/layout/TheNavbar.vue";
 the-preloader(:enablePreloader="false")
 the-header
 the-navbar
-router-view(v-slot="{Component, route}" class="top-(--router-view-top)")
-	transition(:enter-active-class="route.meta.enterClass" :leave-active-class="route.meta.leaveClass" mode="out-in")
-		component(:is="Component")
+div(class="relative content top-(--router-view-top)")
+	router-view(v-slot="{Component, route}")
+		transition(:enter-active-class="route.meta.enterClass" :leave-active-class="route.meta.leaveClass" mode="out-in")
+			component(:is="Component")
 the-footer
 </template>
 <style lang="sass" module>

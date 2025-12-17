@@ -92,7 +92,7 @@ const faqs = [
 </script>
 
 <template lang="pug">
-div(class="pt-4 w-full overflow-hidden flex flex-col")
+div(class="w-full flex flex-col")
 	//- Hero Section
 	section(class="hero-section relative flex flex-col items-center w-full justify-center min-h-screen p-4 sm:p-6 md:p-8 overflow-hidden")
 		//- Animated background elements

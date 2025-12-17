@@ -1,7 +1,5 @@
 <!-- LyeHelpIcon.vue -->
 <script setup lang="ts">
-import { defineProps } from 'vue';
-
 interface Props {
 	content: string;
 	width?: string;

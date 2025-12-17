@@ -7,7 +7,7 @@ import SoapProperties from "@/components/LyeCalc/SoapProperties.vue";
 import RecipeOptions from "@/components/LyeCalc/RecipeOptions.vue";
 </script>
 <template lang="pug">
-div(class="pb-6 pt-20 main-padding-x w-full h-full flex flex-wrap items-start justify-between")
+div(class="overflow-hidden pb-6 main-padding-x w-full h-full flex flex-wrap items-start justify-between")
 	<recipe-options/>
 	PerfectScrollbar(class="pt-14 w-full flex items-center justify-center")
 		div(class="lye-container")
