@@ -35,6 +35,7 @@
  * Docs: https://tailwindcss.com/docs/preflight
  */
 @layer base {
+
 	*,
 	::after,
 	::before,
@@ -42,12 +43,15 @@
 	::file-selector-button {
 		/* ... */
 	}
+
 	body {
 		/* ... */
 	}
+
 	hr {
 		/* ... */
 	}
+
 	/* ... */
 	img {
 		@apply rounded-md;
@@ -79,25 +83,31 @@
  * Useful for defining styles for common components like headings, links, etc.
  */
 @layer components {
+
 	h1,
 	.heading-1 {
 		@apply text-3xl mt-1 mb-4;
 	}
+
 	h2,
 	.heading-2 {
 		@apply text-2xl mt-0.5 mb-4;
 	}
+
 	h3,
 	.heading-3 {
 		@apply text-xl mt-0.5 mb-2;
 	}
+
 	h4,
 	.heading-4 {
 		@apply text-lg mb-1;
 	}
+
 	a.link:hover {
 		@apply no-underline;
 	}
+
 	code {
 		@apply font-mono text-sm bg-gray-500 p-1 rounded;
 	}
@@ -127,3 +137,42 @@
 @custom-variant business (&:where([data-theme=business], [data-theme=business] *));
 @custom-variant coffee (&:where([data-theme=coffee], [data-theme=coffee] *));
 @custom-variant nord (&:where([data-theme=nord], [data-theme=nord] *)); */
+
+@layer base {
+	body {
+		font-family: 'Karla', Arial, sans-serif;
+		@apply relative bg-(--LTheme2) dark:bg-(--Theme2);
+	}
+
+	::selection {
+		@apply bg-amber-300 text-white;
+	}
+}
+
+@layer components {
+
+	/* Lye Styles */
+	.lye-container {
+		@apply w-full flex flex-row gap-4 flex-wrap justify-between items-stretch;
+	}
+
+	.lye-container .lyeWidget {
+		@apply relative w-full sm:w-72 min-h-[280px] max-h-120 px-2 border-3 pb-4 pt-6 my-4 rounded-2xl flex flex-col gap-2 bg-(--LTheme2) dark:bg-(--Theme2);
+	}
+
+	.lye-container .lyeWidget .lye-head {
+		@apply absolute z-10 pl-4 flex items-center justify-between -top-5 left-1/2 -translate-x-1/2 w-[90%] p-2 rounded-full bg-linear-to-r to-zinc-500 dark:to-zinc-700;
+	}
+
+	.lye-container .lyeWidget .lye-head span.lye-label {
+		@apply text-zinc-800 dark:text-zinc-100 font-bold;
+	}
+
+	.lye-container .lyeWidget .lye-head button.lye-help {
+		@apply w-5 h-5 rounded-full flex items-center justify-center text-sm mr-2 text-black dark:text-white font-bold;
+	}
+
+	.main-padding-x {
+		@apply px-8;
+	}
+}
