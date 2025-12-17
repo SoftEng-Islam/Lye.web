@@ -15,10 +15,9 @@
 @import "tailwindcss/utilities.css" layer(utilities);
 */
 /* Or This */
-@import "tailwindcss";
+@import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
 /* @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *)); */
-
 
 /**
  * Overwrite the Tailwind CSS theme. Check docs for more information.
@@ -62,7 +61,7 @@
 		@apply ring-0;
 	}
 
-	input[type="checkbox" i] {
+	input[type='checkbox' i] {
 		@apply outline-none border-none p-0 m-0;
 	}
 
@@ -80,16 +79,20 @@
  * Useful for defining styles for common components like headings, links, etc.
  */
 @layer components {
-	h1, .heading-1 {
+	h1,
+	.heading-1 {
 		@apply text-3xl mt-1 mb-4;
 	}
-	h2, .heading-2 {
+	h2,
+	.heading-2 {
 		@apply text-2xl mt-0.5 mb-4;
 	}
-	h3, .heading-3 {
+	h3,
+	.heading-3 {
 		@apply text-xl mt-0.5 mb-2;
 	}
-	h4, .heading-4 {
+	h4,
+	.heading-4 {
 		@apply text-lg mb-1;
 	}
 	a.link:hover {

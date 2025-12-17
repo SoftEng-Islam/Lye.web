@@ -3,6 +3,7 @@ import { createApp } from 'vue'
 import router from './router/index'
 import App from './App.vue'
 
+import './styles/vendor/tailwind.css'
 import './styles/main.sass'
 import 'animate.css'
 import { PerfectScrollbarPlugin } from 'vue3-perfect-scrollbar'
