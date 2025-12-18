@@ -29,9 +29,7 @@
 
   # https://devenv.sh/basics/
   enterShell = ''
-    hello         # Run scripts directly
     git --version # Use packages
-    code .
     zsh
   '';
 

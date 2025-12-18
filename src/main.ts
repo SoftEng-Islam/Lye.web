@@ -1,17 +1,17 @@
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
-import router from './router/index'
+import router from './core/router/index'
 import App from './App.vue'
 
-import './styles/vendor/tailwind.css'
-import './styles/main.sass'
+import './core/styles/vendor/tailwind.css'
+import './core/styles/main.sass'
 import 'animate.css'
 import { PerfectScrollbarPlugin } from 'vue3-perfect-scrollbar'
 import 'vue3-perfect-scrollbar/style.css'
 import VueTippy from 'vue-tippy'
 // import 'tippy.js/themes/material.css' // optional for styling
 
-import directives from './directives/index'
+import directives from './core/directives/index'
 
 const app = createApp(App)
 
