@@ -15,7 +15,7 @@ import TheProgress from "@/modules/layout/components/TheProgress.vue";
 teleport(to="body")
 	the-progress
 
-the-preloader(:enablePreloader="false")
+the-preloader(:enablePreloader="true")
 the-header
 div(class="content pt-(--router-view-top) min-h-[calc(100vh-var(--footer-height))]")
 	router-view(v-slot="{Component, route}")

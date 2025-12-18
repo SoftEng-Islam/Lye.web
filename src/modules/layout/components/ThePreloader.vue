@@ -11,343 +11,121 @@ const props = withDefaults(defineProps<Preloader>(), {
 
 const isLoading = ref(true);
 onMounted(() => {
-	// Simulate loading process (replace with actual async call)
-	// But What about the SEO?
 	if (props.enablePreloader) {
 		setTimeout(() => {
 			isLoading.value = false;
-		}, 4500);
+		}, 4000); // 4 seconds of cinematic glory
 	}
 });
 
 </script>
+
 <template lang="pug">
 teleport(to="body")
-	div(v-if="props.enablePreloader && isLoading" class="fixed top-0 left-0 w-full h-full z-40 g-glass")
-	div(v-if="props.enablePreloader && isLoading" class="p-preloader fixed flex items-center justify-center top-0 left-0 w-full h-full z-50")
-		.upload.l-loading
-			.path
-				.arrow
-				svg
-					use(xlink:href='#path')
-			.circle
-				.water
-					svg
-						use(xlink:href='#wave')
-					svg
-						use(xlink:href='#wave')
-		svg(xmlns='http://www.w3.org/2000/svg' style='display: none;')
-			symbol#path(viewbox='0 0 72 72')
-				path(d='M36,25.12 L36,43.68 C36,53.3185944 31.52,56.7319277 22.56,53.92 C9.12,49.7021084 4,44.5565697 4,36 C4,18.72 18.72,4 36,4 C53.28,4 68,18.72 68,36 C68,53.28 53.28,68 36,68 C18.72,68 4,53.28 4,36 C4,18.72 18.72,4 36,4 C53.28,4 68,18.72 68,36 C68,53.28 53.28,68 36,68 C18.72,68 4,53.28 4,36 C4,18.72 18.72,4 36,4 C43.2533333,4 49.8789797,6.40627283 55.876939,11.2188185 L32.7391444,45.2477592 L23.8653488,38.1626948')
-			symbol#wave(viewbox='0 0 116 6')
-				path(d='M58,0 C70.6086957,0 79.3822464,6 87,6 L58,6 L29,6 C36.6177536,6 45.3913043,0 58,0 Z M0,0 C12.6086957,0 21.3822464,6 29,6 L0,6 L0,0 Z M116,0 L116,6 L87,6 C94.6177536,6 103.391304,0 116,0 Z')
+	transition(
+		enter-active-class="transition-opacity duration-700 ease-out"
+		enter-from-class="opacity-0"
+		enter-to-class="opacity-100"
+		leave-active-class="transition-all duration-1000 cubic-bezier(0.4, 0, 0.2, 1)"
+		leave-from-class="opacity-100 scale-100"
+		leave-to-class="opacity-0 scale-110 blur-2xl"
+	)
+		div(v-if="props.enablePreloader && isLoading" class="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-zinc-950")
+			//- Background Cinematic Elements
+			div(class="absolute inset-0 z-0")
+				div(class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-gradient-to-br from-(--Theme1)/20 via-transparent to-(--Theme2)/10 blur-[120px] animate-mesh-slow")
+				div(class="absolute inset-0 opacity-10 [background-image:radial-gradient(circle_at_center,var(--LTheme1)_1px,transparent_1px)] [background-size:40px_40px]")
+
+			//- Digital Scanning Line
+			div(class="absolute inset-0 z-10 pointer-events-none")
+				div(class="w-full h-[1px] bg-gradient-to-r from-transparent via-(--LTheme1) to-transparent opacity-20 animate-scan-slow")
+
+			//- Main Lab Container
+			div(class="relative z-20 flex flex-col items-center")
+				//- Distillation Apparatus Visual
+				div(class="relative w-48 h-48 mb-12")
+					//- The Beaker / Flask
+					div(class="absolute inset-0 rounded-[40px] border-2 border-white/10 backdrop-blur-2xl bg-white/5 shadow-2xl")
+						//- Inner Liquid
+						div(class="absolute bottom-4 inset-x-4 rounded-[28px] bg-gradient-to-t from-(--LTheme1) to-(--LTheme2) opacity-40 animate-liquid-fill")
+							//- Bubbles
+							div(v-for="i in 5" :key="i" class="absolute w-1.5 h-1.5 rounded-full bg-white/40 animate-bubble" :style="{ left: i * 20 + '%', animationDelay: i * 0.5 + 's' }")
+
+					//- Connecting Pipes / Technical Accents
+					div(class="absolute -top-12 left-1/2 -translate-x-1/2 w-1 h-12 bg-gradient-to-b from-transparent to-white/20")
+					div(class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent")
+
+				//- Loading Text & Progress
+				div(class="flex flex-col items-center gap-4 text-center")
+					div(class="flex items-center gap-3 mb-2")
+						div(class="w-2 h-2 rounded-full bg-(--LTheme1) animate-ping")
+						span(class="text-[10px] font-black uppercase tracking-[0.5em] text-(--LTheme1) animate-pulse") Initializing Laboratory
+
+					h2(class="text-2xl font-black text-white tracking-tighter") Lye.web
+
+					//- Technical Data Stream
+					div(class="h-4 overflow-hidden")
+						p(class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest animate-data-stream")
+							| SYNCING SAP MODELS... CALIBRATING LYE RATIOS... OPTIMIZING MOLECULAR MAPPING...
 </template>
 
-<style scoped lang="scss">
-$backWave: #652af8;
-$frontWave: #a04cff;
-$border: $frontWave;
-$borderActive: #fff;
+<style scoped lang="sass">
+@reference "tailwindcss"
 
-.upload {
-	position: relative;
-	width: 66px;
-	height: 66px;
-	border-radius: 50%;
-	border: 3px solid $border;
-	cursor: pointer;
-	transform: translateZ(0) scale(2);
-	transition: transform 0.2s ease;
+@keyframes mesh-slow
+	0%, 100%
+		transform: translate(-50%, -50%) rotate(0deg) scale(1)
+	50%
+		transform: translate(-45%, -55%) rotate(5deg) scale(1.05)
 
-	.path {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		z-index: 1;
-		margin: -36px 0 0 -36px;
-		width: 72px;
-		height: 72px;
+@keyframes scan-slow
+	0%
+		top: -10%
+	100%
+		top: 110%
 
-		.arrow {
-			bottom: 27px;
-			width: 2.5px;
-			height: 20px;
-			position: absolute;
-			left: 50%;
-			border-radius: 1px;
-			margin: 0 0 0 0px;
-			transform-origin: 50% 100%;
+@keyframes liquid-fill
+	0%
+		height: 0%
+		opacity: 0
+	50%
+		height: 60%
+		opacity: 0.4
+	100%
+		height: 85%
+		opacity: 0.6
 
-			&:before,
-			&:after {
-				content: "";
-				display: block;
-				width: 2.5px;
-				height: 12px;
-				bottom: -4px;
-				background: $borderActive;
-				position: absolute;
-				border-radius: 5px;
-				transform-origin: 50% 100%;
-			}
+@keyframes bubble
+	0%
+		bottom: 0
+		opacity: 0
+		transform: scale(0.5)
+	50%
+		opacity: 1
+		transform: scale(1.2)
+	100%
+		bottom: 90%
+		opacity: 0
+		transform: scale(0.5)
 
-			&:before {
-				right: 50%;
-				transform: rotate(-44deg) translateX(2px);
-			}
+@keyframes data-stream
+	0%
+		transform: translateY(0)
+	100%
+		transform: translateY(-100%)
 
-			&:after {
-				left: 50%;
-				transform: rotate(44deg) translateX(-2px);
-			}
-		}
+.animate-mesh-slow
+	animation: mesh-slow 15s ease-in-out infinite
 
-		svg {
-			width: 72px;
-			height: 72px;
-			display: block;
-			fill: none;
-			stroke: $borderActive;
-			stroke-width: 3px;
-			stroke-linecap: round;
-			stroke-dashoffset: 592.73;
-			stroke-dasharray: 0 592.73 20 592.73;
-		}
-	}
+.animate-scan-slow
+	animation: scan-slow 3s linear infinite
 
-	.circle {
-		position: absolute;
-		width: 58px;
-		height: 58px;
-		margin: -29px 0 0 -29px;
-		border-radius: 50%;
-		left: 50%;
-		top: 50%;
-		overflow: hidden;
+.animate-liquid-fill
+	animation: liquid-fill 4s cubic-bezier(0.4, 0, 0.2, 1) forwards
 
-		.water {
-			transform: translateY(116%);
-			background: $frontWave;
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
+.animate-bubble
+	animation: bubble 2s ease-in infinite
 
-			svg {
-				display: block;
-				width: 116px;
-				height: 6px;
-				position: absolute;
-				bottom: 100%;
-
-				&:nth-child(1) {
-					right: 0;
-					fill: $backWave;
-					animation: forward 1.65s infinite;
-				}
-
-				&:nth-child(2) {
-					left: 0;
-					fill: $frontWave;
-					margin-bottom: -1px;
-					animation: backward 0.825s infinite linear;
-				}
-			}
-		}
-	}
-
-	&.l-loading {
-		.path {
-			animation: movePath 0.4s linear forwards;
-
-			.arrow {
-				animation: arrow 0.5s linear forwards 3.7s;
-
-				&:before {
-					animation: arrowB 0.4s linear forwards,
-						arrowBCheck 0.5s linear forwards 3.7s;
-				}
-
-				&:after {
-					animation: arrowA 0.4s linear forwards,
-						arrowACheck 0.5s linear forwards 3.7s;
-				}
-			}
-
-			svg {
-				// display: none;
-				animation: load 3s linear forwards 0.45s,
-					reset 0.7s linear forwards 3.7s;
-			}
-		}
-
-		.circle {
-			.water {
-				animation: fill 3s linear forwards 0.45s;
-			}
-		}
-	}
-
-	&:active {
-		transform: scale(0.92) translateZ(0);
-	}
-}
-
-@keyframes load {
-	0% {
-		stroke-dashoffset: 592.73;
-		stroke-dasharray: 0 592.73 20 592.73;
-	}
-
-	42% {
-		stroke-dasharray: 0 592.73 80 592.73;
-	}
-
-	85% {
-		stroke-dashoffset: 80;
-		stroke-dasharray: 0 592.73 32 592.73;
-	}
-
-	100% {
-		stroke-dashoffset: 32;
-		stroke-dasharray: 0 592.73 32 592.73;
-	}
-}
-
-@keyframes reset {
-
-	0%,
-	99% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 0; // This will Show Right Mark After Finish Animation
-	}
-}
-
-@keyframes movePath {
-	70% {
-		transform: translateY(-10px);
-	}
-}
-
-@keyframes arrow {
-	0% {
-		background: $borderActive;
-		transform: rotate(34deg) translate(-2.5px, 2px);
-	}
-
-	40% {
-		transform: rotate(-7deg) translate(0, 0);
-	}
-
-	99% {
-		transform: rotate(0) translate(0, 0);
-	}
-
-	100% {
-		background: $borderActive;
-	}
-}
-
-@keyframes arrowBCheck {
-
-	0%,
-	20% {
-		transform: rotate(-86deg) translateX(2px) translateY(1px) scaleY(0.714);
-		opacity: 1;
-	}
-
-	100% {
-		transform: rotate(-44deg) translateX(2px) scaleY(1) translateY(0);
-		opacity: 1;
-	}
-}
-
-@keyframes arrowACheck {
-	0% {
-		transform: rotate(0deg) translate(-1px, -1px);
-		opacity: 1;
-	}
-
-	40% {
-		transform: rotate(60deg) translate(-2px, 1px);
-		opacity: 1;
-	}
-
-	100% {
-		transform: rotate(44deg) translateX(-2px);
-		opacity: 1;
-	}
-}
-
-@keyframes arrowB {
-	0% {
-		transform: rotate(-44deg) translateX(2px);
-	}
-
-	60% {
-		transform: rotate(-60deg) translateX(2px);
-	}
-
-	99% {
-		transform: rotate(0deg) translateX(1px);
-		opacity: 1;
-	}
-
-	100% {
-		transform: rotate(0deg) translateX(1px);
-		opacity: 0;
-	}
-}
-
-@keyframes arrowA {
-	0% {
-		transform: rotate(44deg) translateX(-2px);
-	}
-
-	60% {
-		transform: rotate(60deg) translateX(-2px);
-	}
-
-	99% {
-		transform: rotate(0deg) translateX(-1px);
-		opacity: 1;
-	}
-
-	100% {
-		transform: rotate(0deg) translateX(-1px);
-		opacity: 0;
-	}
-}
-
-@keyframes fill {
-	0% {
-		transform: translateY(116%);
-	}
-
-	80% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-
-	100% {
-		opacity: 0;
-		transform: translateY(0);
-	}
-}
-
-@keyframes backward {
-	100% {
-		transform: translateX(-50%);
-	}
-}
-
-@keyframes forward {
-	100% {
-		transform: translateX(50%);
-	}
-}
+.animate-data-stream
+	animation: data-stream 10s steps(10) infinite
 </style>
