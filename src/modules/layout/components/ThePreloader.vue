@@ -14,7 +14,7 @@ onMounted(() => {
 	if (props.enablePreloader) {
 		setTimeout(() => {
 			isLoading.value = false;
-		}, 4000); // 4 seconds of cinematic glory
+		}, 300); // 300ms of cinematic glory
 	}
 });
 
@@ -26,7 +26,7 @@ teleport(to="body")
 		enter-active-class="transition-opacity duration-700 ease-out"
 		enter-from-class="opacity-0"
 		enter-to-class="opacity-100"
-		leave-active-class="transition-all duration-1000 cubic-bezier(0.4, 0, 0.2, 1)"
+		leave-active-class="transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1)"
 		leave-from-class="opacity-100 scale-100"
 		leave-to-class="opacity-0 scale-110 blur-2xl"
 	)

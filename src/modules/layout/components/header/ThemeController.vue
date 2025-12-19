@@ -71,11 +71,17 @@ onMounted(() => {
 </script>
 
 <template lang="pug">
-div(class="px-1 h-6 overflow-hidden rounded-full flex items-center justify-center gap-x-2 bg-(--LTheme3) dark:bg-(--Theme3)")
-  button( type="button" aria-label="gra" @click="activeColor = 1" :class="[ 'w-4 h-4 shadow-md rounded-full cursor-pointer hover:scale-90 duration-150 bg-linear-to-r from-(--L-gra) to-gray-950/70', activeColor === 1 ? 'scale-125 mx-1.5' : '' ]" )
-  button( type="button" aria-label="pur" @click="activeColor = 2" :class="[ 'w-4 h-4 shadow-md rounded-full cursor-pointer hover:scale-90 duration-150 bg-linear-to-r from-(--L-pur) to-gray-950/70', activeColor === 2 ? 'scale-125 mx-1.5' : '' ]" )
-  button( type="button" aria-label="pin" @click="activeColor = 3" :class="[ 'w-4 h-4 shadow-md rounded-full cursor-pointer hover:scale-90 duration-150 bg-linear-to-r from-(--L-pin) to-gray-950/70', activeColor === 3 ? 'scale-125 mx-1.5' : '' ]" )
-  button( type="button" aria-label="blu" @click="activeColor = 4" :class="[ 'w-4 h-4 shadow-md rounded-full cursor-pointer hover:scale-90 duration-150 bg-linear-to-r from-(--L-blu) to-gray-950/70', activeColor === 4 ? 'scale-125 mx-1.5' : '' ]" )
-  button( type="button" aria-label="gre" @click="activeColor = 5" :class="[ 'w-4 h-4 shadow-md rounded-full cursor-pointer hover:scale-90 duration-150 bg-linear-to-r from-(--L-gre) to-gray-950/70', activeColor === 5 ? 'scale-125 mx-1.5' : '' ]" )
-  button( type="button" aria-label="yel" @click="activeColor = 6" :class="[ 'w-4 h-4 shadow-md rounded-full cursor-pointer hover:scale-90 duration-150 bg-linear-to-r from-(--L-yel) to-gray-950/70', activeColor === 6 ? 'scale-125 mx-1.5' : '' ]" )
+div(class="w-[210px] px-2 h-8 overflow-hidden rounded-full flex items-center justify-center gap-x-1 bg-(--LTheme3) dark:bg-(--Theme3) border border-black/5 dark:border-white/5")
+  div(class="w-7 h-6 flex items-center justify-center")
+    button( type="button" aria-label="gra" @click="activeColor = 1" :class="[ 'w-4 h-4 shadow-md rounded-full cursor-pointer hover:scale-110 duration-150 bg-linear-to-r from-(--L-gra) to-gray-950/70', activeColor === 1 ? 'scale-125' : '' ]" )
+  div(class="w-7 h-6 flex items-center justify-center")
+    button( type="button" aria-label="pur" @click="activeColor = 2" :class="[ 'w-4 h-4 shadow-md rounded-full cursor-pointer hover:scale-110 duration-150 bg-linear-to-r from-(--L-pur) to-gray-950/70', activeColor === 2 ? 'scale-125' : '' ]" )
+  div(class="w-7 h-6 flex items-center justify-center")
+    button( type="button" aria-label="pin" @click="activeColor = 3" :class="[ 'w-4 h-4 shadow-md rounded-full cursor-pointer hover:scale-110 duration-150 bg-linear-to-r from-(--L-pin) to-gray-950/70', activeColor === 3 ? 'scale-125' : '' ]" )
+  div(class="w-7 h-6 flex items-center justify-center")
+    button( type="button" aria-label="blu" @click="activeColor = 4" :class="[ 'w-4 h-4 shadow-md rounded-full cursor-pointer hover:scale-110 duration-150 bg-linear-to-r from-(--L-blu) to-gray-950/70', activeColor === 4 ? 'scale-125' : '' ]" )
+  div(class="w-7 h-6 flex items-center justify-center")
+    button( type="button" aria-label="gre" @click="activeColor = 5" :class="[ 'w-4 h-4 shadow-md rounded-full cursor-pointer hover:scale-110 duration-150 bg-linear-to-r from-(--L-gre) to-gray-950/70', activeColor === 5 ? 'scale-125' : '' ]" )
+  div(class="w-7 h-6 flex items-center justify-center")
+    button( type="button" aria-label="yel" @click="activeColor = 6" :class="[ 'w-4 h-4 shadow-md rounded-full cursor-pointer hover:scale-110 duration-150 bg-linear-to-r from-(--L-yel) to-gray-950/70', activeColor === 6 ? 'scale-125' : '' ]" )
 </template>

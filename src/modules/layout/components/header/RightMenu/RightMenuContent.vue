@@ -38,7 +38,7 @@ div(class="flex flex-col h-full")
 
 		div(class="space-y-3")
 			span(class="text-[10px] font-black text-zinc-400 uppercase tracking-widest") Theme Color
-			div(class="p-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5")
+			div(class="flex items-center justify-center p-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5")
 				theme-controller
 </template>
 

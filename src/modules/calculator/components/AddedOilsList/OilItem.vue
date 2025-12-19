@@ -36,7 +36,7 @@ li(class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/
 
 	div(class="flex items-center gap-2")
 		div(class="relative flex items-center rounded-lg bg-black/5 dark:bg-white/5 border border-white/10 group-focus-within/item:border-emerald-500/50 transition-all overflow-hidden")
-			input(class="w-16 px-2 py-1.5 outline-none bg-transparent text-sm font-black text-emerald-600 dark:text-emerald-400 text-center" type="number" maxlength="3" name="oilWeight" :id="props.oil.Name" v-model="weightOfOil" @input="SetOilWeight(props.oil.Name)")
+			input(class="w-16 px-2 py-1.5 outline-none bg-transparent text-sm font-black text-emerald-600 dark:text-emerald-400 text-center" type="number" maxlength="3" name="oilWeight" v-model="weightOfOil" @input="SetOilWeight(props.oil.Name)")
 			select(class="bg-transparent text-[10px] font-bold text-zinc-500 outline-none pr-2 appearance-none cursor-pointer hover:text-zinc-700 dark:hover:text-zinc-300" :name="props.oil.Name")
 				option(value="Gram") g
 				option(value="Kilo") kg

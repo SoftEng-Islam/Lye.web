@@ -8,10 +8,11 @@ const router = createRouter({
 			component: () => import('../../modules/home/views/HomeView.vue'),
 			meta: {
 				breadcrumb: 'Home',
-				enterClass: 'animate__animated animate__fadeInLeft',
-				leaveClass: 'animate__animated animate__fadeOutRight',
+				enterClass: 'animate__animated animate__fadeInLeft animate__faster',
+				leaveClass: 'animate__animated animate__fadeOutRight animate__faster',
 				title: 'Lye.web | Home - Professional Soap Making Calculator',
-				description: 'Explore Lye.web and start planning your high-quality soap recipes with precision and ease.'
+				description:
+					'Explore Lye.web and start planning your high-quality soap recipes with precision and ease.',
 			},
 			children: [
 				// {
@@ -39,7 +40,8 @@ const router = createRouter({
 				enterClass: 'animate__animated animate__fadeInRight',
 				leaveClass: 'animate__animated animate__fadeOutLeft',
 				title: 'Advanced Lye Calculator | Lye.web',
-				description: 'Configure your soap recipe, calculate lye amounts, and analyze soap quality indicators with our advanced calculator.'
+				description:
+					'Configure your soap recipe, calculate lye amounts, and analyze soap quality indicators with our advanced calculator.',
 			},
 		},
 	],
@@ -50,23 +52,23 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
 	// Update Title
-	const title = to.meta.title as string || 'Lye.web';
-	document.title = title;
+	const title = (to.meta.title as string) || 'Lye.web'
+	document.title = title
 
 	// Update Meta Description
-	const description = to.meta.description as string || 'Modern soap making lye calculator.';
-	const metaDescription = document.querySelector('meta[name="description"]');
+	const description = (to.meta.description as string) || 'Modern soap making lye calculator.'
+	const metaDescription = document.querySelector('meta[name="description"]')
 	if (metaDescription) {
-		metaDescription.setAttribute('content', description);
+		metaDescription.setAttribute('content', description)
 	}
 
 	// Dynamic OG Title
-	const ogTitle = document.querySelector('meta[property="og:title"]');
+	const ogTitle = document.querySelector('meta[property="og:title"]')
 	if (ogTitle) {
-		ogTitle.setAttribute('content', title);
+		ogTitle.setAttribute('content', title)
 	}
 
-	next();
-});
+	next()
+})
 
 export default router

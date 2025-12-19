@@ -13,7 +13,7 @@ watch(isOpen, (val) => {
 <template lang="pug">
 div(class="flex")
 	//- Trigger Button
-	button(@click="isOpen = true" class="md:hidden w-10 h-10 rounded-xl bg-black/5 dark:bg-white/5 flex flex-col items-center justify-center gap-1.5 transition-all hover:bg-black/10 dark:hover:bg-white/10 group")
+	button(@click="isOpen = true" class="lg:hidden w-10 h-10 rounded-xl bg-black/5 dark:bg-white/5 flex flex-col items-center justify-center gap-1.5 transition-all hover:bg-black/10 dark:hover:bg-white/10 group")
 		div(class="w-5 h-0.5 bg-zinc-600 dark:bg-zinc-300 rounded-full transition-all" :class="{'rotate-45 translate-y-2': isOpen}")
 		div(class="w-3 h-0.5 bg-zinc-600 dark:bg-zinc-300 rounded-full transition-all" :class="{'opacity-0': isOpen}")
 		div(class="w-5 h-0.5 bg-zinc-600 dark:bg-zinc-300 rounded-full transition-all" :class="{'-rotate-45 -translate-y-2': isOpen}")

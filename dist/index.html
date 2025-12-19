@@ -1,30 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/Lye.web/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lye.web | Professional Soap Making Lye Calculator</title>
-    <meta name="description" content="Lye.web is a modern, responsive lye calculator for soap makers. Plan recipes, calculate lye amounts, and analyze soap properties with precision and ease.">
-    <meta name="keywords" content="lye calculator, soap making, cold process soap, hot process soap, NaOH, KOH, soap recipe, lye amount, soap properties">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lye-app-web.pages.dev/">
-    <meta property="og:title" content="Lye.web | Modern Soap Making Lye Calculator">
-    <meta property="og:description" content="The most beautiful and responsive lye calculator for professional soap makers.">
-    <meta property="og:image" content="/og-image.jpg">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/Lye.web/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="/Lye.web/fonts/karla-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <title>Lye.web | Professional Soap Making Lye Calculator</title>
+  <meta name="description" content="Lye.web is a modern, responsive lye calculator for soap makers. Plan recipes, calculate lye amounts, and analyze soap properties with precision and ease.">
+  <meta name="keywords" content="lye calculator, soap making, cold process soap, hot process soap, NaOH, KOH, soap recipe, lye amount, soap properties">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://lye-app-web.pages.dev/">
-    <meta property="twitter:title" content="Lye.web | Modern Soap Making Lye Calculator">
-    <meta property="twitter:description" content="Plan your perfect soap recipe with our advanced lye calculator.">
-    <meta property="twitter:image" content="/og-image.jpg">
-    <script type="module" crossorigin src="/Lye.web/assets/index-Boad1_NL.js"></script>
-    <link rel="stylesheet" crossorigin href="/Lye.web/assets/index-DX2l6VVy.css">
-  </head>
-  <body class="relative overflow-scroll">
-    <div id="app" class="flex flex-col"></div>
-  </body>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lye-app-web.pages.dev/">
+  <meta property="og:title" content="Lye.web | Modern Soap Making Lye Calculator">
+  <meta property="og:description" content="The most beautiful and responsive lye calculator for professional soap makers.">
+  <meta property="og:image" content="/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://lye-app-web.pages.dev/">
+  <meta property="twitter:title" content="Lye.web | Modern Soap Making Lye Calculator">
+  <meta property="twitter:description" content="Plan your perfect soap recipe with our advanced lye calculator.">
+  <meta property="twitter:image" content="/og-image.jpg">
+  <style>
+    :root {
+      --header-height: 4rem;
+      --router-view-top: 4rem;
+      --footer-height: 24rem;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    header {
+      height: 4rem;
+      height: var(--header-height);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 50;
+    }
+
+    .content {
+      padding-top: 4rem;
+      padding-top: var(--router-view-top);
+      min-height: calc(100vh - 24rem);
+      min-height: calc(100vh - var(--footer-height));
+    }
+  </style>
+  <script>
+    (function () {
+      try {
+        const s = JSON.parse(localStorage.getItem('lye-store') || '{}');
+        const isD = s.darkMode !== false;
+        const c = s.themeColor || 1;
+        const h = document.documentElement;
+        h.classList.toggle('dark', isD);
+        const m = { 1: 'gra', 2: 'pur', 3: 'pin', 4: 'blu', 5: 'gre', 6: 'yel' };
+        const t = m[c];
+        if (!t) return;
+        const vars = {
+          '--dark-fav-color': 'var(--D-' + t + ')',
+          '--borderFavColor': 'var(--D-' + t + ')',
+          '--light-fav-color': 'var(--L-' + t + ')',
+          '--LborderFavColor': 'var(--L-' + t + ')'
+        };
+        for (let i = 1; i <= 4; i++) {
+          vars['--Theme' + i] = 'var(--th_' + t + i + ')';
+          vars['--LTheme' + i] = 'var(--Lth_' + t + i + ')';
+        }
+        for (const [k, v] of Object.entries(vars)) h.style.setProperty(k, v);
+      } catch (e) { }
+    })();
+  </script>
+  <script type="module" crossorigin src="/Lye.web/assets/index-CwbkNpbz.js"></script>
+  <link rel="stylesheet" crossorigin href="/Lye.web/assets/index-D__Nc6VE.css">
+</head>
+
+<body class="relative overflow-scroll">
+  <div id="app" class="flex flex-col"></div>
+</body>
+
 </html>
