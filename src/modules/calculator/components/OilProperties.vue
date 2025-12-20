@@ -32,7 +32,7 @@ div(class="lyeWidget group/properties")
 		span(class="lye-label truncate max-w-[80%]") {{ OilProperties.Name || 'Properties' }}
 		button.lye-help(v-tippy="{ content: 'Chemical properties of the selected oil.' }") ?
 
-	div(class="w-full flex-grow overflow-hidden rounded-2xl bg-black/5 dark:bg-white/5 border border-white/5 mt-2")
+	div(class="w-full grow overflow-hidden rounded-2xl bg-black/5 dark:bg-white/5 border border-white/5 mt-2")
 		PerfectScrollbar(class="h-full w-full")
 			ul(class="p-3 space-y-1")
 				li(v-for="(value, name, index) in OilProperties" :key="index" v-show="name !== 'Name' && name !== 'Id'" class="flex items-center justify-between p-2 rounded-lg hover:bg-white/5 transition-colors")

@@ -92,13 +92,10 @@ const SetFragrance = computed({
 	}
 });
 
-
 // The help Content
 const naOH = "<b>Sodium Hydroxide (NaOH)</b><br/><br/>&bull; <b>Used for</b>: solid bar soap (cold process, hot process).<br/> &bull;<b>Physical form</b>: white flakes or beads.<br/>&bull;<b>Purity</b>: usually 95-100%.";
-
-
-
 </script>
+
 <template lang="pug">
 section(class="RecipeOptions w-full my-8 pb-12")
 	div(class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8")
@@ -133,7 +130,7 @@ section(class="RecipeOptions w-full my-8 pb-12")
 					label(class="text-[10px] font-black text-zinc-400 uppercase ml-1 tracking-widest") Total Weight
 					div(class="relative overflow-hidden rounded-2xl bg-black/5 dark:bg-white/5 border border-white/10 p-4 transition-all focus-within:ring-2 ring-emerald-500/20")
 						input(type="number" readonly class="w-full bg-transparent text-2xl font-black text-emerald-600 dark:text-emerald-400 outline-none" v-model.number.trim="OilStore.RecipeTotal.weightOils")
-						span(class="absolute right-4 bottom-4 text-[10px] font-black opacity-20 uppercase tracking-tighter") Locked
+
 
 				div(class="relative group")
 					select(name="weightOilsUnit" id="weightOilsUnit" class="custom-select border-emerald-500/20 group-hover:border-emerald-500/50")
@@ -168,11 +165,11 @@ section(class="RecipeOptions w-full my-8 pb-12")
 
 				div(class="grid grid-cols-2 gap-3 pt-4 border-t border-white/5")
 					div(class="flex flex-col gap-1")
-						span(class="text-[8px] font-black text-zinc-500 uppercase text-center") Water Ratio
-						input(class="ratio-input border-sky-500/20" type="number" v-model.number="waterRatio")
+						span(class="text-[8px] font-black text-black dark:text-white uppercase text-center") Water Ratio
+						input(class="ratio-input text-black dark:text-white border-sky-500/20" type="number" v-model.number="waterRatio")
 					div(class="flex flex-col gap-1")
-						span(class="text-[8px] font-black text-zinc-500 uppercase text-center") Lye Ratio
-						input(class="ratio-input border-sky-500/20" type="number" v-model.number="lyeRatio")
+						span(class="text-[8px] font-black text-black dark:text-white uppercase text-center") Lye Ratio
+						input(class="ratio-input text-black dark:text-white border-sky-500/20" type="number" v-model.number="lyeRatio")
 
 		//- 4. Custom Tuning
 		div(class="custom-card group-extra")
@@ -206,32 +203,43 @@ section(class="RecipeOptions w-full my-8 pb-12")
 .RecipeOptions
 	@apply relative
 
+.dark .custom-card
+	background: var(--Theme1)
 .custom-card
-	@apply flex flex-col rounded-[2.5rem] bg-white/5 dark:bg-zinc-900/40 backdrop-blur-2xl border border-white/10 shadow-2xl transition-all duration-500 ease-out
+	background: var(--LTheme4)
+	@apply flex flex-col rounded-[2.5rem] border border-white/10 shadow-2xl transition-all duration-500 ease-out
 	&:hover
-		@apply -translate-y-2 border-white/20 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)]
+		@apply -translate-y-2 border-white/20
 
 .card-header
 	@apply flex items-center px-6 py-5 rounded-t-[2.5rem] border-b border-white/5 bg-white/5 backdrop-blur-md
 
+.dark .option-label
+	@apply dark:bg-white/5
 .option-label
-	@apply flex items-center p-3.5 rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 cursor-pointer transition-all duration-300
+	@apply  bg-black/5 flex items-center p-3.5 rounded-2xl border border-white/5 hover:border-blue-500 cursor-pointer transition-all duration-300
 
 .radio-circle
 	@apply w-5 h-5 rounded-full border-2 flex items-center justify-center mr-4 transition-all duration-300
 	&.selected
-		@apply shadow-[0_0_15px_-3px_rgba(59,130,246,0.6)]
+		@apply shadow-2xl
 
 .custom-select
 	@apply w-full px-5 py-3.5 rounded-2xl bg-white/5 border border-white/10 outline-none text-xs font-black text-zinc-500 appearance-none cursor-pointer transition-all duration-300 hover:bg-white/10
 
+.dark .custom-range
+	background: var(--Theme4)
 .custom-range
-	@apply w-full h-1.5 bg-zinc-200 dark:bg-white/10 rounded-full appearance-none cursor-pointer shadow-inner
+	background: var(--LTheme4)
+	@apply w-full h-1.5 bg-zinc-200 rounded-full appearance-none cursor-pointer shadow-inner
 	&::-webkit-slider-thumb
 		@apply appearance-none w-4 h-4 rounded-full bg-current shadow-lg border-2 border-white/20 transition-transform active:scale-125
 
+.dark .ratio-input
+	background: var(--Theme2)
 .ratio-input
-	@apply w-full bg-white/5 border border-white/10 rounded-xl py-2.5 text-center text-sm font-black outline-none focus:ring-2 ring-white/10 transition-all
+	background: var(--LTheme3)
+	@apply w-full border border-white/10 rounded-xl py-2.5 text-center text-sm font-black outline-none focus:ring-2 ring-white/10 transition-all
 
 @keyframes scale
 	0%, 100%

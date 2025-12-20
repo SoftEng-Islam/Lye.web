@@ -1,5 +1,5 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import OilsAPIJsonFile from '../api/oilsArray2'
+import OilsAPIJsonFile from '../api/oilsArray'
 
 interface SoapProperties {
 	Hardness: number

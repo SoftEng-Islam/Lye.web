@@ -18,7 +18,7 @@ const filteredOils = () =>
 <template lang="pug">
 //- Oils list Section
 div(class="lyeWidget group/widget")
-	div(class="lye-head")
+	div(class="lye-head shadow-purple-500/20 bg-linear-to-br from-fuchsia-500/90 to-purple-600/90")
 		span(class="lye-label") All Oils
 		button.lye-help(v-tippy="{content: 'Search and add oils to your recipe. Double click to add.'}") ?
 
@@ -29,13 +29,13 @@ div(class="lyeWidget group/widget")
 			input(name="searchForOil" id="searchForOil" v-model="searchForOil" class="w-full bg-transparent outline-none text-sm font-medium text-zinc-800 dark:text-zinc-200 placeholder:text-zinc-500" type="text" placeholder="Search oils...")
 
 	//- Oils
-	div(class="OilsList w-full flex-grow h-72 overflow-hidden rounded-2xl bg-black/5 dark:bg-white/5 border border-white/5")
+	div(class="OilsList w-full grow h-72 overflow-hidden rounded-2xl bg-black/5 dark:bg-white/5 border border-white/5")
 		PerfectScrollbar(class="h-full w-full" :effectData="filteredOils()")
 			transition-group(enter-active-class="animate__animated animate__fadeInUp animate__faster" leave-active-class="animate__animated animate__fadeOutDown animate__faster" tag="ul" class="p-2 space-y-2")
 				li(v-for="Oil in filteredOils()" :key="Oil.Name" class="p-3 rounded-xl flex items-center gap-3 bg-white/5 border border-white/5 hover:border-purple-500/30 hover:bg-white/10 cursor-pointer transition-all group/item shadow-sm" @click="OilStore.showTheInfo(Oil)" @dblclick="OilStore.ClickedOil(Oil)")
 					button(type="button" class="w-8 h-8 rounded-lg flex items-center justify-center bg-purple-500/10 text-purple-600 dark:text-purple-400 group-hover/item:bg-purple-500 group-hover/item:text-white transition-all shadow-inner" @click.stop="OilStore.ClickedOil(Oil)")
 						<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
-					span(class="text-sm font-medium text-zinc-800 dark:text-zinc-200 flex-grow") {{ Oil.Name }}
+					span(class="text-sm font-medium text-zinc-800 dark:text-zinc-200 grow") {{ Oil.Name }}
 					div(class="opacity-0 group-hover/item:opacity-100 transition-opacity")
 						<svg class="w-4 h-4 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
 </template>

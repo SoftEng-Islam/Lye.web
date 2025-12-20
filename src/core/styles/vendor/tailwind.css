@@ -144,40 +144,11 @@
 		@apply relative bg-(--LTheme2) dark:bg-(--Theme2);
 	}
 
+	.dark ::selection {
+		@apply bg-(--dark-color-light) text-white;
+	}
+
 	::selection {
-		@apply bg-amber-300 text-white;
-	}
-}
-
-@layer components {
-
-	/* Lye Styles */
-	.lye-container {
-		@apply w-full flex flex-row gap-4 flex-wrap justify-between items-stretch;
-	}
-
-	.lye-container .lyeWidget {
-		@apply relative flex-1 basis-80 min-w-[300px] max-w-full sm:max-w-[400px] h-fit max-h-[85vh] px-4 pb-6 pt-10 my-6 rounded-3xl flex flex-col gap-4 bg-white/5 dark:bg-black/10 backdrop-blur-2xl border border-white/10 dark:border-white/5 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
-		transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-	}
-
-	.lye-container .lyeWidget:hover {
-		@apply border-white/20 dark:border-white/10 shadow-[0_12px_48px_0_rgba(0,0,0,0.4)];
-		transform: translateY(-6px) scale(1.01);
-	}
-
-	.lye-container .lyeWidget .lye-head {
-		@apply absolute z-10 px-5 flex items-center justify-between -top-5 left-1/2 -translate-x-1/2 w-[90%] h-11 rounded-2xl bg-linear-to-br from-fuchsia-500/90 to-purple-600/90 backdrop-blur-md shadow-lg shadow-purple-500/20 border border-white/10;
-	}
-
-	.lye-container .lyeWidget .lye-head span.lye-label {
-		@apply text-white font-bold tracking-wide text-sm;
-	}
-
-	.lye-container .lyeWidget .lye-head button.lye-help {
-		@apply w-6 h-6 rounded-lg flex items-center justify-center text-xs text-white/80 hover:text-white bg-white/10 hover:bg-white/20 transition-all;
-	}
-	.main-padding-x {
-		@apply px-8;
+		@apply bg-(--light-color-light) text-black;
 	}
 }
