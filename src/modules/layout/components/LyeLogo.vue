@@ -17,13 +17,13 @@ div(class="flex h-full items-center gap-4")
 			circle(fill="#fcd34d" cx="316" cy="437" r="15")
 			path(fill="#f59e0b" d="M271,407c0,8.399-6.599,15-15,15v-30C264.401,392,271,398.599,271,407z")
 	span(class="text-black dark:text-white font-bold min-w-20 inline-block")
-		RouterLink(to="/" class="logo") {{ ProjectName }}
+		RouterLink(to="/" class="logo text-black dark:text-white") {{ ProjectName }}
 </template>
 <style scoped lang="sass">
 @reference "tailwindcss"
-.logo
-	&.router-link-active
-		@apply text-black dark:text-white font-bold bg-transparent
-	&.router-link-exact-active
-		@apply text-black dark:text-white font-bold bg-transparent
+// .logo
+// 	&.router-link-active
+// 		@apply text-black dark:text-white font-bold bg-transparent
+// 	&.router-link-exact-active
+// 		@apply text-black dark:text-white font-bold bg-transparent
 </style>

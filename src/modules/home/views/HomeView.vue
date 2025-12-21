@@ -308,7 +308,7 @@ div(class="w-full flex flex-col bg-white dark:bg-zinc-950")
 			div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6")
 				div(v-for="step in steps" :key="step.number" class="reveal step-card group")
 					div(class="p-8 rounded-[40px] bg-zinc-100 dark:bg-white/5 border border-transparent hover:border-(--LTheme1) dark:hover:border-(--Theme1) hover:border-opacity-20 transition-all h-full")
-						span(class="text-5xl font-black text-zinc-900/5 dark:text-white/5 mb-8 block group-hover:text-(--Theme1) dark:group-hover:text-(--LTheme1) transition-colors") {{ step.number }}
+						span(class="text-5xl font-black text-zinc-900/30 dark:text-white/5 mb-8 block group-hover:text-(--Theme1) dark:group-hover:text-(--LTheme1) transition-colors") {{ step.number }}
 						h3(class="text-lg font-black text-zinc-900 dark:text-white mb-3") {{ step.title }}
 						p(class="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed") {{ step.description }}
 
@@ -320,15 +320,15 @@ div(class="w-full flex flex-col bg-white dark:bg-zinc-950")
 				h2(class="text-4xl font-black text-zinc-900 dark:text-white tracking-tight") Common Questions.
 
 			div(class="space-y-4")
-				div(v-for="(faq, index) in faqs" :key="index" class="reveal accordion-item")
-					button(@click="toggleFAQ(index)" class="w-full text-left p-8 rounded-4xl bg-white dark:bg-zinc-900 border border-black/5 dark:border-white/5 flex items-center justify-between group transition-all" :class="{'rounded-b-none border-b-transparent shadow-xl': faq.isOpen}")
+				div(v-for="(faq, index) in faqs" :key="index" class="reveal accordion-item rounded-2xl bg-white shadow-2xl dark:bg-zinc-900 overflow-hidden")
+					button(@click="toggleFAQ(index)" class="w-full text-left p-4 px-8 flex items-center justify-between group transition-all" :class="{'rounded-b-none border-b-transparent shadow-xl': faq.isOpen}")
 						span(class="text-base font-black text-zinc-800 dark:text-zinc-200") {{ faq.question }}
 						div(class="w-10 h-10 rounded-2xl bg-zinc-100 dark:bg-white/5 flex items-center justify-center transition-transform" :class="{'rotate-180 bg-(--Theme1) dark:bg-(--LTheme1) text-white': faq.isOpen}")
-							<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+							<svg class="w-5 h-5 stroke-black dark:stroke-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
 
-					transition(enter-active-class="transition-all duration-300 ease-out" enter-from-class="max-h-0 opacity-0 transform -translate-y-2" enter-to-class="max-h-[500px] opacity-100 transform translate-y-0" leave-active-class="transition-all duration-300 ease-in" leave-from-class="max-h-[500px] opacity-100" leave-to-class="max-h-0 opacity-0 transform -translate-y-2")
-						div(v-if="faq.isOpen" class="p-8 pt-0 bg-white dark:bg-zinc-900 border border-t-0 border-black/5 dark:border-white/5 rounded-b-4xl")
-							p(class="text-zinc-500 dark:text-zinc-400 leading-relaxed text-sm") {{ faq.answer }}
+					//- transition(enter-active-class="transition-all duration-300 ease-out" enter-from-class="max-h-0 opacity-0 transform -translate-y-2" enter-to-class="max-h-[500px] opacity-100 transform translate-y-0" leave-active-class="transition-all duration-300 ease-in" leave-from-class="max-h-[500px] opacity-100" leave-to-class="max-h-0 opacity-0 transform -translate-y-2")
+					div(v-if="faq.isOpen" class="p-8 pt-5 bg-white dark:bg-zinc-900 border-t border-black/5 dark:border-white/5")
+						p(class="text-zinc-500 dark:text-zinc-400 leading-relaxed text-sm") {{ faq.answer }}
 
 
 	//- Get Started Section

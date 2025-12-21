@@ -4,17 +4,13 @@ import { useOilStore } from "@/modules/calculator/store/calculatorStore";
 import { convert } from '@/core/utils/useConvert.ts';
 import LyeHelpIcon from './LyeHelpIcon.vue';
 
-
 // console.log(convert(100, 'kg').kg);
-
 
 const OilStore = useOilStore();
 const STypeLye = ref("NaOH"); // Default => NaOH
 const SetTypeOfLye = (): void => {
 	OilStore.setTypeOfLye(STypeLye.value);
 };
-
-
 
 // The Water Options
 // const TheWaterOption = ref(0);
@@ -70,7 +66,6 @@ const lyeRatio = computed({
 		OilStore.setWaterLyePercent(2, { lye: value });
 	}
 });
-
 
 // Set Super Fat
 const SetSuperFat = computed({
@@ -190,7 +185,7 @@ section(class="RecipeOptions w-full my-8 pb-12")
 				div(class="space-y-3 pt-4 border-t border-white/5")
 					label(class="text-[10px] font-black text-fuchsia-400 uppercase tracking-widest") Fragrance Amount
 					div(class="flex items-stretch gap-3")
-						div(class="relative flex-1")
+						div(class="relative flex-1 rounded-2xl bg-black/5 dark:bg-white/5 border border-white/10")
 							input(class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-lg font-black text-fuchsia-500 outline-none focus:ring-2 ring-fuchsia-500/20 transition-all" type="number" v-model.number="SetFragrance")
 						div(class="flex flex-col justify-center items-end px-4 rounded-2xl bg-fuchsia-500/5 border border-fuchsia-500/10")
 							span(class="text-xs font-black text-fuchsia-500") {{OilStore.headerOptions.fragrance.frWeight}}
@@ -224,8 +219,10 @@ section(class="RecipeOptions w-full my-8 pb-12")
 	&.selected
 		@apply shadow-2xl
 
+.dark .custom-select
+	@apply dark:bg-white/5
 .custom-select
-	@apply w-full px-5 py-3.5 rounded-2xl bg-white/5 border border-white/10 outline-none text-xs font-black text-zinc-500 appearance-none cursor-pointer transition-all duration-300 hover:bg-white/10
+	@apply w-full px-5 py-3.5 rounded-2xl bg-black/5 border border-white/5 outline-none text-xs font-black hover:border-emerald-500 text-zinc-500 appearance-none cursor-pointer transition-all duration-300
 
 .dark .custom-range
 	background: var(--Theme4)
