@@ -2,6 +2,7 @@ import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 import router from './core/router/index'
 import App from './App.vue'
+import { MotionPlugin } from '@vueuse/motion'
 
 import './core/styles/vendor/tailwind.css'
 import './core/styles/main.sass'
@@ -28,6 +29,7 @@ app.use(VueTippy, {
 	},
 })
 app.use(PerfectScrollbarPlugin)
+app.use(MotionPlugin)
 
 // Register your custom directives
 Object.entries(directives).forEach(([name, directive]) => {

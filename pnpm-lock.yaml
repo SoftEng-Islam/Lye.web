@@ -56,6 +56,9 @@ importers:
       vue3-perfect-scrollbar:
         specifier: ^2.0.0
         version: 2.0.0(vue@3.5.25(typescript@5.9.3))
+      vue3-spinners:
+        specifier: ^1.3.3
+        version: 1.3.3(vue@3.5.25(typescript@5.9.3))
     devDependencies:
       '@rushstack/eslint-patch':
         specifier: ^1.15.0
@@ -195,6 +198,9 @@ importers:
       vue-tippy:
         specifier: ^6.7.1
         version: 6.7.1(vue@3.5.25(typescript@5.9.3))
+      vue-toastification:
+        specifier: 2.0.0-rc.5
+        version: 2.0.0-rc.5(vue@3.5.25(typescript@5.9.3))
       vue-tsc:
         specifier: ^3.1.8
         version: 3.1.8(typescript@5.9.3)
@@ -1556,6 +1562,9 @@ packages:
   color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
 
+  colornames@1.1.1:
+    resolution: {integrity: sha512-/pyV40IrsdulWv+wFPmERh9k/mjsPZ64yUMDmWrtj/k1nmgrzzIENWKdaVKyBbvFdQWqkcaRxr+polCo3VMe7A==}
+
   commander@10.0.1:
     resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
     engines: {node: '>=14'}
@@ -2770,6 +2779,12 @@ packages:
     resolution: {integrity: sha512-pBxcB3LFc8QVgdggvZWyeys+hnrNWg4OcZIU/1X59k5jQdLBlCsYGRQaz234SqoRLTCgMH00fY0xRJH+F9METQ==}
     engines: {node: '>=8'}
 
+  just-range@4.2.0:
+    resolution: {integrity: sha512-z2Ip8H2j7a9Vr8rKFi0IZf4IXn2Yuq2lGZFS41GjfPwksoHWTaTx1xIjU6C0HyQ1jBXEoz/FzjS5eyVXeW19tg==}
+
+  just-zip-it@3.2.0:
+    resolution: {integrity: sha512-ZJxc8mLz8XkaoOegJ237Xuo3ZQB5zUN/8BTXqalBJbh/uj+ahfJbOJKadJPmXDBbxHzh+MQYH43VxV5TlQvlfw==}
+
   keyv@3.0.0:
     resolution: {integrity: sha512-eguHnq22OE3uVoSYG0LVWNP+4ppamWr9+zWBe1bsNcovIMy6huUJFPgy4mGwCd/rnl3vOLGW1MTlu4c57CT1xA==}
 
@@ -3143,6 +3158,9 @@ packages:
     resolution: {integrity: sha512-uksVLsqG3pVdzzPvmAHpBK0wKxYItuzZr7SziusRPoz67tGV8rL1szZ6IdeUrbqLjGDwApBtN29eEE3IqGHOjg==}
     engines: {node: '>=4'}
 
+  outdent@0.8.0:
+    resolution: {integrity: sha512-KiOAIsdpUTcAXuykya5fnVVT+/5uS0Q1mrkRHcF89tpieSmY33O/tmc54CqwA+bfhbtEfZUNLHaPUiB9X3jt1A==}
+
   ow@0.17.0:
     resolution: {integrity: sha512-i3keDzDQP5lWIe4oODyDFey1qVrq2hXKTuTH2VpqwpYtzPiKZt2ziRI4NBQmgW40AnV5Euz17OyWweCb+bNEQA==}
     engines: {node: '>=10'}
@@ -3225,6 +3243,9 @@ packages:
   parse-json@5.2.0:
     resolution: {integrity: sha512-ayCKvm/phCGxOkYRSCM82iDwct8/EonSEgCSxWxD7ve6jHggsFl4fZVQBPRNgQoKiuV/odhFrGzQXZwbifC8Rg==}
     engines: {node: '>=8'}
+
+  parse-unit@1.0.1:
+    resolution: {integrity: sha512-hrqldJHokR3Qj88EIlV/kAyAi/G5R2+R56TBANxNMy0uPlYcttx0jnMW6Yx5KsKPSbC3KddM/7qQm3+0wEXKxg==}
 
   path-browserify@1.0.1:
     resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
@@ -3829,6 +3850,9 @@ packages:
   strnum@1.1.2:
     resolution: {integrity: sha512-vrN+B7DBIoTTZjnPNewwhx6cBA/H+IS7rfW68n7XxC1y7uoiGQBxaKzqucGUgavX15dJgiGztLJ8vxuEzwqBdA==}
 
+  style-inject@0.3.0:
+    resolution: {integrity: sha512-IezA2qp+vcdlhJaVm5SOdPPTUu0FCEqfNSli2vRuSIBbu5Nq5UvygTk/VzeCqfLz2Atj3dVII5QBKGZRZ0edzw==}
+
   style-value-types@5.1.2:
     resolution: {integrity: sha512-Vs9fNreYF9j6W2VvuDTP7kepALi7sk0xtk2Tu8Yxi9UoajJdEVpNpCov0HsLTqXvNGKX+Uv09pkozVITi1jf3Q==}
 
@@ -4237,6 +4261,11 @@ packages:
     peerDependencies:
       vue: ^3.2.0
 
+  vue-toastification@2.0.0-rc.5:
+    resolution: {integrity: sha512-q73e5jy6gucEO/U+P48hqX+/qyXDozAGmaGgLFm5tXX4wJBcVsnGp4e/iJqlm9xzHETYOilUuwOUje2Qg1JdwA==}
+    peerDependencies:
+      vue: ^3.0.2
+
   vue-tour@2.0.0:
     resolution: {integrity: sha512-vhKzqdhunQ3EoO1733UxhOB389u3EKv2X8JqYhX4tIq4ilqlZtnY3azPFBYPFmnAqHn5RyZBrP2CpqSaxTs8og==}
 
@@ -4250,6 +4279,11 @@ packages:
     resolution: {integrity: sha512-nSWVcRyViCgt0Pe3RhU3w/BllLcFSrEzYOGlRBjSyhVmiZlERHHziffW+9P8L0IMEWouC5t+uYrgNJGSAElqMA==}
     peerDependencies:
       vue: ^3.0.0
+
+  vue3-spinners@1.3.3:
+    resolution: {integrity: sha512-2kY/V63k0Kqe6ZPRLDDz+gOm4l3WRYk16HfmZkB/f2IJ5sXFUjC3VnpNXsYpDMdypNJG6/VKsgNhRXLSz0AZ6w==}
+    peerDependencies:
+      vue: ^3
 
   vue@2.7.16:
     resolution: {integrity: sha512-4gCtFXaAA3zYZdTp5s4Hl2sozuySsgz4jy1EnpBHNfpMa9dK1ZCG7viqBPCwXtmgc8nHqUsAu3G4gtmXkkY3Sw==}
@@ -5790,6 +5824,8 @@ snapshots:
 
   color-name@1.1.4: {}
 
+  colornames@1.1.1: {}
+
   commander@10.0.1: {}
 
   commander@13.1.0: {}
@@ -7068,6 +7104,10 @@ snapshots:
 
   junk@3.1.0: {}
 
+  just-range@4.2.0: {}
+
+  just-zip-it@3.2.0: {}
+
   keyv@3.0.0:
     dependencies:
       json-buffer: 3.0.0
@@ -7426,6 +7466,8 @@ snapshots:
     dependencies:
       arch: 2.2.0
 
+  outdent@0.8.0: {}
+
   ow@0.17.0:
     dependencies:
       type-fest: 0.11.0
@@ -7496,6 +7538,8 @@ snapshots:
       error-ex: 1.3.4
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.2.4
+
+  parse-unit@1.0.1: {}
 
   path-browserify@1.0.1: {}
 
@@ -8027,6 +8071,8 @@ snapshots:
 
   strnum@1.1.2: {}
 
+  style-inject@0.3.0: {}
+
   style-value-types@5.1.2:
     dependencies:
       hey-listen: 1.0.8
@@ -8481,6 +8527,10 @@ snapshots:
       tippy.js: 6.3.7
       vue: 3.5.25(typescript@5.9.3)
 
+  vue-toastification@2.0.0-rc.5(vue@3.5.25(typescript@5.9.3)):
+    dependencies:
+      vue: 3.5.25(typescript@5.9.3)
+
   vue-tour@2.0.0:
     dependencies:
       '@popperjs/core': 2.11.8
@@ -8497,6 +8547,16 @@ snapshots:
   vue3-perfect-scrollbar@2.0.0(vue@3.5.25(typescript@5.9.3)):
     dependencies:
       perfect-scrollbar: 1.5.6
+      vue: 3.5.25(typescript@5.9.3)
+
+  vue3-spinners@1.3.3(vue@3.5.25(typescript@5.9.3)):
+    dependencies:
+      colornames: 1.1.1
+      just-range: 4.2.0
+      just-zip-it: 3.2.0
+      outdent: 0.8.0
+      parse-unit: 1.0.1
+      style-inject: 0.3.0
       vue: 3.5.25(typescript@5.9.3)
 
   vue@2.7.16:
