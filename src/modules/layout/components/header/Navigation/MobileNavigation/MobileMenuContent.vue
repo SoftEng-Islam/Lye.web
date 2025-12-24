@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
-import ThemeController from "../ThemeController.vue";
-import DarkMode from "../DarkMode.vue";
+import DarkModeToggle from '../../Controls/DarkModeToggle.vue';
+import ThemeColorPicker from '../../Controls/ThemeColorPicker.vue';
 
 const emit = defineEmits(['close']);
 </script>
@@ -34,12 +34,12 @@ div(class="flex flex-col h-full")
 			span(class="text-[10px] font-black text-zinc-400 uppercase tracking-widest") Appearance
 			div(class="flex items-center justify-between p-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5")
 				span(class="text-sm font-bold text-zinc-600 dark:text-zinc-300") Dark Mode
-				dark-mode
+				dark-mode-toggle
 
 		div(class="space-y-3")
 			span(class="text-[10px] font-black text-zinc-400 uppercase tracking-widest") Theme Color
 			div(class="flex items-center justify-center p-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5")
-				theme-controller
+				theme-color-picker
 </template>
 
 <style scoped lang="sass">

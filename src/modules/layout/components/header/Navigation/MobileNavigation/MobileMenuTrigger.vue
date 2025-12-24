@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import RightMenuContent from './RightMenuContent.vue';
+import MobileMenuContent from './MobileMenuContent.vue';
+
 const isOpen = ref(false);
 
 // Prevent body scroll when menu is open
@@ -28,5 +29,5 @@ div(class="flex")
 				//- Drawer
 				transition(enter-active-class="animate__animated animate__slideInRight animate__faster" leave-active-class="animate__animated animate__slideOutRight animate__faster")
 					div(v-if="isOpen" class="absolute right-0 top-0 bottom-0 w-full sm:w-[400px] h-full bg-white dark:bg-zinc-950 shadow-2xl p-8 border-l border-white/5")
-						right-menu-content(@close="isOpen = false")
+						mobile-menu-content(@close="isOpen = false")
 </template>
