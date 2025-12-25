@@ -13,8 +13,13 @@ import VueTippy from 'vue-tippy'
 // import 'tippy.js/themes/material.css' // optional for styling
 
 import directives from './core/directives/index'
+import { useAnalytics } from './core/composables/useAnalytics'
 
 const app = createApp(App)
+
+// Initialize Google Analytics
+const { initGA } = useAnalytics()
+initGA()
 
 // Register router, pinia, and plugins
 app.use(router)

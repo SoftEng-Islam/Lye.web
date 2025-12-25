@@ -3,50 +3,12 @@
 *Below is a **clear, practical, step-by-step checklist** you can follow to make the site **ready for monetization** (ads, affiliates, and paid features). and we must write a content to increases approval chances and SEO traffic*
 
 ## Table of content
-
-- Small tasks and improvements
 - Pages to Create and fill with content
   1. Privacy Policy (Privacy.html)
   2. Terms & Conditions (Terms.html)
   3. Cookie Policy (Cookies.html)
   4. “How to Use” Page (How-to-use.html)
   5. Blog Content Plan with SEO Keywords
-
-## Small tasks and improvements
-
-1. Replace "Systems Operational" with something related to lye.web project
-2. Create a component for Donations(Buy Me a Coffee) button
-3. Important Legal & Trust Notes (Very Important)
-  Because this is a **lye calculator**:
-     - Add a clear **disclaimer** (safety, accuracy, responsibility).
-     - Clearly state units and assumptions.
-     - This increases trust and protects you legally.
-4. Footer Navigation
-   - **Add links to**:
-     - Privacy Policy
-     - Terms
-     - Cookie Policy
-     - Contact
-   - **Why**
-     - Ad networks check this.
-     - Users expect it.
-5. Email List
-   - **Purpose**
-     - Retain users.
-     - Promote Pro features or products.
-   - **Lead magnet**
-     - Free soap making checklist PDF.
-6. SEO Basics
-   - Proper `<title>` and `<meta description>`
-   - Structured headings (H1, H2)
-   - Fast load time
-7. Analytics
-   - Google Analytics
-   - Google Search Console
-8. MONETIZATION
-   - Affiliate links
-   - Affiliate disclosure
-   - Apply for AdSense
 
 ## Pages to Create and fill with content
 
@@ -162,7 +124,7 @@ Because you deal with **caustic soda**.
 - **Important**
   - Add affiliate disclosure at the top.
 
-### 10. Affiliate Disclosure (REQUIRED)
+### 10. Affiliate Disclosure
 
 - **Purpose**
   - Legal requirement.

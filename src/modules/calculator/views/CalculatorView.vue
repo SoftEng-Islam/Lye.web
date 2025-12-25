@@ -5,22 +5,33 @@ import OilsList from "@/modules/calculator/components/AddedOilsList/OilsList.vue
 import TotalRecipe from "@/modules/calculator/components/TotalRecipe.vue";
 import SoapProperties from "@/modules/calculator/components/SoapProperties.vue";
 import RecipeOptions from "@/modules/calculator/components/RecipeOptions.vue";
+import SafetyDisclaimer from "@/modules/calculator/components/SafetyDisclaimer.vue";
 </script>
 
 <template lang="pug">
 div(class="calculator-view min-h-screen pb-12 overflow-x-hidden")
 	h1(class="sr-only") Advanced Lye Calculator for Soap Making
+
+	//- Safety Disclaimer Banner at the top
+	div(class="main-padding-x pt-8")
+		<Safety-Disclaimer />
+
 	transition(appear enter-active-class="animate__animated animate__fadeInDown")
 		<recipe-options class="main-padding-x" />
 
 	main(class="main-padding-x mt-8")
-		div(class="lye-container")
-			transition-group(appear enter-active-class="animate__animated animate__zoomIn" move-class="transition-all duration-500")
-				<All-Oils-List key="all-oils"/>
-				<oil-properties key="oil-props"/>
-				<oils-list key="added-oils"/>
-				<total-recipe key="total-recipe"/>
-				<soap-properties key="soap-props"/>
+		transition-group(
+			tag="div"
+			class="lye-container"
+			appear
+			enter-active-class="animate__animated animate__zoomIn"
+			move-class="transition-all duration-500"
+		)
+			<All-Oils-List key="all-oils"/>
+			<oil-properties key="oil-props"/>
+			<oils-list key="added-oils"/>
+			<total-recipe key="total-recipe"/>
+			<soap-properties key="soap-props"/>
 </template>
 
 <style lang="css">
@@ -36,9 +47,9 @@ div(class="calculator-view min-h-screen pb-12 overflow-x-hidden")
 
 /* Lye Styles */
 .lye-container {
-	@apply grid w-full gap-10 flex flex-row flex-wrap justify-center items-stretch;
+	@apply grid w-full gap-8 items-stretch justify-center;
 	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-	min-height: 800px;
+	min-height: auto;
 }
 
 @media (max-width: 360px) {
@@ -54,7 +65,7 @@ div(class="calculator-view min-h-screen pb-12 overflow-x-hidden")
 
 .lye-container .lyeWidget {
 	background-color: var(--LTheme4);
-	@apply border-white/10 relative shadow-2xl flex-1 basis-80 min-w-[300px] max-w-full sm:max-w-[400px] h-fit max-h-[85vh] px-4 pb-6 pt-10 my-6 rounded-3xl flex flex-col gap-4 border;
+	@apply border-white/10 relative shadow-2xl w-full h-full px-4 pb-6 pt-10 rounded-3xl flex flex-col gap-4 border;
 	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
