@@ -49,6 +49,7 @@ interface OilStoreState {
 	Oils: Oil[]
 	headerOptions: {
 		typeOfLye: string
+		lyePurity: number
 		weightOfOilsValue: number
 		weightOfOilsUnit: string
 		water: {
@@ -100,6 +101,7 @@ export const useOilStore = defineStore('oilStore', {
 		Oils: OilsAPIJsonFile,
 		headerOptions: {
 			typeOfLye: 'NaOH',
+			lyePurity: 100,
 			weightOfOilsValue: 0,
 			weightOfOilsUnit: 'Grams',
 			water: {
@@ -192,20 +194,34 @@ export const useOilStore = defineStore('oilStore', {
 	},
 	actions: {
 		setTypeOfLye(value: string): void {
-			if (value === 'NaOH' || 'KOH') {
+			if (['NaOH', 'KOH', 'KOH70'].includes(value)) {
 				this.headerOptions.typeOfLye = value
+
+				// Set default purity based on type
+				if (value === 'NaOH') this.headerOptions.lyePurity = 100
+				else if (value === 'KOH') this.headerOptions.lyePurity = 90
+				else if (value === 'KOH70') this.headerOptions.lyePurity = 70
+
 				this.RecipeTotal.weightLye = 0
 				// this.weightWater = 0;
 
 				this.AddedOils.forEach((oi: Oil) => {
 					if (this.headerOptions.typeOfLye === 'NaOH') {
 						const NaOH: number = (oi.weight ?? 0) * oi.NaOH
-
 						this.RecipeTotal.weightLye += parseInt(NaOH.toFixed(0))
 					} else {
+						// For KOH and KOH70, we use KOH SAP value
+						// Purity adjustment happens in calcLye or here?
+						// It's better to do the base SAP calc here and let calcLye handle the rest,
+						// BUT calcLye recalculates everything anyway.
+						// Let's rely on calcLye for the full calculation pipeline to be consistent.
+						// However, this function seems to attempt a partial update.
+						// Let's just call calcLye() to ensure consistency.
 						this.RecipeTotal.weightLye += parseInt(((oi.weight ?? 0) * oi.KOH).toFixed(0))
 					}
 				})
+				// Trigger full recalculation to apply purity and water settings
+				this.calcLye()
 			}
 		},
 		ClickedOil(selectedOil: Oil) {
@@ -308,11 +324,19 @@ export const useOilStore = defineStore('oilStore', {
 					const NaOH = weight * oi.NaOH
 					this.RecipeTotal.weightLye += parseInt(NaOH.toFixed(0))
 				} else {
+					// Both KOH and KOH70 use the KOH SAP value initially
 					this.RecipeTotal.weightLye += parseInt((weight * oi.KOH).toFixed(0))
 				}
 				this.RecipeTotal.weightOils += parseInt(weight.toFixed(0))
 			})
 			// this.RecipeTotal.weightWater += parseInt((this.RecipeTotal.weightLye * 3).toFixed(0));
+
+			// Apply Lye Purity Adjustment
+			// Formula: Adjusted Lye = Pure Lye / (Purity / 100)
+			if (this.headerOptions.lyePurity > 0 && this.headerOptions.lyePurity < 100) {
+				this.RecipeTotal.weightLye =
+					this.RecipeTotal.weightLye / (this.headerOptions.lyePurity / 100)
+			}
 
 			// Apply SuperFat Discount
 			if (this.headerOptions.superFat > 0) {

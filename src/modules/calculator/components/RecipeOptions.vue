@@ -111,6 +111,12 @@ section(class="RecipeOptions w-full my-8 pb-12")
 						div(v-if="STypeLye === lye.id" class="w-1.5 h-1.5 rounded-full bg-white animate-scale")
 					span(class="text-xs font-bold text-zinc-600 dark:text-zinc-300 transition-colors group-hover/opt:text-zinc-900 dark:group-hover/opt:text-white") {{ lye.label }}
 
+			div(class="px-6 pb-6 pt-2 border-t border-white/5 space-y-2")
+				div(class="flex justify-between")
+					span(class="text-[10px] font-black text-blue-400 uppercase mt-1") Purity
+					span(class="text-sm font-black text-blue-500") {{ OilStore.headerOptions.lyePurity }}%
+				input(type="range" min="50" max="100" v-model.number="OilStore.headerOptions.lyePurity" @change="OilStore.calcLye()" class="custom-range accent-blue-500")
+
 		//- 2. Oil Configuration
 		div(class="custom-card group-oil")
 			div(class="card-header bg-linear-to-r from-emerald-500/20 to-teal-500/20 text-emerald-600 dark:text-emerald-400")

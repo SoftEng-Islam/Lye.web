@@ -1,5 +1,9 @@
 Here is a clear, practical breakdown of the types of lye used in soap making, how they differ, how they change formulas, and what to watch for. This is important because the type of lye determines how much water and oil you need.
 
+> Notice: each oil has its own
+> KOH: number The amount of Sodium Hydroxide (in grams) required to saponify 1 gram of this oil.
+> NaOH: number How physically solid the bar will be. High values = a long-lasting, firm bar.
+
 1. Two Main Types of Lye
    There are only two true lyes:
 
