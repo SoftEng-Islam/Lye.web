@@ -262,17 +262,41 @@ export const useOilStore = defineStore('oilStore', {
 				}
 				if (getTheObject.water) {
 					this.headerOptions.water.WaterToLyeRatio.water = getTheObject.water
-				} else {
+				}
+				if (getTheObject.lye) {
 					this.headerOptions.water.WaterToLyeRatio.lye = getTheObject.lye
 				}
 			}
-			// console.log('weightWater', this.RecipeTotal.weightWater)
-			// console.log('setWaterLyePercent', this.headerOptions.water.waterAsOfOils)
-			// console.log('weightOils', this.RecipeTotal.weightOils)
-			// console.log('weightWater', this.RecipeTotal.weightWater)
 
-			this.RecipeTotal.weightWater =
-				(this.RecipeTotal.weightOils / 100) * this.headerOptions.water.waterAsOfOils
+			// Update the selected option so subsequent recalcs use the right method
+			this.headerOptions.water.selected = whichOption
+
+			// Calculate water based on the selected method
+			// 0: Water as % of Oils
+			if (this.headerOptions.water.selected === 0) {
+				this.RecipeTotal.weightWater =
+					(this.RecipeTotal.weightOils / 100) * this.headerOptions.water.waterAsOfOils
+			}
+			// 1: Lye Concentration
+			// Water = (TotalLye / (Concentration/100)) - TotalLye
+			else if (this.headerOptions.water.selected === 1) {
+				const concentration = this.headerOptions.water.lyeConcentration / 100
+				if (concentration > 0 && concentration < 1) {
+					this.RecipeTotal.weightWater =
+						this.RecipeTotal.weightLye / concentration - this.RecipeTotal.weightLye
+				}
+			}
+			// 2: Water:Lye Ratio
+			// Water = LyeWeight * (WaterRatio / LyeRatio)
+			else if (this.headerOptions.water.selected === 2) {
+				const ratio = this.headerOptions.water.WaterToLyeRatio
+				if (ratio.lye > 0) {
+					this.RecipeTotal.weightWater = this.RecipeTotal.weightLye * (ratio.water / ratio.lye)
+				}
+			}
+
+			// Round to nearest integer for consistency
+			this.RecipeTotal.weightWater = Math.round(this.RecipeTotal.weightWater)
 		},
 		calcLye(): void {
 			this.RecipeTotal.weightOils = 0
@@ -289,7 +313,23 @@ export const useOilStore = defineStore('oilStore', {
 				this.RecipeTotal.weightOils += parseInt(weight.toFixed(0))
 			})
 			// this.RecipeTotal.weightWater += parseInt((this.RecipeTotal.weightLye * 3).toFixed(0));
-			this.setWaterLyePercent(0, this.headerOptions.water.waterAsOfOils)
+
+			// Apply SuperFat Discount
+			if (this.headerOptions.superFat > 0) {
+				this.RecipeTotal.weightLye =
+					((100 - this.headerOptions.superFat) / 100) * this.RecipeTotal.weightLye
+			}
+
+			// Recalculate water based on the currently selected method
+			// We pass the current value of the selected method to trigger the calculation logic
+			const selected = this.headerOptions.water.selected
+			let value: number | object = 0
+
+			if (selected === 0) value = this.headerOptions.water.waterAsOfOils
+			else if (selected === 1) value = this.headerOptions.water.lyeConcentration
+			else if (selected === 2) value = this.headerOptions.water.WaterToLyeRatio
+
+			this.setWaterLyePercent(selected, value)
 		},
 		RemoveOils(OilToRemove: Oil): void {
 			if (this.AddedOils.includes(OilToRemove) === true) {
@@ -395,7 +435,15 @@ export const useOilStore = defineStore('oilStore', {
 			this.RecipeTotal.FragranceWeight = Math.round(
 				(((this.RecipeTotal.weightOils / 100) * this.headerOptions.fragrance.value) / 1000) * 100,
 			)
-			this.setWaterLyePercent(0, this.headerOptions.water.waterAsOfOils)
+			// Recalculate water based on the currently selected method, similar to calcLye
+			const selected = this.headerOptions.water.selected
+			let value: number | object = 0
+
+			if (selected === 0) value = this.headerOptions.water.waterAsOfOils
+			else if (selected === 1) value = this.headerOptions.water.lyeConcentration
+			else if (selected === 2) value = this.headerOptions.water.WaterToLyeRatio
+
+			this.setWaterLyePercent(selected, value)
 			this.getProperties()
 			this.ChangeSuperFat(this.headerOptions.superFat)
 		},
@@ -406,10 +454,8 @@ export const useOilStore = defineStore('oilStore', {
 			)
 		},
 		ChangeSuperFat(value: number): void {
-			this.calcLye()
 			this.headerOptions.superFat = value
-			this.RecipeTotal.weightLye =
-				((100 - this.headerOptions.superFat) / 100) * this.RecipeTotal.weightLye
+			this.calcLye()
 		},
 	},
 })
