@@ -1,22 +1,39 @@
 const oilsAPI: {
 	Name: string
 	Id: number
+	// The amount of Potassium Hydroxide (in grams) required to saponify 1 gram of this oil.
 	KOH: number
+	// The amount of Sodium Hydroxide (in grams) required to saponify 1 gram of this oil.
 	NaOH: number
+	// How physically solid the bar will be. High values = a long-lasting, firm bar.
 	Hardness: number
+	// How effectively the soap strips oils. Note: If this is too high, the soap feels "harsh" or drying.
 	Cleansing: number
+	// How moisturizing or "skin-friendly" the soap is. Higher is better for sensitive skin.
 	Condition: number
+	// The ability to produce big, fluffy bubbles (lather).
 	Bubbly: number
+	// The stability of the lather. Think of this as the "shaving cream" feel vs. big bubbles.
 	Creamy: number
+	// Measures the degree of "unsaturation." High Iodine (>70) means the soap is soft and prone to going rancid (Dreaded Orange Spots).
 	Iodine: number
+	// "Iodine and Saponification Value." This is an old-school "overall quality" score. Most soapmakers aim for a total recipe INS of around 160.
 	INS: number
+	// Lauric acid content. Lauric acid is a medium-chain fatty acid that is found in coconut oil and other tropical oils. It is a good emulsifier and helps to stabilize the soap.
 	Lauric: number
+	// Myristic acid content. Myristic acid is a medium-chain fatty acid that is found in coconut oil and other tropical oils. It is a good emulsifier and helps to stabilize the soap.
 	Myristic: number
+	// Palmitic acid content. Palmitic acid is a medium-chain fatty acid that is found in coconut oil and other tropical oils. It is a good emulsifier and helps to stabilize the soap.
 	Palmitic: number
+	// Stearic acid content. Stearic acid is a medium-chain fatty acid that is found in coconut oil and other tropical oils. It is a good emulsifier and helps to stabilize the soap.
 	Stearic: number
+	// Ricinoleic acid content. Ricinoleic acid is a medium-chain fatty acid that is found in coconut oil and other tropical oils. It is a good emulsifier and helps to stabilize the soap.
 	Ricinoleic: number
+	// Oleic acid content. Oleic acid is a medium-chain fatty acid that is found in coconut oil and other tropical oils. It is a good emulsifier and helps to stabilize the soap.
 	Oleic: number
+	// Linoleic acid content. Linoleic acid is a medium-chain fatty acid that is found in coconut oil and other tropical oils. It is a good emulsifier and helps to stabilize the soap.
 	Linoleic: number
+	// Linolenic acid content. Linolenic acid is a medium-chain fatty acid that is found in coconut oil and other tropical oils. It is a good emulsifier and helps to stabilize the soap.
 	Linolenic: number
 }[] = [
 	{

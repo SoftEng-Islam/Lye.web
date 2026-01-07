@@ -146,19 +146,22 @@ section(class="RecipeOptions w-full my-8 pb-12")
 				button.lye-help(v-tippy="{ content: 'Water settings and lye concentration.' }" class="ml-auto w-6 h-6 rounded-full border border-sky-500/30 flex items-center justify-center text-[10px] font-bold hover:bg-sky-500/20 transition-colors") ?
 
 			div(class="p-6 space-y-6")
-				div(class="space-y-2")
+				//- Option 0: Water as % of Oils
+				div(:class="{'opacity-100 ring-2 ring-sky-500 bg-sky-500/10': OilStore.headerOptions.water.selected === 0, 'opacity-60 hover:opacity-100': OilStore.headerOptions.water.selected !== 0}" class="space-y-2 p-3 rounded-2xl transition-all duration-300")
 					div(class="flex justify-between")
 						span(class="text-[10px] font-black text-zinc-400 uppercase mt-1") Water : Oils
 						span(class="text-sm font-black text-sky-500") {{ waterPerOils }}%
 					input(type="range" min="20" max="40" v-model.number="waterPerOils" class="custom-range accent-sky-500")
 
-				div(class="space-y-2")
+				//- Option 1: Lye Concentration
+				div(:class="{'opacity-100 ring-2 ring-sky-500 bg-sky-500/10': OilStore.headerOptions.water.selected === 1, 'opacity-60 hover:opacity-100': OilStore.headerOptions.water.selected !== 1}" class="space-y-2 p-3 rounded-2xl transition-all duration-300")
 					div(class="flex justify-between")
 						span(class="text-[10px] font-black text-zinc-400 uppercase mt-1") Lye Concentration
 						span(class="text-sm font-black text-sky-500") {{ lyeCon }}%
 					input(type="range" min="20" max="50" v-model.number="lyeCon" class="custom-range accent-sky-500")
 
-				div(class="grid grid-cols-2 gap-3 pt-4 border-t border-white/5")
+				//- Option 2: Ratio
+				div(:class="{'opacity-100 ring-2 ring-sky-500 bg-sky-500/10': OilStore.headerOptions.water.selected === 2, 'opacity-60 hover:opacity-100': OilStore.headerOptions.water.selected !== 2}" class="grid grid-cols-2 gap-3 pt-4 border-t border-white/5 p-3 rounded-2xl transition-all duration-300")
 					div(class="flex flex-col gap-1")
 						span(class="text-[8px] font-black text-black dark:text-white uppercase text-center") Water Ratio
 						input(class="ratio-input text-black dark:text-white border-sky-500/20" type="number" v-model.number="waterRatio")
